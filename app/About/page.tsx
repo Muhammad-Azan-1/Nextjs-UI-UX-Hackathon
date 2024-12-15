@@ -6,6 +6,7 @@ import ShopeOffer from "@/components/ShopeOffer/ShopeOffer";
 import { clientsImages } from "@/Data/Data";
 import Header from "@/components/Header/Header";
 
+
 const page = () => {
   return (
     <>
