@@ -18,7 +18,7 @@ const TopCategories = () => {
 
 
             <div className="h-[250px] w-[250px] rounded-[100%] bg-[#F7F7F7] flex justify-center items-center  hover:border-l-[10px] hover:border-[#8575d7ed]  transition-all">
-            <Image src="/images/cantileverchair.svg" className="object-cover " alt="item2"width={180} height={180}></Image>
+            <Image src="/images/Cantileverchair.svg" className="object-cover " alt="item2"width={180} height={180}></Image>
             </div>
 
 
