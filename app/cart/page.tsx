@@ -6,7 +6,7 @@ import Header from "@/components/Header/Header";
 const Cart = () => {
   return (
     <>
-    <Header />
+      <Header />
       <Pagesbar
         pageName="Shopping Cart"
         name1="Home"
@@ -27,7 +27,10 @@ const Cart = () => {
           </div>
 
           {cartData.map((items) => (
-            <div  key={items.id} className="flex items-center max-w2:mt-6 mt-10 border-b-[1px] border-[#E1E1E4] pb-4">
+            <div
+              key={items.id}
+              className="flex items-center max-w2:mt-6 mt-10 border-b-[1px] border-[#E1E1E4] pb-4"
+            >
               <div className="relative p-1">
                 <Image
                   src={items.image}
@@ -45,10 +48,7 @@ const Cart = () => {
                 ></Image>
               </div>
               <div
-                className={`flex flex-col ${
-                 
-                     "max12:w-[160px] w-[170px] sm:w-[190px]"
-                } text-[14px] max10:ml-3 ml-4 mt-2 font-josefin`}
+                className={`flex flex-col ${"max12:w-[160px] w-[170px] sm:w-[190px]"} text-[14px] max10:ml-3 ml-4 mt-2 font-josefin`}
               >
                 <h1 className="w-full max10:text-[11px] max10:font-[700] text-[12px] sm:text-[14px]">
                   {items.name}

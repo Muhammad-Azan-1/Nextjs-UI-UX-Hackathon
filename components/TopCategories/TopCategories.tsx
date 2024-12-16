@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from 'next/image';
 const TopCategories = () => {
   return (
     <>
@@ -13,12 +13,12 @@ const TopCategories = () => {
             </div>
             
             <div className="h-[250px] w-[250px] rounded-[100%] bg-[#F7F7F7] flex justify-center items-center  hover:border-l-[10px] hover:border-[#8575d7ed]  transition-all ">
-            <Image src="/images/trendingChair1.svg" className="object-cover " alt="item2"width={175} height={180}></Image>
+            <Image src="/images/trendingchair1.svg" className="object-cover " alt="item2"width={175} height={180}></Image>
             </div>
 
 
             <div className="h-[250px] w-[250px] rounded-[100%] bg-[#F7F7F7] flex justify-center items-center  hover:border-l-[10px] hover:border-[#8575d7ed]  transition-all">
-            <Image src="/images/cantileverChair.svg" className="object-cover " alt="item2"width={180} height={180}></Image>
+            <Image src="/images/cantileverchair.svg" className="object-cover " alt="item2"width={180} height={180}></Image>
             </div>
 
 
