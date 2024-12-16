@@ -260,7 +260,7 @@ export const clientsImages = [
 
 //? SHop items Data
 
-export const shopitems = [
+export const shopItems = [
   {
     id:'1',
     image:'/images/shopitem1.svg',
