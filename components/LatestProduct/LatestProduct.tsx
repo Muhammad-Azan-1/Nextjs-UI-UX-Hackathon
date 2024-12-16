@@ -53,8 +53,8 @@ import "aos/dist/aos.css"
                 
                 />
                 
-                <div className={`${image === '/images/chair2.svg' ? 'inline-block' : 'hidden'}`}>
-            
+                <div className={` absolute top-0 left-0 ${image === '/images/chair2.svg' ? 'inline-block' : 'hidden'}`}>
+                    <Image src='/images/salestag.svg' alt="sales tag" width={85} height={57}></Image>
                  </div>
                 
                 <div className="absolute bottom-6 left-2 flex flex-col items-center justify-center gap-3 ">
