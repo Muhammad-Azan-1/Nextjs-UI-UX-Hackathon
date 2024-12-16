@@ -14,7 +14,7 @@ const productData = [
         cartName:'Cart Icon',
         heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
-        searchicon:'images/searchi.svg',
+        searchIcon:'images/searchi.svg',
         SearchName:'Search Icon',
         imageCode:'Code - Y523201'
 
@@ -33,7 +33,7 @@ const productData = [
         cartName:'Cart Icon',
         heartIcon:'images/hearticon2.svg',
          HeartName:'Heart Icon',
-        searchicon:'images/searchi.svg',
+        searchIcon:'images/searchi.svg',
         SearchName:'Search Icon',
         imageCode:'Code - Y523201'
 
@@ -53,7 +53,7 @@ const productData = [
         cartName:'Cart Icon',
         heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
-        searchicon:'images/searchi.svg',
+        searchIcon:'images/searchi.svg',
         SearchName:'Search Icon',
         imageCode:'Code - Y523201'
 
@@ -73,7 +73,7 @@ const productData = [
         cartName:'Cart Icon',
         heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
-        searchicon:'images/searchi.svg',
+        searchIcon:'images/searchi.svg',
         SearchName:'Search Icon',
         imageCode:'Code - Y523201'
 
