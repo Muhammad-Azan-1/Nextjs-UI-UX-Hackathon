@@ -123,7 +123,7 @@ export const latestProduct1 = [
 
       {
         id: 3,
-        image: "/images/cantileverchair.svg",
+        image: "/images/Cantileverchair.svg",
         alt1: "chair image",
         cartIcon: "images/carticon2.svg",
         alt2:'cart icon',
@@ -376,7 +376,7 @@ export const shopItems = [
 
   {
     id:'12',
-    image:'/images/shopeitem11.svg',
+    image:'/images/shopitem11.svg',
     alt:'Pellentesque condimentum ac',
     name:'Pellentesque condimentum ac',
     image2:'/images/slidershopitem.svg',
@@ -435,14 +435,14 @@ export const recentPosts = [
   },
   {
     id:'2',
-    image:'/images/recentpost2.svg',
+    image:'/images/recentspost2.svg',
     alt:'post2',
     
 
   },
   {
     id:'3',
-    image:'/images/recentpost3.svg',
+    image:'/images/recentspost3.svg',
     alt:'post3',
     text:'Viverra pulvinar et enim.',
     
@@ -450,7 +450,7 @@ export const recentPosts = [
   },
   {
     id:'4',
-    image:'/images/recentpost4.svg',
+    image:'/images/recentspost4.svg',
     alt:'post4',
     
 
