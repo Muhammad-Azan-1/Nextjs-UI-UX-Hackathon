@@ -577,9 +577,9 @@ export const cartData =[
 
    {
     id:'5',
-    image:'/images/cart5mage5.svg',
+    image:'/images/cartimage5.svg',
     alt:'cart icon 5',
-    name:'Proin  elem pharetra',
+    name:'Proin elem phar',
     color:'Color : black',
     size:'Size : Small',
     price:'$32.00',
