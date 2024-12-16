@@ -129,7 +129,7 @@ export const latestProduct1 = [
 
       {
         id: 3,
-        image: "/images/cantileverChair.svg",
+        image: "/images/cantileverchair.svg",
         alt1: "chair image",
         cartIcon: "images/cartIcon2.svg",
         alt2:'cart icon',
