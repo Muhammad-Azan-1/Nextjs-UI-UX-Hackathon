@@ -15,7 +15,7 @@ const productData = [
         nameOfChair:' Cantilever chair',
         colorImage1:'/images/colorBox.svg',
         colorImage2:'/images/lightMode.svg',
-        mainImage:'/images/cantileverchair.svg',
+        mainImage:'/images/Cantileverchair.svg',
         cartIcon:'images/cartIcon2.svg',
         cartName:'Cart Icon',
         heartIcon:'images/heartIcon2.svg',
