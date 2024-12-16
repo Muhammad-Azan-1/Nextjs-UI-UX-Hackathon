@@ -1,11 +1,5 @@
 //?Featured Product Data
 
-
-
-
-
-
-
 const productData = [
 
     {
@@ -14,13 +8,13 @@ const productData = [
         price: '$42.00',
         nameOfChair:' Cantilever chair',
         colorImage1:'/images/colorbox.svg',
-        colorImage2:'/images/lightMode.svg',
+        colorImage2:'/images/lightmode.svg',
         mainImage:'/images/Cantileverchair.svg',
         cartIcon:'images/carticon2.svg',
         cartName:'Cart Icon',
         heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
-        searchIcon:'images/searchI.svg',
+        searchicon:'images/searchi.svg',
         SearchName:'Search Icon',
         imageCode:'Code - Y523201'
 
@@ -34,12 +28,12 @@ const productData = [
         price: '$42.00',
         mainImage:'/images/cantileverchair2.svg',
         colorImage1:'/images/colorbox.svg',
-        colorImage2:'/images/lightMode.svg',
+        colorImage2:'/images/lightmode.svg',
         cartIcon:'images/carticon2.svg',
         cartName:'Cart Icon',
         heartIcon:'images/hearticon2.svg',
          HeartName:'Heart Icon',
-        searchIcon:'images/searchI.svg',
+        searchicon:'images/searchi.svg',
         SearchName:'Search Icon',
         imageCode:'Code - Y523201'
 
@@ -53,13 +47,13 @@ const productData = [
         price: '$42.00',
         nameOfChair:' Cantilever chair',
         colorImage1:'/images/colorbox.svg',
-        colorImage2:'/images/lightMode.svg',
+        colorImage2:'/images/lightmode.svg',
         mainImage:'/images/cantileverchair3.svg',
         cartIcon:'images/carticon2.svg',
         cartName:'Cart Icon',
         heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
-        searchIcon:'images/searchI.svg',
+        searchicon:'images/searchi.svg',
         SearchName:'Search Icon',
         imageCode:'Code - Y523201'
 
@@ -73,13 +67,13 @@ const productData = [
         price: '$42.00',
         nameOfChair:' Cantilever chair',
         colorImage1:'/images/colorbox.svg',
-        colorImage2:'/images/lightMode.svg',
+        colorImage2:'/images/lightmode.svg',
         mainImage:'/images/cantileverchair4.svg',
         cartIcon:'images/carticon2.svg',
         cartName:'Cart Icon',
         heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
-        searchIcon:'images/searchI.svg',
+        searchicon:'images/searchi.svg',
         SearchName:'Search Icon',
         imageCode:'Code - Y523201'
 
@@ -105,7 +99,7 @@ export const latestProduct1 = [
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
-        searchIcon: "images/searchicon3.svg",
+        searchicon: "images/searchicon3.svg",
         alt4:'search icon',
         name: "Comfort Handy Craft",
         price: "$42.00",
@@ -120,7 +114,7 @@ export const latestProduct1 = [
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
-        searchIcon: "images/searchicon3.svg",
+        searchicon: "images/searchicon3.svg",
         alt4:'search icon',
         name: "Comfort Handy Craft",
         price: "$52.00",
@@ -135,7 +129,7 @@ export const latestProduct1 = [
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
-        searchIcon: "images/searchicon3.svg",
+        searchicon: "images/searchicon3.svg",
         alt4:'search icon',
         name: "Comfort Handy Craft",
         price: "$22.00",
@@ -155,7 +149,7 @@ export const latestProduct1 = [
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
-        searchIcon: "images/searchicon3.svg",
+        searchicon: "images/searchicon3.svg",
         alt4:'search icon',
         name: "Comfort Handy Craft",
         price: "$40.00",
@@ -169,7 +163,7 @@ export const latestProduct1 = [
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
-        searchIcon: "images/searchicon3.svg",
+        searchicon: "images/searchicon3.svg",
         alt4:'search icon',
         name: "Comfort Handy Craft",
         price: "$32.00",
@@ -184,7 +178,7 @@ export const latestProduct1 = [
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
-        searchIcon: "images/searchicon3.svg",
+        searchicon: "images/searchicon3.svg",
         alt4:'search icon',
         name: "Comfort Handy Craft",
         price: "$92.00",
@@ -274,7 +268,7 @@ export const shopItems = [
   {
 
     id:'2',
-    image:'/images/shopitem2.svg',
+    image:'/images/shopitem2Imported.svg',
     alt:'ultricies condimentum imperdiet',
     name:'ultricies condimentum imp',
     image2:'/images/slidershopitem.svg',
@@ -382,7 +376,7 @@ export const shopItems = [
 
   {
     id:'12',
-    image:'/images/shopeItem11.svg',
+    image:'/images/shopeitem11.svg',
     alt:'Pellentesque condimentum ac',
     name:'Pellentesque condimentum ac',
     image2:'/images/slidershopitem.svg',
@@ -497,7 +491,7 @@ export const recentPosts = [
 export const productDetails =[
   {
     id:'1',
-    image:'/images/lproduct1.svg',
+    image:'/images/Lproduct1.svg',
     alt:'Product1',
     heading:'Mens Fashion Wear',
     price:'$43.00',
@@ -506,7 +500,7 @@ export const productDetails =[
 
   {
     id:'2',
-    image:'/images/lproduct2.svg',
+    image:'/images/Lproduct2.svg',
     alt:'Product2',
     heading:'Women’s Fashion',
     price:'$67.00',
@@ -516,7 +510,7 @@ export const productDetails =[
 
   {
     id:'3',
-    image:'/images/lproduct3.svg',
+    image:'/images/Lproduct3.svg',
     alt:'Product3',
     heading:'Wolx Dummy Fashion',
     price:'$51.00',
@@ -525,7 +519,7 @@ export const productDetails =[
 
   {
     id:'4',
-    image:'/images/lproduct4.svg',
+    image:'/images/Lproduct4.svg',
     alt:'Product4',
     heading:'Top Wall Digital Clock',
     price:'$48.00',

@@ -83,7 +83,7 @@ const FeaturedProduct = () => {
 
                   <div className="mt-1 mb-1 inline-block group-hover:hidden">
                     <Image
-                      src={colorImage1 || "/default-color1.png"}
+                      src={colorImage1}
                       alt="Color Image 1"
                       width={50}
                       height={50}
@@ -92,7 +92,7 @@ const FeaturedProduct = () => {
 
                   <div className="hidden group-hover:inline">
                     <Image
-                      src={colorImage2 || "/default-color2.png"}
+                      src={colorImage2}
                       alt="Color Image 2"
                       width={50}
                       height={50}
@@ -101,10 +101,10 @@ const FeaturedProduct = () => {
 
                   <div className="flex flex-col items-center w-full">
                     <h3 className="text-[#1A0B5B] text-inherit font-[400] font-josefin">
-                      {imageCode || "Unknown Code"}
+                      {imageCode}
                     </h3>
                     <h3 className="text-[#1A0B5B] text-inherit font-[400] mb-2 mt-2 font-lato">
-                      {price || "Price Unavailable"}
+                      {price}
                     </h3>
                   </div>
                 </div>
