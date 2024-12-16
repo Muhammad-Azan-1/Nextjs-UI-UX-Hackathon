@@ -13,12 +13,12 @@ const productData = [
         name: 'Cantilever Chair 1',
         price: '$42.00',
         nameOfChair:' Cantilever chair',
-        colorImage1:'/images/colorBox.svg',
+        colorImage1:'/images/colorbox.svg',
         colorImage2:'/images/lightMode.svg',
         mainImage:'/images/Cantileverchair.svg',
-        cartIcon:'images/cartIcon2.svg',
+        cartIcon:'images/carticon2.svg',
         cartName:'Cart Icon',
-        heartIcon:'images/heartIcon2.svg',
+        heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
         searchIcon:'images/searchI.svg',
         SearchName:'Search Icon',
@@ -33,11 +33,11 @@ const productData = [
         nameOfChair:' Cantilever chair',
         price: '$42.00',
         mainImage:'/images/cantileverchair2.svg',
-        colorImage1:'/images/colorBox.svg',
+        colorImage1:'/images/colorbox.svg',
         colorImage2:'/images/lightMode.svg',
-        cartIcon:'images/cartIcon2.svg',
+        cartIcon:'images/carticon2.svg',
         cartName:'Cart Icon',
-        heartIcon:'images/heartIcon2.svg',
+        heartIcon:'images/hearticon2.svg',
          HeartName:'Heart Icon',
         searchIcon:'images/searchI.svg',
         SearchName:'Search Icon',
@@ -52,12 +52,12 @@ const productData = [
         name: 'Cantilever Chair 1',
         price: '$42.00',
         nameOfChair:' Cantilever chair',
-        colorImage1:'/images/colorBox.svg',
+        colorImage1:'/images/colorbox.svg',
         colorImage2:'/images/lightMode.svg',
         mainImage:'/images/cantileverchair3.svg',
-        cartIcon:'images/cartIcon2.svg',
+        cartIcon:'images/carticon2.svg',
         cartName:'Cart Icon',
-        heartIcon:'images/heartIcon2.svg',
+        heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
         searchIcon:'images/searchI.svg',
         SearchName:'Search Icon',
@@ -72,12 +72,12 @@ const productData = [
         name: 'Cantilever Chair 1',
         price: '$42.00',
         nameOfChair:' Cantilever chair',
-        colorImage1:'/images/colorBox.svg',
+        colorImage1:'/images/colorbox.svg',
         colorImage2:'/images/lightMode.svg',
         mainImage:'/images/cantileverchair4.svg',
-        cartIcon:'images/cartIcon2.svg',
+        cartIcon:'images/carticon2.svg',
         cartName:'Cart Icon',
-        heartIcon:'images/heartIcon2.svg',
+        heartIcon:'images/hearticon2.svg',
         HeartName:'Heart Icon',
         searchIcon:'images/searchI.svg',
         SearchName:'Search Icon',
@@ -101,7 +101,7 @@ export const latestProduct1 = [
         id: 1,
         image: "/images/chair1.svg",
         alt1: "comfortable chair",
-        cartIcon: "images/cartIcon2.svg",
+        cartIcon: "images/carticon2.svg",
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
@@ -116,7 +116,7 @@ export const latestProduct1 = [
         id: 2,
         image: "/images/chair2.svg",
         alt1:'chair image',
-        cartIcon: "images/cartIcon2.svg",
+        cartIcon: "images/carticon2.svg",
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
@@ -131,7 +131,7 @@ export const latestProduct1 = [
         id: 3,
         image: "/images/cantileverchair.svg",
         alt1: "chair image",
-        cartIcon: "images/cartIcon2.svg",
+        cartIcon: "images/carticon2.svg",
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
@@ -151,7 +151,7 @@ export const latestProduct1 = [
         id: 1,
         image: "/images/chair4.svg",
         alt1: "chair photo",
-        cartIcon: "images/cartIcon2.svg",
+        cartIcon: "images/carticon2.svg",
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
@@ -165,7 +165,7 @@ export const latestProduct1 = [
         id: 2,
         image: "/images/chair5.svg",
         alt1: "chair photo",
-        cartIcon: "images/cartIcon2.svg",
+        cartIcon: "images/carticon2.svg",
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
@@ -180,7 +180,7 @@ export const latestProduct1 = [
         id: 3,
         image: "/images/chair6.svg",
         alt1: "chair photo",
-        cartIcon: "images/cartIcon2.svg",
+        cartIcon: "images/carticon2.svg",
         alt2:'cart icon',
         heartIcon: "images/hearticon3.svg",
         alt3:'heart icon',
@@ -198,7 +198,7 @@ export const latestProduct1 = [
 export const trendingProduct =[
   {
     id:'1',
-    image:'/images/trendingChair1.svg',
+    image:'/images/trendingchair1.svg',
     alt:'chair Image',
     name:'Cantilever chair',
     price:'$40.00',
@@ -206,7 +206,7 @@ export const trendingProduct =[
   },
   {
     id:'2',
-    image:'/images/trendingChair2.svg',
+    image:'/images/trendingchair2.svg',
     alt:'chair Image',
     name:'Cantilever chair',
     price:'$85.00',
@@ -214,7 +214,7 @@ export const trendingProduct =[
   },
   {
     id:'3',
-    image:'/images/trendingChair3.svg',
+    image:'/images/trendingchair3.svg',
     alt:'chair Image',
     name:'Cantilever chair',
     price:'$35.00',
@@ -222,7 +222,7 @@ export const trendingProduct =[
   },
   {
     id:'4',
-    image:'/images/trendingChair4.svg',
+    image:'/images/trendingchair4.svg',
     alt:'chair Image',
     name:'Cantilever chair',
     price:'$65.00',
@@ -260,13 +260,13 @@ export const clientsImages = [
 
 //? SHop items Data
 
-export const shopItems = [
+export const shopitems = [
   {
     id:'1',
-    image:'/images/shopItem1.svg',
+    image:'/images/shopitem1.svg',
     alt:'Vel elite euismod',
     name:'Vel elite euismod',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
 
@@ -274,10 +274,10 @@ export const shopItems = [
   {
 
     id:'2',
-    image:'/images/shopItem2.svg',
+    image:'/images/shopitem2.svg',
     alt:'ultricies condimentum imperdiet',
     name:'ultricies condimentum imp',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -285,10 +285,10 @@ export const shopItems = [
   {
 
     id:'3',
-    image:'/images/shopItem2.svg',
+    image:'/images/shopitem2.svg',
     alt:'Vitae suspendisse sed',
     name:'Vitae suspendisse sed',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -296,10 +296,10 @@ export const shopItems = [
   {
 
     id:'4',
-    image:'/images/shopItem3.svg',
+    image:'/images/shopitem3.svg',
     alt:'Sed at fermentum',
     name:'Sed at fermentum',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -307,20 +307,20 @@ export const shopItems = [
   {
 
     id:'5',
-    image:'/images/shopItem4.svg',
+    image:'/images/shopitem4.svg',
     alt:'Fusce pellentesque at',
     name:'Fusce pellentesque at',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
   
   {
     id:'6',
-    image:'/images/shopItem5.svg',
+    image:'/images/shopitem5.svg',
     alt:'Vestibulum magna laoreet',
     name:'Vestibulum magna laoreet',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -328,10 +328,10 @@ export const shopItems = [
   {
 
     id:'7',
-    image:'/images/shopItem6.svg',
+    image:'/images/shopitem6.svg',
     alt:'Sollicitudin amet orci',
     name:'Sollicitudin amet orci',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -339,10 +339,10 @@ export const shopItems = [
   {
 
     id:'8',
-    image:'/images/shopItem7.svg',
+    image:'/images/shopitem7.svg',
     alt:'Ultrices mauris sit',
     name:'Ultrices mauris sit',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -350,10 +350,10 @@ export const shopItems = [
   {
 
     id:'9',
-    image:'/images/shopItem8.svg',
+    image:'/images/shopitem8.svg',
     alt:'Pellentesque condimentum act',
     name:'Pellentesque condimentum ac',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -361,10 +361,10 @@ export const shopItems = [
   {
 
     id:'10',
-    image:'/images/shopItem9.svg',
+    image:'/images/shopitem9.svg',
     alt:'Cras scelerisque velite',
     name:'Cras scelerisque velite',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -372,10 +372,10 @@ export const shopItems = [
   {
 
     id:'11',
-    image:'/images/shopItem10.svg',
+    image:'/images/shopitem10.svg',
     alt:'Lectus vulputate faucibus',
     name:'Lectus vulputate faucibus',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -385,7 +385,7 @@ export const shopItems = [
     image:'/images/shopeItem11.svg',
     alt:'Pellentesque condimentum ac',
     name:'Pellentesque condimentum ac',
-    image2:'/images/sliderShopItem.svg',
+    image2:'/images/slidershopitem.svg',
     price:'$26.00',
     originalPrice:'$42.00'
   },
@@ -402,7 +402,7 @@ export const BlogData = [
     alt:'Blog image 1',
     name:'Surf Auxion',
     date:'Aug 09 2020',
-    icon1:'/images/Bloglogo.svg',
+    icon1:'/images/bloglogo.svg',
     icon2:'/images/calendar.svg',
     heading:'Mauris at orci non vulputate diam tincidunt nec.',
   },
@@ -412,7 +412,7 @@ export const BlogData = [
     alt:'Blog image 2',
     name:'Surf Auxion',
     date:'Aug 09 2020',
-    icon1:'/images/Bloglogo.svg',
+    icon1:'/images/bloglogo.svg',
     icon2:'/images/calendar.svg',
     heading:'Aenean vitae in aliquam ultrices lectus. Etiam.',
   },
@@ -422,7 +422,7 @@ export const BlogData = [
     alt:'Blog image 3',
     name:'Surf Auxion',
     date:'Aug 09 2020',
-    icon1:'/images/Bloglogo.svg',
+    icon1:'/images/bloglogo.svg',
     icon2:'/images/calendar.svg',
     heading:'Sit nam congue feugiat nisl, mauris amet nisi. ',
   },
