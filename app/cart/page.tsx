@@ -46,9 +46,8 @@ const Cart = () => {
               </div>
               <div
                 className={`flex flex-col ${
-                  items.id === "5"
-                    ? "max10:w-auto w-[230px] sm:w-[250px]"
-                    : "max12:w-[160px] w-[170px] sm:w-[190px]"
+                 
+                     "max12:w-[160px] w-[170px] sm:w-[190px]"
                 } text-[14px] max10:ml-3 ml-4 mt-2 font-josefin`}
               >
                 <h1 className="w-full max10:text-[11px] max10:font-[700] text-[12px] sm:text-[14px]">
