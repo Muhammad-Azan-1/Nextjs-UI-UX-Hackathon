@@ -1,16 +1,19 @@
-
+'use client'
 import Image from "next/image";
 import Pagesbar from "@/components/PageBar/PageBar";
 import { Button } from "@/components/ui/button";
 import ShopeOffer from "@/components/ShopeOffer/ShopeOffer";
 import { clientsImages } from "@/Data/Data";
 import Header from "@/components/Header/Header";
-
+import useCart from "@/context/CartContext";
 
 const page = () => {
+
+  let {amount} = useCart()
   return (
     <>
       <Header/>
+      {amount}
       <Pagesbar pageName="About Us"
         name1="Home"
         name2="Page"

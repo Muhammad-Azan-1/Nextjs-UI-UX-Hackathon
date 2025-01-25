@@ -1,10 +1,11 @@
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
 config.autoAddCss = false;
-
+import CartContextProvider from "@/context/CartContextProvider";
 import Footer from "@/components/Footer/Footer";
 
 const geistSans = localFont({
@@ -33,9 +34,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >   
-     
+       <CartContextProvider>
         {children}
-        <Footer />
+      </CartContextProvider>   
+        {/* <Footer /> */}
       </body>
     </html>
   );

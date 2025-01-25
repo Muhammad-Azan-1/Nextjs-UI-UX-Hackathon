@@ -3,24 +3,35 @@ import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faChevronDown , faUser ,faHeart , faSearch , faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import useCart from "@/context/CartContext";
 
-import { useState  } from "react";
-
-
+import { useState , useEffect  } from "react";
 
 const Header = () => {
   const [Menu, setMenu] = useState(false);
+  const [amount , setAmount] = useState<number>(0)
 
-
+  const {quantity} = useCart()
   
+
+    
+  useEffect(() => {
+    if (quantity) {
+      const Amount = Object.values(quantity).length!== 0 ? Object.values(quantity).reduce((total:number , qt:number)=> total + qt) : 0;
+      setAmount(Amount);
+    }
+  }, [quantity]);
+
+
   function toggleMenu() {
     setMenu((menu:boolean)=> !menu);
+
   }
 
   return (
     <>
-    <div className="w-full h-[44px] font-josefin text-[#F1F1F1] font-[600] bg-[#7E33E0] flex justify-between px-2 md:px-6 lg:px-0 lg:justify-around items-center">
-        <div className="flex justify-start min-w:justify-between  sm:w-[280px] md:w-[320px] lg:w-[350px]">
+    <div className="fixed z-20 w-full h-[44px] font-josefin text-[#F1F1F1] font-[600] bg-[#7E33E0] flex max7:justify-end justify-between max-w2:px-4 px-6 lg:px-0 lg:justify-around items-center">
+        <div className="flex justify-start min-w:justify-between  sm:w-[280px] md:w-[320px] lg:w-[350px] max7:hidden">
             <div className="flex items-center">
             <Image
             src="/images/mailboxicon.svg"
@@ -44,26 +55,35 @@ const Header = () => {
             </div>
         </div>
 
-        <div className=" flex justify-end lg:justify-center items-center max-w:w-full w-[290px] sm:w-[320px]  md:w-[350px] lg:w-[410px]">
-            <ul className="  flex items-center w-[100%] justify-end sm:justify-between  lg:justify-evenly">
-                <li className="hidden sm:inline-block"><span className="text-[14px]   md:text-[15px]">English</span><FontAwesomeIcon className="ml-1 text-[12px] md:text-[14px]" icon={faChevronDown}/></li>
-               <li className="hidden sm:inline-block cursor-pointer"><span className="text-[14px] ml-3 sm:ml-0  md:text-[15px]">USD</span><FontAwesomeIcon className=" ml-1  text-[12px] md:text-[14px]" icon={faChevronDown}/></li>
-               <Link href='/Login' className="max-w2:hidden"> <li className=""><span className="text-[14px] md:text-[15px] cursor-pointer">Login</span><FontAwesomeIcon className=" ml-1  text-[12px] md:text-[14px]" icon={faUser}/> </li></Link> 
-                <Link href='/' className=""><span className="text-[14px] md:text-[15px]  ml-3 sm:ml-0 ">Wishlist</span><FontAwesomeIcon className="ml-1  text-[12px] md:text-[14px]" icon={faHeart}/></Link>
-                <Link href='/cart'><Image src='/images/carticon.svg' alt="cart icon" className= "cursor-pointer ml-2  sm:ml-0 w-[35px] md:w-[35px]" width={35} height={13}/></Link>
+        <div className="flex   justify-end gap-x-4 lg:justify-center items-center max-w:w-full   w-[350px] lg:w-[410px]">
+            <ul className="  flex items-center w-[100%] justify-between  lg:justify-evenly">
+                <li className=""><span className="  text-[15px]">English</span><FontAwesomeIcon className="ml-1 text-[15px]" icon={faChevronDown}/></li>
+               <li className="max13:hidden cursor-pointer"><span className="  text-[15px]">USD</span><FontAwesomeIcon className="ml-1 text-[15px]" icon={faChevronDown}/></li>
+               <Link href='/Login' className=""> <li className=""><span className="text-[15px] cursor-pointer">Login</span><FontAwesomeIcon className=" ml-1 text-[15px]" icon={faUser}/> </li></Link> 
+                <Link href='/' className=""><span className=" text-[15px] ">Wishlist</span><FontAwesomeIcon className=" ml-1 text-[15px]" icon={faHeart}/></Link>
+                <div className="relative">
+                <Link  href='/shoppingCart'><Image src='/images/carticon.svg' alt="cart icon" className= "cursor-pointer ml-0 w-[35px] " width={35} height={13}/></Link>
+                <div
+                className=" left-6 top-[-1px] flex justify-center items-center rounded-[50%]  w-5 h-5 py-1 text-[#101750]   bg-white text-[14px]  absolute"
+                >{ amount}
+                </div>
+                </div>
             </ul>
         </div>
     </div>
 
+
+
+
     {/* header main */}
 
-    <div className=" w-full  h-[80px] flex justify-between md:justify-center items-center  px-3">
+    <div className=" pt-20 mb-10 w-full  h-[80px] flex justify-between md:justify-center items-center  px-3">
      <div className="w-[100px] md:w-[150px] lg:w-[130px] pt-1 md:pt-0 flex justify-start sm:justify-center md:justify-start">
       <Link href='/'><Image src='/images/logo.svg' alt="logo.svg" className="cursor-pointer w-[70px] min-w:w-[80px] sm:w-[90px] lg:w-[100px]" width={100} height={34}></Image></Link>
      </div>
 
     
-     <div className={`pt-20 md:pt-0 flex z-[10000] md:flex-row flex-col items-center md:justify-around lg:justify-evenly 
+     <div className={` pt-20 md:pt-0 flex z-10 md:flex-row flex-col items-center md:justify-around lg:justify-evenly 
      bg-[#F2F0FF] md:bg-transparent h-[100vh] inset-0 md:h-auto mx-0  w-full md:w-[800px] lg:w-[700px] 
      px-0 md:px-2 lg:px-0 absolute top-[0px] md:static transform transition-transform duration-1000 ease-in-out
     ${Menu ? "top-[0px] translate-y-0 " : "translate-y-[-100%] md:translate-y-[0px] "} `}>

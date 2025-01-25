@@ -41,6 +41,9 @@ const config: Config = {
 			'min-w3':{'min':'420px'},
 			'max-w':{max:'480px'},
 			'max-w2':{'max':'380px'},
+			'min-w7':{'min':'380px'},
+			'max-w4':{'max':'550px'},
+			'max-w5':{'min':'541px'},
 			
 			
 		  },

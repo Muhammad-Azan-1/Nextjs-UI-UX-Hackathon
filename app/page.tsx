@@ -10,8 +10,15 @@ import TopCategories from "@/components/TopCategories/TopCategories";
 import Banner2 from "@/components/Banner2/Banner2";
 import Brands from "@/components/Brands/Brands";
 import Blog from "@/components/Blog/Blog";
-
-export default function Home() {
+import { client } from "@/sanity/lib/client"
+export default async function Home() {
+     const query = `
+     *[_type == 'product'] | order(id asc) {
+  
+      id,     
+  }`
+  
+  let response = await client.fetch(query)
   return (
     <>
   <Header/>
