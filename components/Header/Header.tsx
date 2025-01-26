@@ -11,16 +11,28 @@ const Header = () => {
   const [Menu, setMenu] = useState(false);
   const [amount , setAmount] = useState<number>(0)
 
-  const {quantity} = useCart()
+  const {cartItems} = useCart()
   
 
     
   useEffect(() => {
-    if (quantity) {
-      const Amount = Object.values(quantity).length!== 0 ? Object.values(quantity).reduce((total:number , qt:number)=> total + qt) : 0;
-      setAmount(Amount);
+
+   
+    if(cartItems){
+      let ids : string[] = Object.keys(cartItems)  
+
+      let ID  =  ids.map((items)=> Number(items) ) 
+
+    
+     let totalItems =  ID.reduce((acc , ID)=>{
+       return acc + cartItems[ID]?.value || 0
+     },0)
+
+     setAmount(totalItems)
+
+     //console.log(totalItems)
     }
-  }, [quantity]);
+  }, [cartItems]);
 
 
   function toggleMenu() {
@@ -65,7 +77,7 @@ const Header = () => {
                 <Link  href='/shoppingCart'><Image src='/images/carticon.svg' alt="cart icon" className= "cursor-pointer ml-0 w-[35px] " width={35} height={13}/></Link>
                 <div
                 className=" left-6 top-[-1px] flex justify-center items-center rounded-[50%]  w-5 h-5 py-1 text-[#101750]   bg-white text-[14px]  absolute"
-                >{ amount}
+                >{amount}
                 </div>
                 </div>
             </ul>

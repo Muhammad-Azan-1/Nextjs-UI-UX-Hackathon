@@ -11,7 +11,7 @@ const ProductList = ({ DataFetched }: { DataFetched: Products[] }) => {
   return (
     <>
       
-      <div className="relative   items-center flex flex-wrap justify-center gap-y-24 gap-x-[25px] sm:gap-x-[35px] lg:gap-x-[50px] min1:gap-x-[85px] h-auto mx-2 lg:mx-4 min1:mx-20 pt-8">
+      <div className="relative   items-center flex flex-wrap justify-center gap-y-24 gap-x-[25px] sm:gap-x-[35px] lg:gap-x-[50px] min1:gap-x-[85px] h-auto mx-2 lg:mx-4 min1:mx-20 pt-24">
         
         {
           DataFetched?.map((items: Products) => (
@@ -38,7 +38,7 @@ const ProductList = ({ DataFetched }: { DataFetched: Products[] }) => {
                     </div>
 
                     <div className="">
-                   <CartIcon id={items.id} stock={items.stockLevel} />
+                   <CartIcon id={items.id} stock={items.stockLevel} name={items.name} price={items.price} image={items.imageUrl} colors={items.colors}  />
                    </div>
 
                     <div className="absolute flex items-center justify-center max-w2:right-[65px]  right-[85px]  max-w5:right-[45px] bottom-3 w-[30px] h-[30px] hover:bg-[#151875] bg-white rounded-[50%] group ">
@@ -48,7 +48,7 @@ const ProductList = ({ DataFetched }: { DataFetched: Products[] }) => {
              </div>
 
 
-                <div className={` ${items.discountPercentage != 0 ? 'z-30 absolute rounded-[5px] px-3 py-1 bg-[#151875] top-3 text-white text-[12px] font-josefin -left-2' : ''}`}>{items.discountPercentage == 0 ? '' : `${items.discountPercentage}% OFF`}</div>
+                <div className={` ${items.discountPercentage != 0 ? 'z-10 absolute rounded-[5px] px-3 py-1 bg-[#151875] top-3 text-white text-[12px] font-josefin -left-2' : ''}`}>{items.discountPercentage == 0 ? '' : `${items.discountPercentage}% OFF`}</div>
               </div>
               <div className="flex flex-col justify-center items-center ">
                 <h1 className={`mt-2 text-[#151875] text-center text-[18px] font-josefin font-[700]`}>

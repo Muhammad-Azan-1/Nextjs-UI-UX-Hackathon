@@ -7,6 +7,7 @@ imageUrl:string,
 discountPercentage:number,
 stockLevel:number,
 id:number
+colors:string[]
 }
 
 export type Dimensions =  {

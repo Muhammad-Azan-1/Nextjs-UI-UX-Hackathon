@@ -3,15 +3,33 @@ import { ReactNode, useState , useMemo } from "react"
 import { CartContext } from "./CartContext"
 import { useEffect } from "react"
 
+type Quantity = {
+    [key:number] : {
+        name:string,
+        stock:number,
+        price:number,
+        image:string,
+        id:number
+        value:number
+    },
+}
 
 
+// cartItems : {
+//1:{  ,name , quantity , stock , image , price , value}
+//}
+  
+// prev:{
+//     [id]: { /* object properties */ }
+//   }
 
 const CartContextProvider = ({children} : {children:ReactNode}) => {
 console.log("CartContextProvider render")
  
 
-  
-    const [quantity, setQuantity] = useState<{[key:number]:number}>(() => {
+
+
+    const [cartItems, setcartItems] = useState<Quantity>(() => {
         if(typeof window != 'undefined' && sessionStorage){
         const storedAmount = sessionStorage.getItem('amountInLocal');
         // console.log('getting values from local tow persists', storedAmount)
@@ -19,24 +37,28 @@ console.log("CartContextProvider render")
         }
     });
 
-    console.log(quantity)
+    console.log("Cart",cartItems)
+    // console.log(Object.keys(cartItems))
 
      
   
              useEffect(()=>{
-              sessionStorage.setItem('amountInLocal',JSON.stringify(quantity))
+              sessionStorage.setItem('amountInLocal',JSON.stringify(cartItems))
       
-             },[quantity])
+             },[cartItems])
 
 
-    function setDecrement(id:number ){
-        setQuantity((prev)=>{
+    function setDecrement(id:number){
+        setcartItems((prev:Quantity)=>{
       
-       const currentAmount : number = prev[id] || 0 
+    const currentAmount : number = prev[id]?.value || 0
        
        return{
        ...prev,
-        [id]: currentAmount > 0 ? currentAmount - 1 : 0
+        [id]:{ 
+            ...prev[id],
+            value:currentAmount > 0 ? currentAmount - 1 : 0
+        }
        }
 
         }
@@ -44,28 +66,36 @@ console.log("CartContextProvider render")
       
     }
 
+    function setIncrement2(){}
 
-    function setIncrement(stock:number , id:number ){
-        setQuantity((prev)=>{
+
+    function setIncrement(stock:number , id:number , name:string , price:number , image:string , color?:string ){
+        setcartItems((prev:Quantity)=>{
           
-        const currentAmount : number = prev[id] || 0
+        const currentAmount : number = prev[id]?.value || 0
         console.log(currentAmount , "on increment")
         return{
-            ...prev,
-            [id]: currentAmount < stock ? currentAmount + 1 : stock
-           
+            ...prev,  // as a new id comes then the previous object will first spread here so that structure will be like { 1:{ name , price , image , id , stock , value  } , 2:{ name , price , image , id , stock , value  } }
+            [id]:{ 
+                ...prev[id],
+                value:currentAmount < stock ? currentAmount + 1 : stock,
+                name:name,
+                price:price,
+                image:image,
+                color:[color]
+            } // for each id a new object created 1:{ name , price , image , id , stock , value  }
         }
-        })
+    });
 
         
     }
 
-    const contextValue = useMemo(() => {
-        return { quantity, setIncrement, setDecrement, setQuantity };
-      }, [quantity]);
+    // const contextValue = useMemo(() => {
+    //     return { cartItems, setIncrement, setDecrement, setcartItems };
+    //   }, [cartItems]);
     return (
 
-        <CartContext.Provider value={{quantity , setIncrement , setDecrement , setQuantity}}>
+        <CartContext.Provider value={{cartItems , setIncrement , setDecrement , setcartItems}}>
                     {children}
          </CartContext.Provider>
     )
@@ -84,15 +114,15 @@ export default CartContextProvider
 // value ko session storage main save kry ga or jab user kese dosre page per navigate kry ga ya page refresh hu ga to amount ke andr 
 //value session storage se bheji jaye ge
 
-///When the state (quantity in this case) changes, React triggers a re-render of any component that consumes that state. 
+///When the state (cartItems in this case) changes, React triggers a re-render of any component that consumes that state. 
 // This is because React's state is directly linked to the component's rendered output. 
 // So, whenever the state changes, React needs to update the UI to reflect the new state.
 
 //
-//even though only a single key inside the quantity object changes, 
-// React considers the entire quantity object as "new" because a new reference is 
+//even though only a single key inside the cartItems object changes, 
+// React considers the entire cartItems object as "new" because a new reference is 
 // created. 
-// This triggers a re-render in all components consuming quantity
+// This triggers a re-render in all components consuming cartItems
 
 
 

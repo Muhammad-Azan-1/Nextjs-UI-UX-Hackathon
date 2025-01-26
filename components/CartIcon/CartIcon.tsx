@@ -1,36 +1,40 @@
 'use client'
 import useCart from "@/context/CartContext";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useToast } from "@/hooks/use-toast";
 
 
 
-const CartIcon = ({id , stock}: {id:number , stock:number}) => {
+const CartIcon = ({ id, stock, name, price, image, colors }: { id: number, stock: number, name: string, price: number, image: string, colors: string[] }) => {
 
+  const { setIncrement } = useCart()
+  const { toast } = useToast()
+
+  const handleAddToCart = () => {
+
+    setIncrement(stock, id, name, price, image, colors[0]);
+    toast({
+      description:`${name} added to cart successfully.`,
+      variant:'custom'
+    })
   
-    
-    const {setIncrement} = useCart()
-    
-    const handleAddToCart = () => {
-      
-        setIncrement(stock, id);
+console.log("running")
+  };
 
-        
+  return (
+    <>
 
-      
-      };
-
-    return (
-        <>
-                 
-        <div  
+      <div
+     onClick={() => handleAddToCart()}
         className="absolute flex items-center justify-center max-w2:left-[65px] left-[85px] max-w5:left-[45px] bottom-3 w-[30px] h-[30px] hover:bg-[#151875] bg-white rounded-[50%] group"
-        >
-        < AiOutlineShoppingCart size={18}  onClick={()=> handleAddToCart()} className="text-[#151875] group-hover:text-white"/>
-         </div>
+      >
+        < AiOutlineShoppingCart size={18}   className="text-[#151875] group-hover:text-white" />
+    
+      </div>
 
 
-          </>
-    )
+    </>
+  )
 }
 
 export default CartIcon

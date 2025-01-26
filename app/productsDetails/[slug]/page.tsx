@@ -4,11 +4,7 @@ import PageBar from "@/components/PageBar/PageBar"
 import { client } from "@/sanity/lib/client"
 import Image from "next/image"
 import { ProductsDetails } from "@/components/Utilits/Helper"
-import ProductColors from "@/components/ProductColors/ProductColors"
-
-import Cart from "@/components/Cart/Cart"
-
-
+import Cart from "@/components/ProductDetailsCart/ProductDetailsCart"
 
 
 
@@ -52,6 +48,7 @@ let response: ProductsDetails[] = await client.fetch(query)
             response.map((items:ProductsDetails)=>(
               
             <div className="w-full h-auto flex flex-col md:flex-row justify-center items-center gap-y-10 md:gap-y-0 gap-x-0 md:gap-x-4 lg:gap-x-12 pb-6 mt-20 md:mt-32">
+               
               <div className="max-w4:w-[100%] w-[550px] md:w-[500px] px-4 flex justify-center items-center ">
                 <Image src={items.imageUrl} alt={items.slug}  width={600} height={400} loading="lazy" className="w-full h-auto"></Image>
                 </div>
@@ -78,15 +75,9 @@ let response: ProductsDetails[] = await client.fetch(query)
                   <div className="border-[0.5px] w-full"></div>
                 </div>
 
-                <ProductColors colors={items.colors} id={items.id} />
-
-                <div className="flex items-baseline">
-                <Cart stock={items.stockLevel} Id={items.id}/>
-                <div className="w-full relative flex items-center">
-                 
-                <button className=" ml-3 rounded-[3px] text-white  font-josefin w-full h-[50px] border-[1px]  border-[#151875]  bg-[#151875] px-4 py-1">ADD TO CART</button>
-               
-                </div>
+                {/* <ProductColors  stock={items.stockLevel} colors={items.colors} id={items.id} name={items.name} price={items.price} image={items.imageUrl} /> */}
+                <div>
+                <Cart  stock={items.stockLevel} Id={items.id} name={items.name} price={items.price} image={items.imageUrl} colors={items.colors} />
                 </div>
 
                 <div className="mt-[20px] tracking-wide">
@@ -94,7 +85,7 @@ let response: ProductsDetails[] = await client.fetch(query)
                   {
                response.map((items , index)=>{
 
-                  const ObjectValues:string[] = Object.values(items.dimensions)
+                  const ObjectValues:string[] = Object?.values(items?.dimensions)
                   return(
                     <div className="flex gap-x-3" key={index}>
                       <span  className="text-[#151875]" key={index}>{ObjectValues[0]} W  | </span>

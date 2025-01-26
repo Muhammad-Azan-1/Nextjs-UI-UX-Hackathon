@@ -22,7 +22,8 @@ const page = async() => {
     discountPrice,
     "imageUrl": image.asset->url,
     discountPercentage,
-    stockLevel
+    stockLevel,
+    colors
   }
 `;
 const DataFetched: Products[] = await client.fetch(query1);

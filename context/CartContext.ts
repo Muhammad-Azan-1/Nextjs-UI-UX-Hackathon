@@ -3,22 +3,29 @@ import {createContext , useContext} from "react";
 
 
 type Quantity = {
-    [key:number] : number,
+    [key:number] : {
+        name:string,
+        stock:number,
+        price:number,
+        image:string,
+        id:number,
+        value:number
+    },
 }
 
 type Cart = {
-    quantity:Quantity,
-    setIncrement: (stock:number , id:number) => void,
+    cartItems:Quantity,
+    setIncrement: (stock:number , id:number , name:string , price:number , image:string , color?:string) => void,
     setDecrement: (id:number) => void,
-    setQuantity: (amount : Quantity) => void,
+    setcartItems: (amount : Quantity) => void,
     
 }
 
 export const CartContext = createContext<Cart>({
-    quantity:{}, 
-    setIncrement:(stock:number , id:number)=>{},
-     setDecrement:(id:number)=>{}, 
-     setQuantity:({})=>{} 
+    cartItems:{}, 
+    setIncrement:()=>{},
+     setDecrement:()=>{}, 
+     setcartItems:({})=>{} 
      }  
     )
 
