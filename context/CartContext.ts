@@ -9,7 +9,9 @@ type Quantity = {
         price:number,
         image:string,
         id:number,
-        value:number
+        value:number,
+        values:number,
+        color?:string
     },
 }
 
@@ -18,14 +20,17 @@ type Cart = {
     setIncrement: (stock:number , id:number , name:string , price:number , image:string , color?:string , value?:number) => void,
     setDecrement: (id:number) => void,
     setcartItems: (amount : Quantity) => void,
+    id:number,
     
 }
 
 export const CartContext = createContext<Cart>({
     cartItems:{}, 
+    id:0,
     setIncrement:()=>{},
      setDecrement:()=>{}, 
-     setcartItems:({})=>{} 
+     setcartItems:({})=>{},
+    
      }  
     )
 

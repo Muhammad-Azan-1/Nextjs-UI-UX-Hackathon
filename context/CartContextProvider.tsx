@@ -3,16 +3,19 @@ import { ReactNode, useState , useMemo } from "react"
 import { CartContext } from "./CartContext"
 import { useEffect } from "react"
 
-type Quantity = {
+type Quantity =  {    
     [key:number] : {
         name:string,
         stock:number,
         price:number,
         image:string,
-        id:number
-        value:number
+        id:number,
+        value:number,
+        values:number,
+        color?:string
     },
 }
+
 
 
 // cartItems : {
@@ -28,7 +31,8 @@ console.log("CartContextProvider render")
  
 
 
-
+    const [valueOfCard , setValue] = useState<number>(0)
+    const [id , setId] = useState<number>(0)
     const [cartItems, setcartItems] = useState<Quantity>(() => {
         if(typeof window != 'undefined' && sessionStorage){
         const storedAmount = sessionStorage.getItem('amountInLocal');
@@ -71,8 +75,12 @@ console.log("CartContextProvider render")
 
     function setIncrement(stock:number , id:number , name:string , price:number , image:string , color?:string  , value?:number){
         setcartItems((prev:Quantity)=>{
-        
+        setId(id)
         const currentAmount : number = prev[id]?.value || 0
+        console.log(value , 'value')
+        if(value){
+            setValue(value)
+        }
         console.log(currentAmount , "on increment")
         return{
             ...prev,  // as a new id comes then the previous object will first spread here so that structure will be like { 1:{ name , price , image , id , stock , value  } , 2:{ name , price , image , id , stock , value  } }
@@ -82,7 +90,7 @@ console.log("CartContextProvider render")
                 name:name,
                 price:price,
                 image:image,
-                color:[color]
+                color:color
             } // for each id a new object created 1:{ name , price , image , id , stock , value  }
         }
     });
@@ -98,7 +106,7 @@ console.log("CartContextProvider render")
       }), [cartItems, setIncrement, setDecrement]);
     return (
 
-        <CartContext.Provider value={{cartItems , setIncrement , setDecrement , setcartItems}}>
+        <CartContext.Provider value={{cartItems , setIncrement , setDecrement , setcartItems , id}}>
                     {children}
          </CartContext.Provider>
     )

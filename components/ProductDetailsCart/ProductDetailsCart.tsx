@@ -60,9 +60,8 @@ const Cart = ({ stock  , Id , name , price , image , colors}:{stock:number , Id:
              <FaMinus className="text-[#151875]" size={12}/>
              </button>
 
-        <p className="text-[14px] text-[#151875] font-[700]">{cartItems[Id]?.value || 0}</p>
-
-        <button  onClick={()=>setIncrement(stock , Id , name , price , image , Selectedcolor)}>
+             <p className="text-[14px] text-[#151875] font-[700]">{cartItems[Id]?.value || 0}</p>
+             <button  onClick={()=>setIncrement(stock , Id , name , price , image , Selectedcolor)}>
             <FaPlus className="text-[#151875]" size={12}/>
             </button>
             
