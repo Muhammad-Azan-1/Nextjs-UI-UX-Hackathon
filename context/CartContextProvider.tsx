@@ -66,19 +66,19 @@ console.log("CartContextProvider render")
       
     }
 
-    function setIncrement2(){}
+  
 
 
-    function setIncrement(stock:number , id:number , name:string , price:number , image:string , color?:string ){
+    function setIncrement(stock:number , id:number , name:string , price:number , image:string , color?:string  , value?:number){
         setcartItems((prev:Quantity)=>{
-          
+        
         const currentAmount : number = prev[id]?.value || 0
         console.log(currentAmount , "on increment")
         return{
             ...prev,  // as a new id comes then the previous object will first spread here so that structure will be like { 1:{ name , price , image , id , stock , value  } , 2:{ name , price , image , id , stock , value  } }
             [id]:{ 
                 ...prev[id],
-                value:currentAmount < stock ? currentAmount + 1 : stock,
+                value:currentAmount < stock ? currentAmount + 1 : stock ,
                 name:name,
                 price:price,
                 image:image,
@@ -90,9 +90,12 @@ console.log("CartContextProvider render")
         
     }
 
-    // const contextValue = useMemo(() => {
-    //     return { cartItems, setIncrement, setDecrement, setcartItems };
-    //   }, [cartItems]);
+    const contextValue = useMemo(() => ({
+        cartItems,
+        setIncrement,
+        setDecrement,
+        setcartItems,
+      }), [cartItems, setIncrement, setDecrement]);
     return (
 
         <CartContext.Provider value={{cartItems , setIncrement , setDecrement , setcartItems}}>

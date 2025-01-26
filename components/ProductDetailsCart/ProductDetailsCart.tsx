@@ -7,7 +7,7 @@ import { useEffect , useState } from "react"
 const Cart = ({ stock  , Id , name , price , image , colors}:{stock:number , Id:number , name:string , price : number , image:string , colors:string[]}) => {    
 
     let {setIncrement , setDecrement , cartItems} = useCart()
-        
+    let [value , setValue] = useState(0)
 
 
 

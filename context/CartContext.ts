@@ -15,7 +15,7 @@ type Quantity = {
 
 type Cart = {
     cartItems:Quantity,
-    setIncrement: (stock:number , id:number , name:string , price:number , image:string , color?:string) => void,
+    setIncrement: (stock:number , id:number , name:string , price:number , image:string , color?:string , value?:number) => void,
     setDecrement: (id:number) => void,
     setcartItems: (amount : Quantity) => void,
     

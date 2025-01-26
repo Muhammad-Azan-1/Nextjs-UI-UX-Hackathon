@@ -25,7 +25,7 @@ const Header = () => {
 
     
      let totalItems =  ID.reduce((acc , ID)=>{
-       return acc + cartItems[ID]?.value || 0
+       return acc + cartItems[ID]?.value 
      },0)
 
      setAmount(totalItems)

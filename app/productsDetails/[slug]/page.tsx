@@ -42,7 +42,7 @@ let response: ProductsDetails[] = await client.fetch(query)
         name2="Page"
         name3="Product Details"
         />
-        <div className="w-full h-screen">
+        <div className="w-full h-auto">
 
             {
             response.map((items:ProductsDetails)=>(
