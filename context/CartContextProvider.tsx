@@ -3,20 +3,8 @@ import { ReactNode, useState , useMemo } from "react"
 import { CartContext } from "./CartContext"
 import { useEffect } from "react"
 
-type Quantity =  {    
-    [key:number] : {
-        name:string,
-        stock:number,
-        price:number,
-        image:string,
-        id:number,
-        value:number,
-        values:number,
-        color?:string
-    },
-}
-
-
+import { Quantity } from "@/components/Utilits/Helper"
+import { useCallback } from "react"
 
 // cartItems : {
 //1:{  ,name , quantity , stock , image , price , value}
@@ -31,18 +19,17 @@ console.log("CartContextProvider render")
  
 
 
-    const [valueOfCard , setValue] = useState<number>(0)
-    const [id , setId] = useState<number>(0)
+    // const [id , setId] = useState<number>(0)
     const [cartItems, setcartItems] = useState<Quantity>(() => {
         if(typeof window != 'undefined' && sessionStorage){
         const storedAmount = sessionStorage.getItem('amountInLocal');
-        // console.log('getting values from local tow persists', storedAmount)
+         console.log('getting values from local tow persists', storedAmount)
         return storedAmount ? JSON.parse(storedAmount) : {}; // Default to {} if nothing is stored
         }
     });
 
     console.log("Cart",cartItems)
-    // console.log(Object.keys(cartItems))
+     console.log(Object.keys(cartItems))
 
      
   
@@ -52,9 +39,8 @@ console.log("CartContextProvider render")
              },[cartItems])
 
 
-    function setDecrement(id:number){
+    const  setDecrement = useCallback((id:number )=>{
         setcartItems((prev:Quantity)=>{
-      
     const currentAmount : number = prev[id]?.value || 0
        
        return{
@@ -68,35 +54,50 @@ console.log("CartContextProvider render")
         }
     )
       
-    }
+    } , [cartItems])
 
   
 
 
-    function setIncrement(stock:number , id:number , name:string , price:number , image:string , color?:string  , value?:number){
+    const setIncrement = useCallback((stock:number , id:number , name:string , price:number , image:string , color?:string ) =>{
         setcartItems((prev:Quantity)=>{
-        setId(id)
+  
+            
         const currentAmount : number = prev[id]?.value || 0
-        console.log(value , 'value')
-        if(value){
-            setValue(value)
-        }
+        console.log({...prev} , "prev all objects");
+        console.log({...prev[id]} , "prev object of specific id")
+
         console.log(currentAmount , "on increment")
+
+        if(prev[id]){
+            const newAmount : number = currentAmount < stock ? currentAmount + 1 : stock
+            console.log('if statment run')
+            return{
+                ...prev,
+                [id]:{
+                    ...prev[id],
+                    value: newAmount,
+                   
+
+                }
+            }
+        } else{
         return{
-            ...prev,  // as a new id comes then the previous object will first spread here so that structure will be like { 1:{ name , price , image , id , stock , value  } , 2:{ name , price , image , id , stock , value  } }
+            ...prev,  
             [id]:{ 
-                ...prev[id],
-                value:currentAmount < stock ? currentAmount + 1 : stock ,
+                value:1 ,
                 name:name,
                 price:price,
                 image:image,
-                color:color
+                color:color,
+                id:id
             } // for each id a new object created 1:{ name , price , image , id , stock , value  }
         }
+    }
     });
 
         
-    }
+    },[cartItems])
 
     const contextValue = useMemo(() => ({
         cartItems,
@@ -104,9 +105,11 @@ console.log("CartContextProvider render")
         setDecrement,
         setcartItems,
       }), [cartItems, setIncrement, setDecrement]);
+
+
     return (
 
-        <CartContext.Provider value={{cartItems , setIncrement , setDecrement , setcartItems , id}}>
+        <CartContext.Provider value={{cartItems , setIncrement , setDecrement , setcartItems }}>
                     {children}
          </CartContext.Provider>
     )

@@ -9,7 +9,7 @@ import { useState , useEffect  } from "react";
 
 const Header = () => {
   const [Menu, setMenu] = useState(false);
-  const [amount , setAmount] = useState<number>(0)
+  const [amount , setAmount] = useState<number | null>()
 
   const {cartItems} = useCart()
   
@@ -76,8 +76,8 @@ const Header = () => {
                 <div className="relative">
                 <Link  href='/shoppingCart'><Image src='/images/carticon.svg' alt="cart icon" className= "cursor-pointer ml-0 w-[35px] " width={35} height={13}/></Link>
                 <div
-                className=" left-6 top-[-1px] flex justify-center items-center rounded-[50%]  w-5 h-5 py-1 text-[#101750]   bg-white text-[14px]  absolute"
-                >{amount}
+                className= {`${amount == 0 ? '' : "left-6 top-[-1px] flex justify-center items-center rounded-[50%]  w-5 h-5 py-1 text-[#101750]   bg-white text-[14px]  absolute" }`}
+                >{amount == 0 ?  '' : amount}
                 </div>
                 </div>
             </ul>

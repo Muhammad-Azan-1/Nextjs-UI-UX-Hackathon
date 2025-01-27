@@ -1,9 +1,31 @@
+'use client'
 import Pagesbar from "@/components/PageBar/PageBar";
 import Image from "next/image";
-import { cartData } from "@/Data/Data";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header/Header";
+import useCart from "@/context/CartContext";
+import CartMessage from "@/components/CartMessage/CartMessage";
+import ProductsAdder from "@/components/ProductsAdder/ProductsAdder";
 const Cart = () => {
+ const {cartItems } = useCart()
+
+
+ const items = Object.entries(cartItems).some((item)=> item[1]?.value > 0)
+console.log( "items checking true false",items)
+
+console.log("OBject keys in an array",Object.entries(cartItems)) // this will convert object key and value inside teh cartItems object into an array
+// cartItems : { 1:{  ,name , quantity , stock , image , price , value} } ->[ [0:"1" , 1:{,name , quantity , stock , image , price , value}] ,[0:"2" , 1:{,name , quantity , stock , image , price , value}] ] same thing for all objects
+  
+Object.entries(cartItems).map(([key ,item])=>{
+
+  // When you use [key, item], you are explicitly destructuring the array ['1', {...}]
+  //  into two separate variables (key and item). Without destructuring, the first argument contains the entire entry (the array), 
+  //  and the second argument is unused (undefined).
+
+
+
+  console.log(key , item)
+})
   return (
     <>
       <Header />
@@ -13,7 +35,11 @@ const Cart = () => {
         name2="Page"
         name3="Shopping Cart"
       />
-      <div className="w-full flex-col items-center lg:flex-row flex justify-center gap-x-10 min7:gap-x-20 pt-[110px] max12:px-0 px-2 min7:px-0  h-auto">
+
+     { 
+     items ?
+     
+     ( <div className="w-full flex-col items-center lg:flex-row flex justify-center gap-x-10 min7:gap-x-20 pt-[110px] max12:px-0 px-2 min7:px-0  h-auto">
         <div className="w-[98%] md:w-[720px] lg:w-[610px] min7:w-[720px]">
           <div className="flex max-w2:text-[16px] w-full text-[#1D3178] font-[700] font-josefin text-[20px]">
             <h1>Product</h1>
@@ -26,16 +52,22 @@ const Cart = () => {
             </div>
           </div>
 
-          {cartData.map((items) => (
+         { 
+         
+         Object.entries(cartItems).map(([key , items])=>(
+
+         items.value !== 0 ?(
+         
+      
             <div
-              key={items.id}
+              key={Number(key)}
               className="flex items-center max-w2:mt-6 mt-10 border-b-[1px] border-[#E1E1E4] pb-4"
             >
               <div className="relative p-1">
                 <Image
                   src={items.image}
                   className="w-[85px] object-cover  "
-                  alt={items.alt}
+                  alt={'im'}
                   width={83}
                   height={87}
                 ></Image>
@@ -51,29 +83,26 @@ const Cart = () => {
                 className={`flex flex-col ${"max12:w-[160px] w-[170px] sm:w-[190px]"} text-[14px] max10:ml-3 ml-4 mt-2 font-josefin`}
               >
                 <h1 className="w-full max10:text-[11px] max10:font-[700] text-[12px] sm:text-[14px]">
-                  {items.name}
+                {items.name}
                 </h1>
                 <p className=" text-[#A1A8C1] text-[12px]">{items.color}</p>
-                <p className=" text-[#A1A8C1] text-[12px]">{items.size}</p>
+                {/* <p className=" text-[#A1A8C1] text-[12px]">{items.size}</p> */}
               </div>
 
               <div className=" max12:w-[90%] w-full text-[#15245E] font-josefin text-[14px] ">
                 <ul className="flex  justify-end items-center max-w2:gap-x-4 max13:gap-x-6 max10:gap-x-10 gap-x-20">
                   <li>{items.price}</li>
                   <li>
-                    <Image
-                      src="/images/slideImage.svg"
-                      alt="slide Image"
-                      height={51}
-                      width={51}
-                    ></Image>
+                 {/* <ProductsAdder /> */}
                   </li>
-                  <li>{items.price2}</li>
+                  <li>{items.value == 1 ? items.price   : items.value * items.price}</li>
                 </ul>
               </div>
-            </div>
-          ))}
-
+            </div>) : (
+              ''
+            )
+      
+             ))}
           <div className="w-full flex justify-between pt-8">
             <Button
               variant="outline"
@@ -163,7 +192,9 @@ const Cart = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>):(
+        <CartMessage/>
+      )}
     </>
   );
 };

@@ -75,9 +75,8 @@ let response: ProductsDetails[] = await client.fetch(query)
                   <div className="border-[0.5px] w-full"></div>
                 </div>
 
-                {/* <ProductColors  stock={items.stockLevel} colors={items.colors} id={items.id} name={items.name} price={items.price} image={items.imageUrl} /> */}
                 <div>
-                <Cart  stock={items.stockLevel} Id={items.id} name={items.name} price={items.price} image={items.imageUrl} colors={items.colors} />
+                <Cart stock={items.stockLevel} Id={items.id} name={items.name} price={items.price} image={items.imageUrl} colors={items.colors} />
                 </div>
 
                 <div className="mt-[20px] tracking-wide">
@@ -85,7 +84,7 @@ let response: ProductsDetails[] = await client.fetch(query)
                   {
                response.map((items , index)=>{
 
-                  const ObjectValues:string[] = Object?.values(items?.dimensions)
+                  const ObjectValues:string[] = Object.values(items?.dimensions)
                   return(
                     <div className="flex gap-x-3" key={index}>
                       <span  className="text-[#151875]" key={index}>{ObjectValues[0]} W  | </span>
