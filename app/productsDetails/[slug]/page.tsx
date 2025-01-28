@@ -4,12 +4,11 @@ import PageBar from "@/components/PageBar/PageBar"
 import { client } from "@/sanity/lib/client"
 import Image from "next/image"
 import { ProductsDetails } from "@/components/Utilits/Helper"
-import Cart from "@/components/ProductDetailsCart/ProductDetailsCart"
+import ProductDetailsCart from "@/components/ProductDetailsCart/ProductDetailsCart"
 
 
 
 const page = async({ params }:{params : { slug : string} }) => {
-
 
     const query = `
    *[_type == 'product' && slug.current == "${params.slug}"] | order(id asc) {
@@ -27,10 +26,6 @@ const page = async({ params }:{params : { slug : string} }) => {
 }`
 
 let response: ProductsDetails[] = await client.fetch(query)
-
-
-
-
 
     return (
             <>
@@ -50,7 +45,7 @@ let response: ProductsDetails[] = await client.fetch(query)
             <div className="w-full h-auto flex flex-col md:flex-row justify-center items-center gap-y-10 md:gap-y-0 gap-x-0 md:gap-x-4 lg:gap-x-12 pb-6 mt-20 md:mt-32">
                
               <div className="max-w4:w-[100%] w-[550px] md:w-[500px] px-4 flex justify-center items-center ">
-                <Image src={items.imageUrl} alt={items.slug}  width={600} height={400} loading="lazy" className="w-full h-auto"></Image>
+                <Image src={items.imageUrl} alt={items.slug}  width={600} height={400}  loading="lazy" className="w-full h-auto"></Image>
                 </div>
 
                 <div className=" md:hidden w-full">
@@ -76,7 +71,7 @@ let response: ProductsDetails[] = await client.fetch(query)
                 </div>
 
                 <div>
-                <Cart stock={items.stockLevel} Id={items.id} name={items.name} price={items.price} image={items.imageUrl} colors={items.colors} />
+                <ProductDetailsCart stock={items.stockLevel} Id={items.id} name={items.name} price={items.price} image={items.imageUrl} colors={items.colors} />
                 </div>
 
                 <div className="mt-[20px] tracking-wide">

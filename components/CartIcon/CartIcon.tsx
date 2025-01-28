@@ -5,7 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 
 
 const CartIcon = ({ id, stock, name, price, image, colors }: { id: number, stock: number, name: string, price: number, image: string, colors: string[] }) => {
-
+   const key = `${id}-${colors[0]}`
   const { setIncrement , cartItems } = useCart()
   const { toast } = useToast()
 
@@ -13,11 +13,11 @@ const CartIcon = ({ id, stock, name, price, image, colors }: { id: number, stock
     console.log("running handle function")
     setIncrement(stock, id, name, price, image, colors[0]);
 
-    console.log(cartItems)
-    console.log(cartItems[id])
-    console.log(cartItems[id]?.value, "outside the if statement")
+    // console.log(cartItems)
+    // console.log(cartItems[id])
+    // console.log(cartItems[id]?.value, "outside the if statement")
     
-    if(cartItems[id]?.value  == stock){
+    if(cartItems[key]?.value  == stock){
       console.log( "Cart value from each items inside if statement",cartItems[id]?.value)
     toast({
       description:`No items left in stock`,

@@ -1,15 +1,10 @@
 'use client'
-import { FaMinus , FaPlus } from "react-icons/fa6"
-import useCart from "@/context/CartContext"
 import { useEffect , useState } from "react"
 import ProductsAdder from "../ProductsAdder/ProductsAdder"
-const Cart = ({ stock  , Id , name , price , image , colors}:{stock:number , Id:number , name:string , price : number , image:string , colors:string[]}) => {    
+
+const ProductDetailsCart = ({ stock  , Id , name , price , image , colors}:{stock:number , Id:number , name:string , price : number , image:string , colors:string[]}) => {    
 
    
-   
-
-
-
 
         //working for porduct colors
          const storageKey = `color-${Id}`
@@ -59,7 +54,7 @@ const Cart = ({ stock  , Id , name , price , image , colors}:{stock:number , Id:
     )
 }
 
-export default Cart
+export default ProductDetailsCart
 
 
 

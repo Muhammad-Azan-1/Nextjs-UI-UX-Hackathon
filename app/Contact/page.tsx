@@ -1,7 +1,10 @@
+
+'use client'
 import Pagesbar from "@/components/PageBar/PageBar"
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header/Header";
+
 const Contact = () => {
   return (
     <>

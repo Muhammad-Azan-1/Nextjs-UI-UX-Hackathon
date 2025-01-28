@@ -32,14 +32,14 @@ export type ProductsDetails = {
     
 
    export type Quantity = {
-        [key:number] : {
+        [key:string] : {
             name:string,
-            stock?:number,
+            stock:number,
             price:number,
             image:string,
             id:number,
             value:number,
-            color?:string,
+            color:string,
         },
     }
     

@@ -5,27 +5,30 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header/Header";
 import useCart from "@/context/CartContext";
 import CartMessage from "@/components/CartMessage/CartMessage";
-import ProductsAdder from "@/components/ProductsAdder/ProductsAdder";
+// import ProductsAdder from "@/components/ProductsAdder/ProductsAdder";
+import ProductIncrementDecrement from "@/components/ProductIncrementDecrement/ProductIncrementDecrement";
 const Cart = () => {
- const {cartItems } = useCart()
 
+ const {cartItems, deleteItem } = useCart()
 
+ console.log(" renders")
  const items = Object.entries(cartItems).some((item)=> item[1]?.value > 0)
 console.log( "items checking true false",items)
 
-console.log("OBject keys in an array",Object.entries(cartItems)) // this will convert object key and value inside teh cartItems object into an array
+console.log("OBject keys in an array",Object.entries(cartItems))
+
+// this will convert object key and value inside teh cartItems object into an array
 // cartItems : { 1:{  ,name , quantity , stock , image , price , value} } ->[ [0:"1" , 1:{,name , quantity , stock , image , price , value}] ,[0:"2" , 1:{,name , quantity , stock , image , price , value}] ] same thing for all objects
   
-Object.entries(cartItems).map(([key ,item])=>{
+// Object.entries(cartItems).map(([key ,item])=>{
 
-  // When you use [key, item], you are explicitly destructuring the array ['1', {...}]
-  //  into two separate variables (key and item). Without destructuring, the first argument contains the entire entry (the array), 
-  //  and the second argument is unused (undefined).
+//   // When you use [key, item], you are explicitly destructuring the array ['1', {...}]
+//   //  into two separate variables (key and item). Without destructuring, the first argument contains the entire entry (the array), 
+//   //  and the second argument is unused (undefined).
 
+//   console.log(key , item)
+// })
 
-
-  console.log(key , item)
-})
   return (
     <>
       <Header />
@@ -67,13 +70,14 @@ Object.entries(cartItems).map(([key ,item])=>{
                 <Image
                   src={items.image}
                   className="w-[85px] object-cover  "
-                  alt={'im'}
+                  alt={items.name}
                   width={83}
                   height={87}
                 ></Image>
                 <Image
                   src="/images/crosssicon.svg"
-                  className="absolute top-[-2px] right-[-2px]"
+                  onClick={()=> deleteItem(items.id , items.color)}
+                  className="absolute top-[-2px] right-[-2px] cursor-pointer"
                   alt="cross Icon"
                   width={12}
                   height={12}
@@ -93,7 +97,11 @@ Object.entries(cartItems).map(([key ,item])=>{
                 <ul className="flex  justify-end items-center max-w2:gap-x-4 max13:gap-x-6 max10:gap-x-10 gap-x-20">
                   <li>{items.price}</li>
                   <li>
-                 {/* <ProductsAdder /> */}
+             
+                 <ProductIncrementDecrement
+                  stock={items.stock} id={items.id} name={items.name} 
+                  price={items.price} image={items.image} colors={items.color}
+                 />
                   </li>
                   <li>{items.value == 1 ? items.price   : items.value * items.price}</li>
                 </ul>

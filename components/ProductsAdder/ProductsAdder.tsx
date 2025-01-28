@@ -1,11 +1,9 @@
-
 'use client'
-import { FaMinus , FaPlus } from "react-icons/fa6"
 import useCart from "@/context/CartContext"
 import ProductIncrementDecrement from "../ProductIncrementDecrement/ProductIncrementDecrement"
 
 const ProductsAdder = ({stock  , Id , name , price , image , colors}:{stock:number , Id:number , name:string , price : number , image:string , colors:string}) => {
-    let {setIncrement , setDecrement , cartItems} = useCart()
+    let {setIncrement} = useCart()
     return (
         <div className="flex   h-auto  pt-5">
                 <ProductIncrementDecrement stock={stock}  id={Id} name={name} price={price} image={image} colors={colors}/>

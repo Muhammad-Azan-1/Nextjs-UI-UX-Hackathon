@@ -13,7 +13,7 @@ const Header = () => {
 
   const {cartItems} = useCart()
   
-
+console.log("render on cartItems change")
     
   useEffect(() => {
 
@@ -21,13 +21,13 @@ const Header = () => {
     if(cartItems){
       let ids : string[] = Object.keys(cartItems)  
 
-      let ID  =  ids.map((items)=> Number(items) ) 
-
+      let ID  =  ids.map((items)=>(items) ) 
+     // console.log('ID',ID)
     
      let totalItems =  ID.reduce((acc , ID)=>{
        return acc + cartItems[ID]?.value 
      },0)
-
+console.log(totalItems)
      setAmount(totalItems)
 
      //console.log(totalItems)

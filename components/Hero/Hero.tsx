@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
 
+
   return (
     <>
       <div className="relative w-full pt-[40px] overflow-hidden max-w:pt-0 sm:pt-[60px] lg:pt-0 pb-[20px] lg:pb-0 h-auto lg:h-[470px] xl:h-[550px] min2:h-[650px] min1:h-[750px] bg-[#F2F0FF] flex max-w:flex-col flex-row px-6 lg:pr-6">
