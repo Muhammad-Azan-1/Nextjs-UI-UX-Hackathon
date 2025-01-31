@@ -1,3 +1,5 @@
+
+
 export type Products = {
 name:string,
 price:number,
@@ -43,3 +45,16 @@ export type ProductsDetails = {
         },
     }
     
+
+    export type Product = 
+        {
+            stockLevel:number,
+            id:number,
+            name:string,
+            price:number,
+            image:string,
+            colors:string[]
+        }
+    
+
+     

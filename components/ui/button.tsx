@@ -14,7 +14,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-input w-[160px] h-[50px] bg-[#FB2E86] text-[white] ",
+          "border rounded-md bg-[#FB2E68] hover:bg-[rgb(200_30_80_/_.8)] text-[white] ",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -22,6 +22,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "w-[150px] h-[45px] text-[17px] rounded-[3px] px-10 py-3",
+        outline:"w-[80px] h-[40px] text-[14px] px-4  ",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",

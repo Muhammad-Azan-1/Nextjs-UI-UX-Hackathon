@@ -1,24 +1,24 @@
 import Image from "next/image";
 import { Products } from "@/components/Utilits/Helper";
 import Link from "next/link";
-import { CiHeart, CiStar } from "react-icons/ci";
 import CartIcon from "../CartIcon/CartIcon";
 
 
+import HeartIcon from "../HeartIcon/HeartIcon";
 
 const ProductList = ({ DataFetched }: { DataFetched: Products[] }) => {
 
   return (
     <>
-      
+
       <div className="relative   items-center flex flex-wrap justify-center gap-y-24 gap-x-[25px] sm:gap-x-[35px] lg:gap-x-[50px] min1:gap-x-[85px] h-auto mx-2 lg:mx-4 min1:mx-20 pt-24">
-        
+
         {
           DataFetched?.map((items: Products) => (
             <div key={items.id} className=" cursor-pointer max-w2:w-[300px] max10:w-[350px] w-[249px] sm:w-[270px] h-[365px]  shrink-0 m-0 lg:m-2  rounded-[5px] ">
 
               <div
-                className={`w-full relative   h-[280px] ${items.id == 18 || items.id == 2 || items.id == 6 || items.id == 10 || items.id == 20 ? 'bg-white ' : 'bg-[#F6F7FB]'} cursor-pointer  flex justify-center items-center    rounded-[5px]`}
+                className={`w-full relative   h-[280px] ${  [18, 2, 6, 10, 20].includes(items.id) ? "bg-white" : "bg-[#F6F7FB]"} cursor-pointer  flex justify-center items-center    rounded-[5px]`}
               >
                 <Image
                   className={` ${items.id == 11 || items.id == 12 ? 'w-[360px]' : 'w-[210px] '} ${items.id == 2 || items.id == 6 || items.id == 20 ? 'w-[220px]' : ''} ${items.id == 10 ? 'w-[240px]' : ''} `}
@@ -28,24 +28,24 @@ const ProductList = ({ DataFetched }: { DataFetched: Products[] }) => {
                   height={200}
                   loading="lazy"
                 ></Image>
-            
-            {/*  on Hover */}
-                 <div className="absolute z-10 top-0 left-0 w-full h-full bg-[#00000090] opacity-0 transition-opacity duration-500 hover:opacity-95 cursor-pointer">
-                    <div className="absolute  left-0 bottom-3 w-full flex justify-center">
+
+                {/*  on Hover */}
+                <div className="absolute z-10 top-0 left-0 w-full h-full bg-[#00000090] opacity-0 transition-opacity duration-500 hover:opacity-95 cursor-pointer">
+                  <div className="absolute  left-0 bottom-3 w-full flex justify-center">
                     <Link href={`productsDetails/${items.slug}`} className=" font-[600] bg-[white] text-[#151875] rounded-[5px] py-1 px-3  text-[12px] transition-all duration-300 hover:bg-[#151875] hover:text-white focus:outline-none">
-                    View Item
+                      View Item
                     </Link>
-                    </div>
+                  </div>
 
-                    <div className="">
-                   <CartIcon id={items.id} stock={items.stockLevel} name={items.name} price={items.price} image={items.imageUrl} colors={items.colors}  />
-                   </div>
+                  <div className="">
+                    <CartIcon id={items.id} stock={items.stockLevel} name={items.name} price={items.price} image={items.imageUrl} colors={items.colors} />
+                  </div>
 
-                    <div className="absolute flex items-center justify-center max-w2:right-[65px]  right-[85px]  max-w5:right-[45px] bottom-3 w-[30px] h-[30px] hover:bg-[#151875] bg-white rounded-[50%] group ">
-                    <CiHeart size={20} className="text-[#151875] group-hover:text-white" />
+                 <div className="">
+                <HeartIcon stock={items.stockLevel} id={items.id} name={items.name} image={items.imageUrl} color={items.colors[0]} slug={items.slug} price={items.price}/>
+                 </div>
 
-                    </div>
-             </div>
+                </div>
 
 
                 <div className={` ${items.discountPercentage != 0 ? 'z-10 absolute rounded-[5px] px-3 py-1 bg-[#151875] top-3 text-white text-[12px] font-josefin -left-2' : ''}`}>{items.discountPercentage == 0 ? '' : `${items.discountPercentage}% OFF`}</div>
@@ -76,7 +76,7 @@ const ProductList = ({ DataFetched }: { DataFetched: Products[] }) => {
 
 
       </div>
-  
+
     </>
   )
 }

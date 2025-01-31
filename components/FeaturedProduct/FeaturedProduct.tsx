@@ -1,14 +1,24 @@
-'use client';
-import AOS from 'aos';
-import "aos/dist/aos.css";
-import { useEffect } from 'react';
+
 import Image from "next/image";
 import productData from '@/Data/Data';
+import { Products } from "../Utilits/Helper";
+import Link from "next/link";
+import { CiHeart } from "react-icons/ci";
+import CartIcon2 from "../CartIconForFeaturedProducts/CartIcon2";
 
-const FeaturedProduct = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+
+
+const FeaturedProduct = ({Product} : {Product:Products[]}) => {
+    //The filter method in JavaScript is used to create a new array containing only the elements from the original array that meet a specified condition.
+
+const filteredArray = Product.filter((items:Products)=>{
+ return [5 ,19 , 4 ,12].includes(items.id)
+})
+
+
+
+
+
 
   return (
     <>
@@ -18,72 +28,45 @@ const FeaturedProduct = () => {
         </h1>
 
         <div className="w-full h-full flex justify-center gap-x-[30px] md:gap-x-[45px] min3:gap-x-[35px] gap-y-[100px] lg:gap-[28px] flex-wrap lg:flex-nowrap pt-6">
-          {productData.map((product, index) => {
-            const {
-              id,
-              name,
-              price,
-              mainImage,
-              cartIcon,
-              heartIcon,
-              colorImage1,
-              colorImage2,
-              searchIcon,
-              imageCode,
-              SearchName,
-              HeartName,
-              cartName,
-              nameOfChair,
-            } = product;
+          {filteredArray?.map((product) => (
+           
 
             
-            return (
+       
               <div
-                key={id || index} // Use index as a fallback if id is missing
+                key={product.id} // Use index as a fallback if id is missing
                 className="w-[350px] min3:w-[300px] bg-[#F6F7FB] shadow-lg"
                 data-aos="fade-up"
               >
-                <div className="group relative w-full h-[60%] flex justify-center items-center cursor-pointer">
+                <div className=" relative w-full h-[60%] flex justify-center items-center cursor-pointer">
                   <Image
-                    src={mainImage}
-                    alt={name || "Product Image"}
+                    src={product.imageUrl}
+                    alt={product.name|| "Product Image"}
                     width={190}
                     height={180}
-                    className="group-hover:scale-110 transition-all duration-300 ease-in-out"
+                   
                   />
-                  <div className="absolute top-2 left-2 flex object-cover">
-                    <Image
-                      src={heartIcon}
-                      alt={HeartName || "Heart Icon"}
-                      className="mr-2"
-                      width={15}
-                      height={40}
-                    />
-                    <Image
-                      src={searchIcon}
-                      alt={SearchName || "Search Icon"}
-                      className="mr-2"
-                      width={15}
-                      height={40}
-                    />
-                    <Image
-                      src={cartIcon}
-                      alt={cartName || "Cart Icon"}
-                      className="mr-2"
-                      width={25}
-                      height={40}
-                    />
-                  </div>
+                 
+                
+                  <div className="absolute gap-x-2 top-2 left-2  justify-center items-center flex object-cover w-[25px] h-[25px] hover:text-white hover:bg-[#151875] bg-white rounded-[50%] group">
+                    <CiHeart size={15}/>
+                    </div>
+                    <CartIcon2 stock={product.stockLevel} id={product.id} name={product.name} price={product.price} image={product.imageUrl} colors={product.colors}/>
+                  
+                  
                 </div>
 
+                <Link href={`/productsDetails/${product.slug}`}>
                 <div className="group pb-6 p-4 h-[150px] w-full bg-white hover:bg-[#1A0B5B] hover:text-[#ffff] cursor-pointer flex flex-col mt-1 mb-1 items-center gap-2 shadow-lg">
-                  <h1 className="font-poppins text-[#FB2E86] text-inherit font-lato text-[18px] font-[700]">
-                    {nameOfChair || "Unnamed Chair"}
+                  <h1 className=" text-center text-[15px] text-[#FB2E86] text-inherit font-lato  font-[700]">
+                    {product.name || "Unnamed Chair"}
                   </h1>
 
+
+                    <div>
                   <div className="mt-1 mb-1 inline-block group-hover:hidden">
                     <Image
-                      src={colorImage1}
+                      src={productData[0].colorImage1}
                       alt="Color Image 1"
                       width={50}
                       height={50}
@@ -92,25 +75,26 @@ const FeaturedProduct = () => {
 
                   <div className="hidden group-hover:inline">
                     <Image
-                      src={colorImage2}
+                      src={productData[0].colorImage2}
                       alt="Color Image 2"
                       width={50}
                       height={50}
                     />
                   </div>
-
+                  </div>
+            
+                  
                   <div className="flex flex-col items-center w-full">
-                    <h3 className="text-[#1A0B5B] text-inherit font-[400] font-josefin">
-                      {imageCode}
-                    </h3>
                     <h3 className="text-[#1A0B5B] text-inherit font-[400] mb-2 mt-2 font-lato">
-                      {price}
+                     Rs.{(product.price).toLocaleString('en-PK')}
                     </h3>
                   </div>
                 </div>
+                </Link>
               </div>
-            );
-          })}
+
+           
+          ))}
         </div>
       </div>
 

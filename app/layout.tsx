@@ -5,10 +5,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
-config.autoAddCss = false;
+config.autoAddCss = false;
 import CartContextProvider from "@/context/CartContextProvider";
 import Footer from "@/components/Footer/Footer";
-
+import WishlistContextProvider from "@/context/WishListContextProvider";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -34,11 +34,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >   
-       <CartContextProvider>
-        {children}
-      </CartContextProvider>  
-      <Toaster /> 
+      > 
+      <WishlistContextProvider>
+        <CartContextProvider>
+          {children}
+        </CartContextProvider>
+        </WishlistContextProvider>
+        <Toaster />
         <Footer />
       </body>
     </html>

@@ -11,11 +11,27 @@ import Link from "next/link";
 import { productDetails } from "@/Data/Data";
 import Brands from "@/components/Brands/Brands";
 import Header from "@/components/Header/Header";
+
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Login | Hekhto Sofas - Premium Sofas for Your Home',
+  description: 'Login to Hekhto to access your personalized shopping experience and explore our premium sofa collections.',
+  openGraph: {
+    title: 'Login | Hekhto Sofas - Premium Sofas for Your Home',
+    description: 'Login to Hekhto for a personalized experience and find your perfect sofa.',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 const Shop = () => {
   // w-[90%] min3:w-[900px] lg:w-[1000px] min7:
   return (
     <>
-    <Header />
+      <Header />
       <Pagesbar pageName="Products" name1="Home" name2="Page" name3="Product" />
       <div className="w-full flex-col h-auto  pt-[60px] flex justify-center items-center  ">
         <div
@@ -28,7 +44,9 @@ const Shop = () => {
               alt="product1"
               width={151}
               height={155}
+              priority
               className=" max12:w-[105px]  max12:h-[120px]  max10:w-[120px]  max10:h-[140px] w-[155px] sm:w-[200px] sm:h-[175px] object-cover md:object-cover md:h-auto  md:w-[250px] lg:object-contain lg:h-auto lg:w-[151px]"
+
             ></Image>
             <Image
               src="/images/product3.svg"
@@ -36,6 +54,7 @@ const Shop = () => {
               alt="product2"
               width={151}
               height={155}
+              priority
             ></Image>
             <Image
               src="/images/product4.svg"
@@ -43,6 +62,7 @@ const Shop = () => {
               alt="product3"
               width={151}
               height={155}
+              priority
             ></Image>
           </div>
           {/* w-[800px] object-contain */}
@@ -52,6 +72,7 @@ const Shop = () => {
               alt="product 4"
               width={375}
               height={490}
+              priority
               className="max10:h-[350px] w-full h-[650px] object-cover md:w-[500px] md:h-auto md:object-cover lg:object-contain lg:w-[375px]"
             ></Image>
           </div>
@@ -247,9 +268,8 @@ const Shop = () => {
             {productDetails.map((items) => (
               <div
                 key={items.id}
-                className={`max11:w-[330px] w-[270px] h-[400px] ${
-                  items.id === "1" ? "mt-0" : "max11:mt-12"
-                } `}
+                className={`max11:w-[330px] w-[270px] h-[400px] ${items.id === "1" ? "mt-0" : "max11:mt-12"
+                  } `}
               >
                 <div className="">
                   <Image
@@ -281,11 +301,10 @@ const Shop = () => {
                         icon={faStar}
                       />
                       <FontAwesomeIcon
-                        className={` text-[10px] ml-1 ${
-                          items.id === "1" || items.id === "3"
+                        className={` text-[10px] ml-1 ${items.id === "1" || items.id === "3"
                             ? "text-[#B2B2B2]"
                             : "text-[#FFC416]"
-                        }`}
+                          }`}
                         icon={faStar}
                       />
                     </div>
@@ -299,7 +318,7 @@ const Shop = () => {
           </div>
         </div>
       </div>
-      <Brands/>
+      <Brands />
     </>
   );
 };

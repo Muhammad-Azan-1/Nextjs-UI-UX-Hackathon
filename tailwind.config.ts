@@ -31,6 +31,7 @@ const config: Config = {
 			'min7':{'min':'1200px'},
 			'min6':{'min':'862px'},
 			'lgm':{'min':'800px'},
+			'lgm2':{'min':'695px'},
 			'min4':{'min':'742px'},
 			'max10':{'max':'540px'},
 			'max11':{'max':'590px'},

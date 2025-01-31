@@ -17,7 +17,7 @@ const Banner2 = () => {
           </div>
         </div>
 
-        
+
       </div>
     </>
   );

@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useToast } from "@/hooks/use-toast";
 
 
-const CartIcon = ({ id, stock, name, price, image, colors }: { id: number, stock: number, name: string, price: number, image: string, colors: string[] }) => {
+const CartIconForLatestProduct = ({ id, stock, name, price, image, colors }: { id: number, stock: number, name: string, price: number, image: string, colors: string[] }) => {
   const key = `${id}-${colors[0]}`
   const { setIncrement, cartItems } = useCart()
   const { toast } = useToast()
@@ -16,7 +16,6 @@ const CartIcon = ({ id, stock, name, price, image, colors }: { id: number, stock
 
 
     if (cartItems[key]?.value == stock) {
-      console.log("Cart value from each items inside if statement", cartItems[id]?.value)
       toast({
         description: `No items left in stock`,
         variant: 'customDestructive'
@@ -34,11 +33,9 @@ const CartIcon = ({ id, stock, name, price, image, colors }: { id: number, stock
   return (
     <>
 
-      <div
-        onClick={() => handleAddToCart()}
-        className="absolute flex items-center justify-center max-w2:left-[65px] left-[85px] max-w5:left-[45px] bottom-3 w-[30px] h-[30px] hover:bg-[#151875] bg-white rounded-[50%] group"
-      >
-        < AiOutlineShoppingCart size={18} className="text-[#151875] group-hover:text-white" />
+   <div  onClick={() => handleAddToCart()} className="absolute bottom-16 left-2 flex flex-col items-center justify-center gap-3 cursor-pointer w-[30px] h-[30px] hover:text-white hover:bg-[#151875] bg-white rounded-[50%] ">
+    
+        < AiOutlineShoppingCart size={18} />
 
       </div>
 
@@ -47,4 +44,4 @@ const CartIcon = ({ id, stock, name, price, image, colors }: { id: number, stock
   )
 }
 
-export default CartIcon
+export default CartIconForLatestProduct

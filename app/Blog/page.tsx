@@ -2,7 +2,7 @@ import Pagesbar from "@/components/PageBar/PageBar";
 import { BlogData } from "@/Data/Data";
 import Image from "next/image";
 import { MdSearch } from "react-icons/md";
-import { recentPosts,saleProduct } from "@/Data/Data";
+import { recentPosts, saleProduct } from "@/Data/Data";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,10 +12,19 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Brands from "@/components/Brands/Brands";
 import Header from "@/components/Header/Header";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Blog | Hekhto - Premium Sofas for Your Home',
+  description: 'Stay updated with the latest insights, news, and tips from Hekhto’s blog, your go-to source for premium sofas and home decor.',
+  keywords: 'Blog, Ecommerce, Sofas, Premium Sofas, Home Decor, Business Insights, Ecommerce Tips, Hekhto News, Sofa Trends',
+
+};
+
 const page = () => {
   return (
     <>
-     <Header />
+      <Header />
       <Pagesbar
         pageName="Blog Page"
         name1="Home"
@@ -32,6 +41,7 @@ const page = () => {
                 alt={item.alt}
                 width={870}
                 height={450}
+                priority
               ></Image>
               <div className="flex items-center  mt-6 max8:ml-0 max7:ml-1 max8:justify-center ">
                 <div className="flex items-center  ">
@@ -40,6 +50,7 @@ const page = () => {
                     alt="pin icon"
                     width={12}
                     height={20}
+                    priority
                   ></Image>
                   <div className="ml-1 bg-[#FFE7F9] max-w2:w-[130px] w-[160px] h-[23px] py-1 text-center rounded-[2px]">
                     <p className="text-[#151875] text-[14px] font-josefin">
@@ -54,6 +65,7 @@ const page = () => {
                     alt="pin icon"
                     width={12}
                     height={20}
+                    priority
                   ></Image>
                   <div className="ml-1 pb-1 bg-[#FFE7F9] max-w2:w-[130px] w-[160px] h-[23px] py-1 text-center rounded-[2px]">
                     <p className="text-[#151875] text-[14px] font-josefin">
@@ -162,7 +174,8 @@ const page = () => {
                       alt={post.alt}
                       width={70}
                       height={51}
-                      className="max8:w-[100px] object-cover" 
+                      priority
+                      className="max8:w-[100px] object-cover"
                     ></Image>
                     <div className="flex flex-col justify-center ">
                       <p className="text-[14px] max8:text-[16px] font-josefin text-[#3F509E]">
@@ -178,7 +191,7 @@ const page = () => {
             </div>
 
 
-        {/* sales prodct */}
+            {/* sales prodct */}
             <div className="mt-6 max8:mt-[170px] max8:w-full  max8:flex max8:flex-col max8:items-center">
               <h1 className="text-[#151875] max8:text-[35px] text-[22px]  max8:text-center font-[600] font-josefin">
                 Sale Product
@@ -191,7 +204,8 @@ const page = () => {
                       alt={post.alt}
                       width={70}
                       height={51}
-                      className="max8:w-[100px] object-cover" 
+                      priority
+                      className="max8:w-[100px] object-cover"
                     ></Image>
                     <div className="flex flex-col justify-center">
                       <p className="text-[14px] max8:text-[16px] font-josefin text-[#3F509E]">
@@ -219,6 +233,7 @@ const page = () => {
                     alt="bag"
                     width={126}
                     height={80}
+                    priority
                   ></Image>
                   <div className="text-center mt-2">
                     <h1 className="text-[#151875] font-[600] font-lato text-[14px]">
@@ -236,6 +251,7 @@ const page = () => {
                     alt="bag"
                     width={126}
                     height={80}
+                    priority
                   ></Image>
                   <div className="text-center mt-2">
                     <h1 className="text-[#151875] font-[600] font-lato text-[14px]">
@@ -253,6 +269,7 @@ const page = () => {
                     alt="bag"
                     width={126}
                     height={80}
+                    priority
                   ></Image>
                   <div className="text-center mt-2">
                     <h1 className="text-[#151875] font-[600] font-lato text-[14px]">
@@ -270,6 +287,7 @@ const page = () => {
                     alt="bag"
                     width={126}
                     height={80}
+                    priority
                   ></Image>
                   <div className="text-center mt-2">
                     <h1 className="text-[#151875] font-[600] font-lato text-[14px]">
@@ -286,7 +304,7 @@ const page = () => {
             {/* Follow box */}
             <div className="mt-8 max8:mt-14  max8:flex max8:flex-col max8:items-center">
               <h1 className="text-[#151875] max8:text-[35px] text-[22px] font-[600] font-josefin">
-                Follow 
+                Follow
               </h1>
 
               <div className="flex w-[126px] max8:w-full max8:justify-center ml-2  sm:justify-end max8:mt-6 mt-4 ">
@@ -322,15 +340,15 @@ const page = () => {
 
 
             <div className="mt-10 max8:mt-14  max8:flex max8:flex-col max8:items-center">
-            <h1 className="text-[#151875] max8:text-[35px] text-[22px] font-[600] font-josefin">
-               Tags
+              <h1 className="text-[#151875] max8:text-[35px] text-[22px] font-[600] font-josefin">
+                Tags
               </h1>
               <div className="mt-4 max8:mt-6  w-[228px] flex flex-wrap justify-start max8:w-full max8:justify-center gap-x-10 max8:gap-y-6 gap-y-3">
                 <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">General</p>
-                <p  className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Atsanil</p>
-                <p  className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Insas</p>
-                <p  className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Bibsaas</p>
-                <p  className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Nulla</p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Atsanil</p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Insas</p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Bibsaas</p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Nulla</p>
               </div>
             </div>
           </div>
@@ -343,7 +361,7 @@ const page = () => {
         <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">3</div>
         <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">4</div>
       </div>
-      <Brands/>
+      <Brands />
     </>
   );
 };

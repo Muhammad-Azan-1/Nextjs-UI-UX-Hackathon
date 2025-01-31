@@ -1,15 +1,21 @@
-"use client";
+
+import HomeIncrementButton from "../HomeAddToCartBtn/HomeIncrementButton";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "@/components/ui/button";
+import { Products } from "../Utilits/Helper.js";
 
-const DiscountItems = () => {
+
+const DiscountItems = ({Product}:{Product:Products[]}) => {
+
+ 
+
+
 
   return (
     <>
       <div className="w-full pt-[90px]">
-       
+
         <div className="">
           <h1 className="font-josefin max-w:text-[32px] text-[42px] text-[#1A0B5B] text-center font-[700]">
             Discount Products
@@ -33,7 +39,7 @@ const DiscountItems = () => {
         <div className="w-full h-auto flex  flex-col min3:flex-row items-center justify-center pt-10 px-[10px] lx:px-0">
           <div
             className="w-full min3:w-[700px] lg:w-[600px] h-[80%] text-center min3:text-left  items-center min3:items-start flex flex-col justify-center min3:ml-6  lg:ml-3 min5:ml-6 gap-6"
-          
+
           >
             <h1 className="text-[#151875] font-[700] max-w:text-[23px]  text-[30px] lg:text-[35px]  font-josefin">
               20% Discount Of All Products
@@ -81,13 +87,7 @@ const DiscountItems = () => {
             </div>
 
             <div className="border-none">
-              <Button
-                variant="outline"
-                size={"default"}
-                className=" font-josefin"
-              >
-                Shop Now
-              </Button>
+              <HomeIncrementButton stock={Product[10]?.stockLevel} id={Product[10]?.id} name={Product[10]?.name} price={Product[10]?.price} image={Product[10]?.imageUrl} colors={Product[10]?.colors} />
             </div>
             {/* </div> */}
           </div>
