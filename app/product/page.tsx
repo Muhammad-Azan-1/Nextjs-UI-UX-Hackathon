@@ -12,15 +12,17 @@ import { productDetails } from "@/Data/Data";
 import Brands from "@/components/Brands/Brands";
 import Header from "@/components/Header/Header";
 
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Login | Hekhto Sofas - Premium Sofas for Your Home',
-  description: 'Login to Hekhto to access your personalized shopping experience and explore our premium sofa collections.',
+  title: "Login | Hekhto Sofas - Premium Sofas for Your Home",
+  description:
+    "Login to Hekhto to access your personalized shopping experience and explore our premium sofa collections.",
   openGraph: {
-    title: 'Login | Hekhto Sofas - Premium Sofas for Your Home',
-    description: 'Login to Hekhto for a personalized experience and find your perfect sofa.',
-    type: 'website',
+    title: "Login | Hekhto Sofas - Premium Sofas for Your Home",
+    description:
+      "Login to Hekhto for a personalized experience and find your perfect sofa.",
+    type: "website",
   },
   robots: {
     index: true,
@@ -46,7 +48,6 @@ const Shop = () => {
               height={155}
               priority
               className=" max12:w-[105px]  max12:h-[120px]  max10:w-[120px]  max10:h-[140px] w-[155px] sm:w-[200px] sm:h-[175px] object-cover md:object-cover md:h-auto  md:w-[250px] lg:object-contain lg:h-auto lg:w-[151px]"
-
             ></Image>
             <Image
               src="/images/product3.svg"
@@ -268,8 +269,9 @@ const Shop = () => {
             {productDetails.map((items) => (
               <div
                 key={items.id}
-                className={`max11:w-[330px] w-[270px] h-[400px] ${items.id === "1" ? "mt-0" : "max11:mt-12"
-                  } `}
+                className={`max11:w-[330px] w-[270px] h-[400px] ${
+                  items.id === "1" ? "mt-0" : "max11:mt-12"
+                } `}
               >
                 <div className="">
                   <Image
@@ -301,10 +303,11 @@ const Shop = () => {
                         icon={faStar}
                       />
                       <FontAwesomeIcon
-                        className={` text-[10px] ml-1 ${items.id === "1" || items.id === "3"
+                        className={` text-[10px] ml-1 ${
+                          items.id === "1" || items.id === "3"
                             ? "text-[#B2B2B2]"
                             : "text-[#FFC416]"
-                          }`}
+                        }`}
                         icon={faStar}
                       />
                     </div>

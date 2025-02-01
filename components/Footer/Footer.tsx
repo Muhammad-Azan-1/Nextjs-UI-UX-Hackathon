@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF , faInstagram , faTwitter} from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 const Footer = () => {
   return (
@@ -41,58 +45,80 @@ const Footer = () => {
         </div>
 
         <div className="">
-            <ul className="text-center sm:text-left">
-                <li className="text-[22px] text-[#000000] font-josefin mb-8">Catagories</li>
-                <li className="text-[#8A8FB9] mb-4">Laptops & Computers</li>
-                <li className="text-[#8A8FB9] mt-4">Cameras & Photography</li>
-                <li className="text-[#8A8FB9] mt-4 ">Smart Phones & Tablets</li>
-                <li className="text-[#8A8FB9] mt-4">Video Games & Consoles</li>
-                <li className="text-[#8A8FB9] mt-4">Waterproof Headphones</li>
-            </ul>
+          <ul className="text-center sm:text-left">
+            <li className="text-[22px] text-[#000000] font-josefin mb-8">
+              Catagories
+            </li>
+            <li className="text-[#8A8FB9] mb-4">Laptops & Computers</li>
+            <li className="text-[#8A8FB9] mt-4">Cameras & Photography</li>
+            <li className="text-[#8A8FB9] mt-4 ">Smart Phones & Tablets</li>
+            <li className="text-[#8A8FB9] mt-4">Video Games & Consoles</li>
+            <li className="text-[#8A8FB9] mt-4">Waterproof Headphones</li>
+          </ul>
         </div>
 
-
-        
         <div className=" ">
-            <ul className=" text-center min6:text-left ">
-                <li className="text-[22px] text-[#000000] font-josefin mb-8">Customer Care</li>
-                <li className="text-[#8A8FB9] mb-4 ">My Account</li>
-                <li className="text-[#8A8FB9] mt-4">Discount</li>
-                <li className="text-[#8A8FB9] mt-4">Returns</li>
-                <li className="text-[#8A8FB9] mt-4">Orders History</li>
-                <li className="text-[#8A8FB9] mt-4">Order Tracking</li>
-            </ul>
+          <ul className=" text-center min6:text-left ">
+            <li className="text-[22px] text-[#000000] font-josefin mb-8">
+              Customer Care
+            </li>
+            <li className="text-[#8A8FB9] mb-4 ">My Account</li>
+            <li className="text-[#8A8FB9] mt-4">Discount</li>
+            <li className="text-[#8A8FB9] mt-4">Returns</li>
+            <li className="text-[#8A8FB9] mt-4">Orders History</li>
+            <li className="text-[#8A8FB9] mt-4">Order Tracking</li>
+          </ul>
         </div>
 
-
-        
         <div className="mt-8">
-            <ul className="text-center lg:text-left ">
-                <li className="text-[22px] text-[#000000] font-josefin mb-8">Pages</li>
-                <li className="text-[#8A8FB9] mb-4">Blog</li>
-                <li className="text-[#8A8FB9] mt-4">Browse the Shop</li>
-                <li className="text-[#8A8FB9] mt-4">Category</li>
-                <li className="text-[#8A8FB9] mt-4">Pre-Built Pages</li>
-                <li className="text-[#8A8FB9] mt-4">Visual Composer Elements</li>
-                <li className="text-[#8A8FB9] mt-4">WooCommerce Pages</li>
-            </ul>
+          <ul className="text-center lg:text-left ">
+            <li className="text-[22px] text-[#000000] font-josefin mb-8">
+              Pages
+            </li>
+            <li className="text-[#8A8FB9] mb-4">Blog</li>
+            <li className="text-[#8A8FB9] mt-4">Browse the Shop</li>
+            <li className="text-[#8A8FB9] mt-4">Category</li>
+            <li className="text-[#8A8FB9] mt-4">Pre-Built Pages</li>
+            <li className="text-[#8A8FB9] mt-4">Visual Composer Elements</li>
+            <li className="text-[#8A8FB9] mt-4">WooCommerce Pages</li>
+          </ul>
         </div>
       </div>
 
       <div className="w-full h-aut0 sm:h-[60px] bg-[#E7E4F8] flex flex-col sm:flex-row justify-between py-4 sm:py-0 px-3 sm:px-0 sm:justify-around items-center ">
-      <p className="font-lato font-[600] text-[#9DA0AE] max-w:text-[14px] ">©Webecy - All Rights Reserved</p>
-      <div className="flex w-[150px] justify-evenly sm:justify-between mt-4 sm:mt-0">
-        <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
-        <Link href=''> <FontAwesomeIcon className="text-white max-w:text-[14px]" icon={faFacebookF}/></Link>
-        </div>
-        <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
-        <Link href=''> <FontAwesomeIcon className="text-white max-w:text-[14px]" icon={faInstagram}/> </Link>
-        </div>
-        <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
-        <Link href=''> <FontAwesomeIcon className="text-white max-w:text-[14px]" icon={faTwitter}/> </Link>
+        <p className="font-lato font-[600] text-[#9DA0AE] max-w:text-[14px] ">
+          ©Webecy - All Rights Reserved
+        </p>
+        <div className="flex w-[150px] justify-evenly sm:justify-between mt-4 sm:mt-0">
+          <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
+            <Link href="">
+              {" "}
+              <FontAwesomeIcon
+                className="text-white max-w:text-[14px]"
+                icon={faFacebookF}
+              />
+            </Link>
+          </div>
+          <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
+            <Link href="">
+              {" "}
+              <FontAwesomeIcon
+                className="text-white max-w:text-[14px]"
+                icon={faInstagram}
+              />{" "}
+            </Link>
+          </div>
+          <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
+            <Link href="">
+              {" "}
+              <FontAwesomeIcon
+                className="text-white max-w:text-[14px]"
+                icon={faTwitter}
+              />{" "}
+            </Link>
+          </div>
         </div>
       </div>
-</div>
     </>
   );
 };

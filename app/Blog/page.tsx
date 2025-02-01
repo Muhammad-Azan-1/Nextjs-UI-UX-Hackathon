@@ -12,13 +12,14 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Brands from "@/components/Brands/Brands";
 import Header from "@/components/Header/Header";
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Our Blog | Hekhto - Premium Sofas for Your Home',
-  description: 'Stay updated with the latest insights, news, and tips from Hekhto’s blog, your go-to source for premium sofas and home decor.',
-  keywords: 'Blog, Ecommerce, Sofas, Premium Sofas, Home Decor, Business Insights, Ecommerce Tips, Hekhto News, Sofa Trends',
-
+  title: "Our Blog | Hekhto - Premium Sofas for Your Home",
+  description:
+    "Stay updated with the latest insights, news, and tips from Hekhto’s blog, your go-to source for premium sofas and home decor.",
+  keywords:
+    "Blog, Ecommerce, Sofas, Premium Sofas, Home Decor, Business Insights, Ecommerce Tips, Hekhto News, Sofa Trends",
 };
 
 const page = () => {
@@ -35,7 +36,10 @@ const page = () => {
       <div className="w-full h-auto  justify-center  flex flex-row max8:flex-col max7:gap-x-8 max6:gap-x-6 gap-x-10 xl:gap-x-16 px-1 min6:px-3 xl:px-0">
         <div className=" h-auto flex flex-col items-center justify-start max7:justify-evenly max7:pt-6 pt-16">
           {BlogData.map((item) => (
-            <div key={item.id} className="max8:w-[90%] max7:w-[350px] max6:w-[490px] max5:w-[650px] w-[750px] xl:w-[870px]  mt-10">
+            <div
+              key={item.id}
+              className="max8:w-[90%] max7:w-[350px] max6:w-[490px] max5:w-[650px] w-[750px] xl:w-[870px]  mt-10"
+            >
               <Image
                 src={item.image}
                 alt={item.alt}
@@ -168,7 +172,10 @@ const page = () => {
               </h1>
               <div className="mt-8 max8:mt-2 max8:w-full w-[250px] h-[270px]">
                 {recentPosts.map((post) => (
-                  <div key={post.id} className="w-[250px] max8:w-full max8:h-[80px]  h-[50px]  flex max8:justify-center max8:gap-x-4 justify-between mt-4">
+                  <div
+                    key={post.id}
+                    className="w-[250px] max8:w-full max8:h-[80px]  h-[50px]  flex max8:justify-center max8:gap-x-4 justify-between mt-4"
+                  >
                     <Image
                       src={post.image}
                       alt={post.alt}
@@ -190,7 +197,6 @@ const page = () => {
               </div>
             </div>
 
-
             {/* sales prodct */}
             <div className="mt-6 max8:mt-[170px] max8:w-full  max8:flex max8:flex-col max8:items-center">
               <h1 className="text-[#151875] max8:text-[35px] text-[22px]  max8:text-center font-[600] font-josefin">
@@ -198,7 +204,10 @@ const page = () => {
               </h1>
               <div className="mt-8 max8:mt-4 w-[250px] h-auto max8:w-full">
                 {saleProduct.map((post) => (
-                  <div key={post.id} className="w-[250px]  max8:w-full max8:justify-center max8:gap-x-4 max8:h-[80px] h-[50px] flex justify-between mt-4">
+                  <div
+                    key={post.id}
+                    className="w-[250px]  max8:w-full max8:justify-center max8:gap-x-4 max8:h-[80px] h-[50px] flex justify-between mt-4"
+                  >
                     <Image
                       src={post.image}
                       alt={post.alt}
@@ -338,17 +347,26 @@ const page = () => {
               </div>
             </div>
 
-
             <div className="mt-10 max8:mt-14  max8:flex max8:flex-col max8:items-center">
               <h1 className="text-[#151875] max8:text-[35px] text-[22px] font-[600] font-josefin">
                 Tags
               </h1>
               <div className="mt-4 max8:mt-6  w-[228px] flex flex-wrap justify-start max8:w-full max8:justify-center gap-x-10 max8:gap-y-6 gap-y-3">
-                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">General</p>
-                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Atsanil</p>
-                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Insas</p>
-                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Bibsaas</p>
-                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">Nulla</p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">
+                  General
+                </p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">
+                  Atsanil
+                </p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">
+                  Insas
+                </p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">
+                  Bibsaas
+                </p>
+                <p className="text-[#151875] font-lato underline hover:text-[#FB2E86]">
+                  Nulla
+                </p>
               </div>
             </div>
           </div>
@@ -356,10 +374,18 @@ const page = () => {
       </div>
 
       <div className="w-full  flex justify-center gap-x-10 mt-16">
-        <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">1</div>
-        <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">2</div>
-        <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">3</div>
-        <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">4</div>
+        <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">
+          1
+        </div>
+        <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">
+          2
+        </div>
+        <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">
+          3
+        </div>
+        <div className="w-[32px] h-[24px] flex items-center font-lato font-[600] cursor-pointer justify-center text-[#E0D3F5]  border-[1px] border-[#E0D3F5] rounded-[3px] hover:bg-[#FB2E86] hover:text-[white]">
+          4
+        </div>
       </div>
       <Brands />
     </>

@@ -1,21 +1,12 @@
-
 import Image from "next/image";
 import HomeIncrementButton from "../HomeAddToCartBtn/HomeIncrementButton";
 import { Products } from "../Utilits/Helper";
 
-
-
-const Hero  =  ({Product}:{Product:Products[]}) => {
-
-
-
-
+const Hero = ({ Product }: { Product: Products[] }) => {
   return (
     <>
       <div className="relative w-full pt-[40px] overflow-hidden max-w:pt-0 sm:pt-[60px] lg:pt-0 pb-[20px] lg:pb-0 h-auto lg:h-[470px] xl:h-[550px] min2:h-[650px] min1:h-[750px] bg-[#F2F0FF] flex max-w:flex-col flex-row px-6 lg:pr-6">
-        <div className=" max-w:h-[200px] h-auto max-w:static max-w:w-full max-w:flex  max-w:justify-center   absolute top-0 left-[5px]  lg:left-[0px] xl:left-[10px] min2:left-[10px] min1:left-[-2px]"
-
-        >
+        <div className=" max-w:h-[200px] h-auto max-w:static max-w:w-full max-w:flex  max-w:justify-center   absolute top-0 left-[5px]  lg:left-[0px] xl:left-[10px] min2:left-[10px] min1:left-[-2px]">
           <Image
             src="/images/light.svg"
             alt="light image"
@@ -38,9 +29,7 @@ const Hero  =  ({Product}:{Product:Products[]}) => {
         {/*text-box */}
 
         <div className=" w-[100%]  lg:ml-[190px] xl:ml-[220px] min2:ml-[240px]  h-full flex flex-col lg:flex-row justify-center  min1:gap-0  items-center ">
-          <div className="max-w:w-[100%] w-[92%] sm:w-[80%] max-w:px-0 px-10  md:px-20 lg:px-0 lg:w-[420px] lg:ml-0 lg:pl-2 xl:pl-0 xl:w-[500px] min2:w-[600px] min1:w-[630px] items-center lg:items-start flex flex-col justify-center gap-6 lg:gap-4 xl:gap-6 "
-
-          >
+          <div className="max-w:w-[100%] w-[92%] sm:w-[80%] max-w:px-0 px-10  md:px-20 lg:px-0 lg:w-[420px] lg:ml-0 lg:pl-2 xl:pl-0 xl:w-[500px] min2:w-[600px] min1:w-[630px] items-center lg:items-start flex flex-col justify-center gap-6 lg:gap-4 xl:gap-6 ">
             {/* text-[#FB2E86] */}
             <p className="text-[#FB2E86] font-lato font-[700]">
               Best Furniture For Your Castle....
@@ -53,14 +42,18 @@ const Hero  =  ({Product}:{Product:Products[]}) => {
               est adipiscing in phasellus non in justo.
             </p>
             <div>
-
-              <HomeIncrementButton stock={Product[0]?.stockLevel} id={Product[0]?.id} name={Product[0]?.name} price={Product[0]?.price} image={Product[0]?.imageUrl} colors={Product[0]?.colors} />
+              <HomeIncrementButton
+                stock={Product[0]?.stockLevel}
+                id={Product[0]?.id}
+                name={Product[0]?.name}
+                price={Product[0]?.price}
+                image={Product[0]?.imageUrl}
+                colors={Product[0]?.colors}
+              />
             </div>
           </div>
 
-          <div className="flex items-center pt-[60px] pb-8 lg:pb-0 lg:pt-0"
-
-          >
+          <div className="flex items-center pt-[60px] pb-8 lg:pb-0 lg:pt-0">
             <Image
               src="/images/hero.svg"
               alt="Hero sofa Image"
@@ -73,18 +66,16 @@ const Hero  =  ({Product}:{Product:Products[]}) => {
         </div>
 
         <div className="absolute bottom-4 w-[90%]  lg:bottom-8  flex justify-center">
-          <Image src='/images/scrollerhero.svg' alt="scroller" width={60} height={30}></Image>
+          <Image
+            src="/images/scrollerhero.svg"
+            alt="scroller"
+            width={60}
+            height={30}
+          ></Image>
         </div>
       </div>
-
     </>
   );
-
-  
-  
-  
 };
-
-
 
 export default Hero;
