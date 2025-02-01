@@ -3,9 +3,8 @@ import Image from "next/image";
 import productData from '@/Data/Data';
 import { Products } from "../Utilits/Helper";
 import Link from "next/link";
-import { CiHeart } from "react-icons/ci";
-import CartIcon2 from "../CartIconForFeaturedProducts/CartIcon2";
-
+import CartIcon2 from "../Add-To-Card-Icons_functionality/CartIconForFeaturedProducts/CartIcon2";
+import WishlistIcon from "../Add-To-Wishlist-Icons_functionality/WishlistIconForFeaturedProduct/WishlistIcon";
 
 
 const FeaturedProduct = ({Product} : {Product:Products[]}) => {
@@ -47,12 +46,11 @@ const filteredArray = Product.filter((items:Products)=>{
                    
                   />
                  
-                
-                  <div className="absolute gap-x-2 top-2 left-2  justify-center items-center flex object-cover w-[25px] h-[25px] hover:text-white hover:bg-[#151875] bg-white rounded-[50%] group">
-                    <CiHeart size={15}/>
-                    </div>
+
+                  <div>
+                 <WishlistIcon stock={product.stockLevel} id={product.id} name={product.name} image={product.imageUrl} color={product.colors[0]} slug={product.slug} price={product.price}/>
                     <CartIcon2 stock={product.stockLevel} id={product.id} name={product.name} price={product.price} image={product.imageUrl} colors={product.colors}/>
-                  
+                    </div>
                   
                 </div>
 

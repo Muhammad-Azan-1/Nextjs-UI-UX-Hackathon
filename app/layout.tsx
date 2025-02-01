@@ -41,7 +41,7 @@ export default function RootLayout({
         </CartContextProvider>
         </WishlistContextProvider>
         <Toaster />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

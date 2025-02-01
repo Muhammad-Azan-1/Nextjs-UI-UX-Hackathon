@@ -11,17 +11,44 @@ import { useState , useEffect } from "react";
 
 
 
+
 const ShoppingCart = () => {
 
   const { cartItems, deleteItem } = useCart()
   const [items , setItems] = useState<boolean>(false)
+  const [totalItems , setTotalItems] = useState<number>(0)
+  const [totalAmount , setTotalAmount] = useState<number>(0)
+  console.log(cartItems)
 
   useEffect(() => {
     if (cartItems) {
       const itemsVal = Object.values(cartItems).some((item) => item?.value > 0);
       setItems(itemsVal);
+
+
+      const noOfItems : number[] =Object.values(cartItems).map((items)=> items.value)
+      console.log("Total no of Items" , noOfItems)
+      if(noOfItems.length > 0){
+      setTotalItems(noOfItems.reduce((acc , curr)=> acc + curr))
+      }
+     
+
+
+      const priceOfEachItem : number[] =Object?.values(cartItems).map((items)=> items.price)
+      console.log("total price" , priceOfEachItem)
+     
+
+      const totalPrice = noOfItems.map((items , index)=> items * priceOfEachItem[index])
+      if(totalPrice.length > 0){
+        setTotalAmount(totalPrice.reduce((acc , curr)=>  acc + curr))
+      }
+
+   
+
     }
   }, [cartItems]);
+
+
 
 
   return (
@@ -37,15 +64,15 @@ const ShoppingCart = () => {
       {
         items ?
 
-          (<div className="w-full flex-col items-center lg:flex-row flex justify-center gap-x-10 min7:gap-x-20 pt-[110px] max12:px-0 px-2 min7:px-0  h-auto">
+          (<div className="w-full flex-col flex   items-center lg:items-start lg:flex-row justify-center gap-x-8 pt-[30px] max12:px-0 pl-0 min7:px-0  h-auto">
             <div className="w-[98%] md:w-[720px] lg:w-[610px] min7:w-[720px]">
-              <div className="flex max-w2:text-[16px] w-full text-[#1D3178] font-[700] font-josefin text-[20px]">
+              <div className="flex  max-w2:text-[14px]  max13:text-[16px]  w-full text-[#1D3178] ml-1 font-[700] font-josefin pr-1 text-[20px]">
                 <h1>Product</h1>
                 <div className="w-full">
-                  <ul className="flex max-w2:text-[16px] max13:text-[18px] justify-end max13:gap-x-[20px] max10:gap-x-[30px]  gap-x-[70px]">
+                  <ul className="flex  max-w2:text-[14px] max13:text-[16px] justify-end  max13:gap-x-[29px] max10:gap-x-[35px]  gap-x-[66px]">
                     <li>Price</li>
-                    <li>Quality</li>
-                    <li>Total</li>
+                    <li>Quantity</li>
+                    <li className="pr-1">Total</li>
                   </ul>
                 </div>
               </div>
@@ -54,7 +81,7 @@ const ShoppingCart = () => {
 
                 Object.entries(cartItems || {}).map(([,items]) => (
 
-                  items.value !== 0 ? (
+                 
 
 
                     <div
@@ -81,65 +108,53 @@ const ShoppingCart = () => {
                       <div
                         className={`flex flex-col ${"max12:w-[160px] w-[170px] sm:w-[190px]"} text-[14px] max10:ml-3 ml-4 mt-2 font-josefin`}
                       >
-                        <h1 className="w-full max10:text-[11px] max10:font-[700] text-[12px] sm:text-[14px]">
+                        <h1 className="w-full max10:text-[11px] max13:font-[600] text-[12px] sm:text-[14px]">
                           {items.name}
                         </h1>
-                        <p className=" text-[#A1A8C1] text-[12px]"> color : {items.color}</p>
+                        <p className=" text-[#15245E] text-[12px]"> color : {items.color}</p>
                       </div>
 
                       <div className=" max12:w-[90%] w-full text-[#15245E] font-josefin text-[14px] ">
-                        <ul className="flex  justify-end items-center max-w2:gap-x-4 max13:gap-x-6 max10:gap-x-10 gap-x-20">
-                          <li>{items.price}</li>
+                        <ul className="flex  justify-end items-center max-w2:gap-x-4 max13:gap-x-6 max10:gap-x-10 gap-x-[68px]">
+                          <li>Rs. {items.price}</li>
                           <li>
 
                             <ProductIncrementDecrement
                               stock={items.stock} id={items.id} name={items.name}
                               price={items.price} image={items.image} colors={items.color}
+                              num={2}
                             />
                           </li>
-                          <li>{(items.value == 1 ? items.price : items.value * items.price).toLocaleString('en-PK')}</li>
+                          <li>Rs. {(items.value == 1 ? items.price : items.value * items.price).toLocaleString('en-PK')}</li>
                         </ul>
                       </div>
-                    </div>) : (
-                    ''
-                  )
+                    </div>
 
                 ))}
-              <div className="w-full flex justify-between pt-8">
-                <Button
-                  variant="outline"
-                  size={"default"}
-                  className=" font-josefin pb-[6px] h-[40px] max12:text-[14px] max12:w-[130px]"
-                >
-                  Update Cart
-                </Button>
 
-                <Button
-                  variant="outline"
-                  size={"default"}
-                  className=" font-josefin  pb-[6px] h-[40px] max12:text-[14px]  max12:w-[130px]"
-                >
-                  Clear Cart
-                </Button>
-              </div>
             </div>
 
             {/* Cart side bxoses */}
 
-            <div className="flex gap-x-[52px] justify-center md:justify-start flex-wrap lg:flex-nowrap flex-row items-center lg:flex-col mt-14 ">
-              <div className=" w-[350px] mt-10 md:mt-0 min7:w-[370px]">
-                <h1 className="flex  justify-center  text-[20px] font-[700] font-josefin text-[#15245E]">
-                  Cart Totals
-                </h1>
-                <div className="w-full mt-4 lg:mt-8 h-[284px] bg-[#F4F4FC]">
-                  <div className="w-full flex px-6 h-full justify-evenly  flex-col">
-                    <div className="flex justify-between font-lato text-[#15245E] border-b-[2px] border-[#E1E1E4] pb-3">
-                      <p className="font-[600]">Subtotals:</p>
-                      <p>£219.00</p>
+              <div className="w-[400px] max12:w-full max12:px-2 mt-10 lg:mt-0 py-2 lg:sticky lg:top-12">
+               
+                <div className="w-full  h-[320px] bg-[#F4F4FC]">
+                  <div className="w-full flex px-5 h-full justify-evenly gap-y-0  flex-col">
+                    <h1 className="font-[600] text-[18px] font-lato text-[#15245E]">Order  Summary</h1>
+                    <div className="flex justify-between font-lato text-[#15245E]  ">
+                      <p className="font-[600] text-[14px]">Subtotals ({totalItems} items)</p>
+                      <p>Rs. {(totalAmount).toLocaleString('en-PK')}</p>
                     </div>
-                    <div className="flex justify-between font-lato text-[#15245E]  border-b-[2px] border-[#E1E1E4] pb-3">
-                      <p className="font-[600]">Totals:</p>
-                      <p>£325.00</p>
+
+                    <div className="flex gap-x-3 items-center">
+                            <input type="number" placeholder="Enter Voucher Code"   className="placeholder:text-gray-400 focus:border-black  focus:outline-none focus:border-[2px] rounded-[4px] focus:ring-0 transition-all duration-300 ease-in-out h-9 w-[240px] text-[14px] pl-2 bg-[#F4F4FC] border"
+ />
+                            <Button  className="font-josefin max13:text-[12px] h-9 rounded-[4px]  cursor-pointer w-[100px] " size={'outline'} variant={"outline"}>APPLY</Button>
+                            </div>
+
+                    <div className="flex justify-between items-center font-lato text-[#15245E]">
+                      <p className="font-[600]">Totals</p> 
+                      <p>Rs. {(totalAmount).toLocaleString('en-PK')}</p>
                     </div>
 
                     <div className="flex justify-start">
@@ -149,51 +164,28 @@ const ShoppingCart = () => {
                         width={10}
                         height={10}
                       ></Image>
-                      <p className="ml-2">
+                      <p className="ml-2 text-[#15245E]">
                         Shipping & taxes calculated at checkout
                       </p>
                     </div>
                     <div>
+                      <Link href={'/checkout'}>
                       <Button
                         variant="outline"
                         size={"default"}
-                        className="bg-[#19D16F] w-full font-josefin mt-2  "
+                        className=" w-full rounded-[4px] font-josefin text-[14px] cursor-pointer  "
                       >
-                        Clear Cart
+                        PROCCED TO CHECKOUT
                       </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="w-[350px] mt-10 md:mt-0 min7:w-[370px]">
-                <h1 className="flex  justify-center lg:mt-8  gap-y-8 text-[20px] font-[700] font-josefin text-[#15245E]">
-                  Calculate Shopping
-                </h1>
-                <div className="w-full mt-4 lg:mt-8 h-[284px] bg-[#F4F4FC]">
-                  <div className="w-full flex px-6 h-full  justify-evenly  flex-col">
-                    <div className="flex justify-between text-[#C5CBE3] font-lato border-b-[2px] mt-2 border-[#E1E1E4] pb-1">
-                      <p className="font-[600] text-[14px]">Bangladesh</p>
-                    </div>
-                    <div className="flex justify-between font-lato text-[#C5CBE3]  border-b-[2px] border-[#E1E1E4] pb-1">
-                      <p className="font-[600] text-[14px]">Totals</p>
-                    </div>
-
-                    <div className="flex justify-between font-lato text-[#C5CBE3]  border-b-[2px] border-[#E1E1E4] pb-1">
-                      <p className="font-[600] text-[14px]">Totals</p>
-                    </div>
-
-                    <Button
-                      variant="outline"
-                      size={"default"}
-                      className=" w-[65%] font-josefin mt-2  "
-                    >
-                      Calculating Shopping
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
+   
+   
+           
           </div>) : (
               <div className="flex h-auto flex-col justify-center items-center font-josefin  mt-10 mb-10">
               <div className="bg-green-100 w-[200px] h-[200px] rounded-[50%] mb-6 flex justify-center items-center"><AiOutlineShoppingCart size={130} color="green"/></div>
@@ -243,3 +235,59 @@ export default ShoppingCart;
 
 // //   console.log(key , item)
 // // })
+
+
+
+// button code
+              {/* <div className="w-full flex justify-between pt-8">
+                <Button
+                  variant="outline"
+                  size={"default"}
+                  className=" font-josefin pb-[6px] h-[40px] max12:text-[14px] max12:w-[130px]"
+                >
+                  Update Cart
+                </Button>
+NOT USED
+                <Button
+                  variant="outline"
+                  size={"default"}
+                  className=" font-josefin  pb-[6px] h-[40px] max12:text-[14px]  max12:w-[130px]"
+                >
+                  Clear Cart
+                </Button>
+              </div> */}
+
+
+
+// box code
+
+              {/* <div className="flex gap-x-[52px] justify-center md:justify-start flex-wrap lg:flex-nowrap flex-row items-center lg:flex-col mt-14 "> */}
+
+              {/*  <div className="w-[350px] mt-10 md:mt-0 min7:w-[370px]">
+                <h1 className="flex  justify-center lg:mt-8  gap-y-8 text-[20px] font-[700] font-josefin text-[#15245E]">
+                  Calculate Shopping
+                </h1>
+                <div className="w-full mt-4 lg:mt-8 h-[284px] bg-[#F4F4FC]">
+                  <div className="w-full flex px-6 h-full  justify-evenly  flex-col">
+                    <div className="flex justify-between text-[#C5CBE3] font-lato border-b-[2px] mt-2 border-[#E1E1E4] pb-1">
+                      <p className="font-[600] text-[14px]">Bangladesh</p>
+                    </div>
+                    <div className="flex justify-between font-lato text-[#C5CBE3]  border-b-[2px] border-[#E1E1E4] pb-1">
+                      <p className="font-[600] text-[14px]">Totals</p>
+                    </div>
+NOT USED
+                    <div className="flex justify-between font-lato text-[#C5CBE3]  border-b-[2px] border-[#E1E1E4] pb-1">
+                      <p className="font-[600] text-[14px]">Totals</p>
+                    </div>
+
+                    <Button
+                      variant="outline"
+                      size={"default"}
+                      className=" w-[65%] font-josefin mt-2  "
+                    >
+                      Calculating Shopping
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div> */}

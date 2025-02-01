@@ -3,10 +3,9 @@ import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
 import { Products } from "../Utilits/Helper";
 import { useState } from "react";
-import CartIconForLatestProduct from "../CartIconForLatestProduct/CartIconForLatestProduct";
+import CartIconForLatestProduct from "../Add-To-Card-Icons_functionality/CartIconForLatestProduct/CartIconForLatestProduct";
 import Link from "next/link";
-
-
+import WishlistIcon from "../Add-To-Wishlist-Icons_functionality/WishlistIconForLatestProduct/WishlistIcon";
 
  const LatestProduct = ({Product}:{Product:Products[]}) => {
   const [SelectedCategory , setSelectedCategory ] = useState('New Arrival')
@@ -82,9 +81,8 @@ import Link from "next/link";
          
             <CartIconForLatestProduct id={items.id} stock={items.stockLevel}  name={items.name} price={items.price}image={items.imageUrl} colors={items.colors}/>
 
-                <div className="absolute bottom-6 left-2 flex flex-col items-center justify-center gap-3 cursor-pointer w-[30px] h-[30px] hover:text-white hover:bg-[#151875] bg-white rounded-[50%] ">
-                  <CiHeart size={18}/>
-                </div>
+            <WishlistIcon stock={items.stockLevel} id={items.id} name={items.name} image={items.imageUrl} color={items.colors[0]} slug={items.slug} price={items.price}/>
+
          </div>
 
          {/* icons */}
@@ -115,113 +113,3 @@ import Link from "next/link";
 };
 
 export default LatestProduct;
-
-
-{/* <div className="h-[310px] w-[500px] md:w-[360px]">
-<div className="w-full h-[90%] flex justify-center items-center relative">
-  <Image
-    src="/images/chair2.svg"
-    alt="product 1"
-    width={230}
-    height={230}
-    className="w-[230px] h-[230px] object-cover"
-  />
-  <Image
-    src="/images/salesTag.svg"
-    alt="product 1"
-    width={100}
-    height={10}
-    className="absolute top-0 left-0 w-[100px] h-[64px] object-cover"
-  />
-  <div className="absolute bottom-6 left-2 flex flex-col items-center justify-center gap-3 ">
-    <Image
-      src="images/carticon2.svg"
-      alt="cart icon"
-      className="mr-2"
-      width={30}
-      height={40}
-    ></Image>
-    <Image
-      src="images/hearticon3.svg"
-      alt="heart Icon"
-      className="mr-2"
-      width={15}
-      height={40}
-    ></Image>
-    <Image
-      src="images/searchicon3.svg"
-      alt="search Icon"
-      className="mr-2"
-      width={15}
-      height={40}
-    ></Image>
-  </div>
-</div>
-
-<div className="w-full font-josefin flex justify-between py-2 pr-3 ">
-  <p className="text-[#151875] border-b-[2px] border-b-[#EEEFFB]">
-    Comfort Handy Craft
-  </p>
-  <div className="flex items-center">
-    <p className="mr-2 text-[14px] text-[#151875] ">$42.00</p>
-    <p className=" text-[12px] line-through text-[#FB2448]">
-      $65.00
-    </p>
-  </div>
-</div>
-</div>
-
-
-
-<div className="h-[310px] w-[500px] md:w-[360px]">
-<div className="relative w-full h-[90%] flex justify-center items-center bg-[#F7F7F7]">
-  <Image
-    src="/images/Cantileverchair.svg"
-    alt="product 1"
-    width={230}
-    height={230}
-    className="w-[230px] h-[230px] object-cover"
-  />
-  <div className="absolute bottom-6 left-2 flex flex-col items-center justify-center gap-3 ">
-    <Image
-      src="images/carticon2.svg"
-      alt="cart icon"
-      className="mr-2"
-      width={30}
-      height={40}
-    ></Image>
-    <Image
-      src="images/hearticon3.svg"
-      alt="heart Icon"
-      className="mr-2"
-      width={15}
-      height={40}
-    ></Image>
-    <Image
-      src="images/searchicon3.svg"
-      alt="search Icon"
-      className="mr-2"
-      width={15}
-      height={40}
-    ></Image>
-  </div>
-</div>
-
-<div className="w-full font-josefin flex justify-between py-2 pr-3 ">
-  <p className="text-[#151875] border-b-[2px] border-b-[#EEEFFB]">
-    Comfort Handy Craft
-  </p>
-  <div className="flex items-center">
-    <p className="mr-2 text-[14px] text-[#151875] ">$42.00</p>
-    <p className=" text-[12px] line-through text-[#FB2448]">
-      $65.00
-    </p>
-  </div>
-</div>
-</div> */}
-
-      {/*                 
-                <div className={` absolute top-0 left-0 ${image === '/images/chair2.svg' ? 'inline-block' : 'hidden'}`}>
-                    <Image src='/images/salestag.svg' alt="sales tag" width={85} height={57}></Image>
-                 </div>
-                 */}

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Products } from "@/components/Utilits/Helper";
 import Link from "next/link";
-import CartIcon from "../CartIcon/CartIcon";
+import CartIcon from "../Add-To-Card-Icons_functionality/CartIcon/CartIcon";
 
 
-import HeartIcon from "../HeartIcon/HeartIcon";
+import HeartIcon from "../Add-To-Wishlist-Icons_functionality/WishlistIcon/WihslistIcon";
 
 const ProductList = ({ DataFetched }: { DataFetched: Products[] }) => {
 

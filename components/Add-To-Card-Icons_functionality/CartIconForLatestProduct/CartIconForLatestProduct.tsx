@@ -10,7 +10,6 @@ const CartIconForLatestProduct = ({ id, stock, name, price, image, colors }: { i
   const { toast } = useToast()
 
   const handleAddToCart = () => {
-    console.log("running handle function")
     setIncrement(stock, id, name, price, image, colors[0]);
 
 

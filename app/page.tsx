@@ -38,7 +38,7 @@ const response =  await client.fetch(query);
 
   return (
     <>
-  <Header/>
+   <Header/> 
     <Hero Product={response}/>
     <FeaturedProduct Product={response}/>
     <LatestProduct Product={response } />

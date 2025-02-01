@@ -9,45 +9,99 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-
-		scrollBehavior:['smooth'],
-
-	
-		fontFamily: {
-			josefin: ['Josefin Sans','sans-serif'], // Add fallback font
-			lato:['Lato','sans-serif'],
-		  },
-
-		  screens:{
-			'defualt':{'min':'900px'},
-			'min1':{'min':'1678px'},
-			'min2':{'min':'1400px'},
-			'min5':{'min':'1100px'},
-			'max5':{'max':'1100px'},
-			'max6':{'max':'1000px'},
-			'max7':{'max':'800px'},
-			'max8':{'max':'670px'},
-			'min3':{'min':'914px'},
-			'min7':{'min':'1200px'},
-			'min6':{'min':'862px'},
-			'lgm':{'min':'800px'},
-			'lgm2':{'min':'695px'},
-			'min4':{'min':'742px'},
-			'max10':{'max':'540px'},
-			'max11':{'max':'590px'},
-			'max12':{'max':'420px'},
-			'max13':{'max':'460px'},
-			'min-w':{min:'420px'},
-			'min-w2':{'min':'480px'},
-			'min-w3':{'min':'420px'},
-			'max-w':{max:'480px'},
-			'max-w2':{'max':'380px'},
-			'min-w7':{'min':'380px'},
-			'max-w4':{'max':'550px'},
-			'max-w5':{'min':'541px'},
-			
-			
-		  },
+  		scrollBehavior: [
+  			'smooth'
+  		],
+  		fontFamily: {
+  			josefin: [
+  				'Josefin Sans',
+  				'sans-serif'
+  			],
+  			lato: [
+  				'Lato',
+  				'sans-serif'
+  			]
+  		},
+  		screens: {
+  			defualt: {
+  				min: '900px'
+  			},
+  			min1: {
+  				min: '1678px'
+  			},
+  			min2: {
+  				min: '1400px'
+  			},
+  			min5: {
+  				min: '1100px'
+  			},
+  			max5: {
+  				max: '1100px'
+  			},
+  			max6: {
+  				max: '1000px'
+  			},
+  			max7: {
+  				max: '800px'
+  			},
+  			max8: {
+  				max: '670px'
+  			},
+  			min3: {
+  				min: '914px'
+  			},
+  			min7: {
+  				min: '1200px'
+  			},
+  			min6: {
+  				min: '862px'
+  			},
+  			lgm: {
+  				min: '800px'
+  			},
+  			lgm2: {
+  				min: '695px'
+  			},
+  			min4: {
+  				min: '742px'
+  			},
+  			max10: {
+  				max: '540px'
+  			},
+  			max11: {
+  				max: '590px'
+  			},
+  			max12: {
+  				max: '420px'
+  			},
+  			max13: {
+  				max: '460px'
+  			},
+  			'min-w': {
+  				min: '420px'
+  			},
+  			'min-w2': {
+  				min: '480px'
+  			},
+  			'min-w3': {
+  				min: '420px'
+  			},
+  			'max-w': {
+  				max: '480px'
+  			},
+  			'max-w2': {
+  				max: '380px'
+  			},
+  			'min-w7': {
+  				min: '380px'
+  			},
+  			'max-w4': {
+  				max: '550px'
+  			},
+  			'max-w5': {
+  				min: '541px'
+  			}
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -94,6 +148,28 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },
