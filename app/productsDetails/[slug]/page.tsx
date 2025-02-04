@@ -35,7 +35,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
 }`;
 
   const response: ProductsDetails[] = await client.fetch(query);
-    console.log(response, "Product detials data")
+
   return (
     <>
       <Header />

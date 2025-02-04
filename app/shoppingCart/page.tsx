@@ -12,7 +12,7 @@ import Footer from "@/components/Footer/Footer";
 import DeleteItemsBtn from "@/components/CartItemsDeleteBtn/CartItemsDeleteBtn";
 
 const ProductList = () => {
-  const { cartItems, deleteItem } = useCart();
+  const { cartItems } = useCart();
   const [items, setItems] = useState<boolean>(false);
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalAmount, setTotalAmount] = useState<number>(0);

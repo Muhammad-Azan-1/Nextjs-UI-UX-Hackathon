@@ -12,7 +12,7 @@ import useCart from "@/context/CartContext";
 import WishListItemsDeleteBtn from "@/components/WishListItemsDeleteBtn/WishListItemsDeleteBtn";
 
 const WihsList = () => {
-  const { wishListItem, deleteItem } = useWishlist();
+  const { wishListItem } = useWishlist();
   const { setIncrement } = useCart();
 
   return (
@@ -41,7 +41,7 @@ const WihsList = () => {
                         width={83}
                         height={87}
                       ></Image>
-                      <WishListItemsDeleteBtn id={response.id} color={response.color}/>
+                      <WishListItemsDeleteBtn id={response.id} />
                     </div>
 
                     <div className="text-[14px] max13:w-[150px] ml-2 font-josefin  flex flex-col justify-center items-start">
