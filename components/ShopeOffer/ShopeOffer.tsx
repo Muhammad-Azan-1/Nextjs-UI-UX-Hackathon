@@ -95,7 +95,7 @@ const ShopeOffer = ({ heading = "What Shope Offer" }) => {
             data-aos-duration="2000"
           >
             <Image
-              src="/images/phoneCall.svg"
+              src="/images/phonecall.svg"
               alt="phone image"
               width={80}
               height={80}

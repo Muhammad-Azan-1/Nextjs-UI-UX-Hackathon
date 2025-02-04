@@ -26,7 +26,7 @@ const Blog = () => {
               <div className="flex justify-start gap-8">
                 <div className="flex items-center">
                   <Image
-                    src="/images/blogLogo.svg"
+                    src="/images/bloglogo.svg"
                     alt="pen loogo"
                     className=""
                     width={14}
@@ -85,7 +85,7 @@ const Blog = () => {
               <div className="flex justify-start gap-8">
                 <div className="flex items-center">
                   <Image
-                    src="/images/blogLogo.svg"
+                    src="/images/bloglogo.svg"
                     alt="pen loogo"
                     className=""
                     width={14}
@@ -146,7 +146,7 @@ const Blog = () => {
               <div className="flex justify-start gap-8">
                 <div className="flex items-center">
                   <Image
-                    src="/images/blogLogo.svg"
+                    src="/images/bloglogo.svg"
                     alt="pen loogo"
                     className=""
                     width={14}
