@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import { CiHeart } from "react-icons/ci";
 import { Products } from "../Utilits/Helper";
 import { useState } from "react";
 import CartIconForLatestProduct from "../Add-To-Card-Icons_functionality/CartIconForLatestProduct/CartIconForLatestProduct";
 import Link from "next/link";
 import WishlistIcon from "../Add-To-Wishlist-Icons_functionality/WishlistIconForLatestProduct/WishlistIcon";
+
 
 const LatestProduct = ({ Product }: { Product: Products[] }) => {
   const [SelectedCategory, setSelectedCategory] = useState("New Arrival");
@@ -32,6 +32,8 @@ const LatestProduct = ({ Product }: { Product: Products[] }) => {
   };
 
   const filteredProducts = getFilteredProduct();
+
+  if(Product.length < 0) return <p>Loading</p>
 
   return (
     <>

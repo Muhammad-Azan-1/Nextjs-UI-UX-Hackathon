@@ -16,7 +16,7 @@ const DiscountItems = ({ Product }: { Product: Products[] }) => {
 
         <div className="mt-4">
           <ul className="flex w-full justify-center gap-8 max-w:gap-6 sm:gap-10 text-[#151875] ">
-            <li className="hover:text-[#FB2E86] hover:underline   text-[15px] sm:text-[18px]">
+            <li className="hover:text-[#FB2E86] hover:underline   text-[14px] sm:text-[18px]">
               Wood Chair
             </li>
             <li className="hover:text-[#FB2E86] hover:underline text-[15px] sm:text-[18px]">
@@ -91,9 +91,12 @@ const DiscountItems = ({ Product }: { Product: Products[] }) => {
             <Image
               src="/images/sofa3.svg"
               alt="Discount Image"
-              className=" max-w:w-[700px] sm:w-[700px] lg:w-[640px] min5:w-[600px] lg:h-[600px] max-w:object-cover lg:object-cover"
+              className=" max-w:w-[700px] sm:w-[700px] lg:w-[640px] min5:w-[600px]"
+              sizes="(max-width:768px) 100vw, (max-width: 1200px) 50vw , 33vw"
               width={600}
               height={600}
+              quality={75}
+              loading="lazy"
             />
           </div>
         </div>

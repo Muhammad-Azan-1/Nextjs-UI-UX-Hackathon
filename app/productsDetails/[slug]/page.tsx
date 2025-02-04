@@ -4,7 +4,7 @@ import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { ProductsDetails } from "@/components/Utilits/Helper";
 import ProductDetailsCart from "@/components/ProductDetailsCart/ProductDetailsCart";
-
+import Footer from "@/components/Footer/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,8 +16,11 @@ export const metadata: Metadata = {
 };
 
 const page = async ({ params }: { params: { slug: string } }) => {
+
+  try{
+
   const query = `
-   *[_type == 'product' && slug.current == "${params.slug}"] | order(id asc) {
+   *[_type == 'product' && slug.current == "${params?.slug}"] | order(id asc) {
   name , 
     id,
   price ,
@@ -32,7 +35,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
 }`;
 
   const response: ProductsDetails[] = await client.fetch(query);
-
+    console.log(response, "Product detials data")
   return (
     <>
       <Header />
@@ -42,7 +45,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
         name2="Page"
         name3="Product Details"
       />
-      <div className="w-full h-auto">
+      <div data-testid="product" className="w-full h-auto">
         {response.map((items: ProductsDetails) => (
           <div
             key={items.id}
@@ -150,8 +153,21 @@ const page = async ({ params }: { params: { slug: string } }) => {
           </div>
         ))}
       </div>
+      <Footer/>
     </>
   );
+}catch(err){
+  console.log(err)
+  return(
+  <>
+ <Header/>
+ <div className="w-full h-screen flex justify-center bg-black text-white font-lato items-center">
+  <p className="text-center text-[16px font-[700] sm:text-[25px]">Fail to load the Products. Please try again later</p>
+  </div>
+  <Footer/>
+  </>
+  )
+}
 };
 
 export default page;

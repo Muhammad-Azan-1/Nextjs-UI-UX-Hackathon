@@ -5,14 +5,16 @@ import { Products } from "../Utilits/Helper";
 const Hero = ({ Product }: { Product: Products[] }) => {
   return (
     <>
-      <div className="relative w-full pt-[40px] overflow-hidden max-w:pt-0 sm:pt-[60px] lg:pt-0 pb-[20px] lg:pb-0 h-auto lg:h-[470px] xl:h-[550px] min2:h-[650px] min1:h-[750px] bg-[#F2F0FF] flex max-w:flex-col flex-row px-6 lg:pr-6">
-        <div className=" max-w:h-[200px] h-auto max-w:static max-w:w-full max-w:flex  max-w:justify-center   absolute top-0 left-[5px]  lg:left-[0px] xl:left-[10px] min2:left-[10px] min1:left-[-2px]">
+      <div className="relative w-full pt-[40px] overflow-x-hidden max-w:pt-0 sm:pt-[60px] lg:pt-0 pb-[20px] lg:pb-0 h-auto lg:h-[470px] xl:h-[550px] min2:h-[650px] min1:h-[750px] bg-[#F2F0FF] flex max-w:flex-col flex-row px-6 lg:pr-6">
+        <div className=" max-w:h-[200px] h-auto max-w:static max-w:w-full max-w:flex  max-w:justify-center   absolute top-0 left-[5px]  lg:left-[0px] xl:left-[10px] min2:left-[10px] min1:-left-2">
           <Image
             src="/images/light.svg"
             alt="light image"
             className="object-cover max-w:w-[220px] w-[90px] sm:w-[120px] md:w-[190px] lg:w-[270px] xl:w-[290px]  min2:h-[380px] min2:w-[320px] h-[200px] md:h-auto min1:w-[380px]"
             width={390}
             height={400}
+            loading="lazy"
+            
           />
         </div>
 
@@ -23,6 +25,8 @@ const Hero = ({ Product }: { Product: Products[] }) => {
             className="object-cover max-w:hidden w-[90px] sm:w-[120px] md:w-[190px]  lg:w-[270px] xl:w-[290px]  min2:h-[380px] min2:w-[320px] h-[180px] md:h-auto min1:w-[380px]"
             width={450}
             height={400}
+            loading="lazy"
+            
           />
         </div>
 
@@ -53,15 +57,17 @@ const Hero = ({ Product }: { Product: Products[] }) => {
             </div>
           </div>
 
-          <div className="flex items-center pt-[60px] pb-8 lg:pb-0 lg:pt-0">
+          <div className="flex items-center pt-[60px] pb-2 lg:pb-0 lg:pt-0">
             <Image
               src="/images/hero.svg"
               alt="Hero sofa Image"
-              className="w-[650px] lg:w-[400px] xl:w-[480px] min2:w-[600px] min2:h-[800px] min1:w-[720px]"
-              width={700}
-              height={700}
-              priority
-            ></Image>
+              className="w-[650px] lg:w-[400px] xl:w-[480px] min2:w-[600px]  "
+              quality={75}
+              width={600}
+              height={600}
+              sizes="(max-width:768px) 100vw, (max-width: 1200px) 50vw , 33vw"
+              loading="eager"
+            />
           </div>
         </div>
 
@@ -71,7 +77,9 @@ const Hero = ({ Product }: { Product: Products[] }) => {
             alt="scroller"
             width={60}
             height={30}
-          ></Image>
+            quality={75}
+            loading="lazy"
+          />
         </div>
       </div>
     </>

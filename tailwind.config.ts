@@ -13,14 +13,8 @@ const config: Config = {
   			'smooth'
   		],
   		fontFamily: {
-  			josefin: [
-  				'Josefin Sans',
-  				'sans-serif'
-  			],
-  			lato: [
-  				'Lato',
-  				'sans-serif'
-  			]
+  		josefin: ['var(--font-josefin)'],
+        lato: ['var(--font-lato)'],
   		},
   		screens: {
   			defualt: {

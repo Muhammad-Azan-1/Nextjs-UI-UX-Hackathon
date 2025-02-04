@@ -8,8 +8,10 @@ import ProductIncrementDecrement from "@/components/ProductIncrementDecrement/Pr
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState, useEffect } from "react";
+import Footer from "@/components/Footer/Footer";
+import DeleteItemsBtn from "@/components/CartItemsDeleteBtn/CartItemsDeleteBtn";
 
-const ShoppingCart = () => {
+const ProductList = () => {
   const { cartItems, deleteItem } = useCart();
   const [items, setItems] = useState<boolean>(false);
   const [totalItems, setTotalItems] = useState<number>(0);
@@ -80,14 +82,7 @@ const ShoppingCart = () => {
                     width={83}
                     height={87}
                   ></Image>
-                  <Image
-                    src="/images/crosssicon.svg"
-                    onClick={() => deleteItem(items.id, items.color)}
-                    className="absolute top-[-2px] right-[-2px] cursor-pointer"
-                    alt="cross Icon"
-                    width={12}
-                    height={12}
-                  ></Image>
+                 <DeleteItemsBtn id={items.id} color={items.color}/>
                 </div>
                 <div
                   className={`flex flex-col ${"max12:w-[160px] w-[170px] sm:w-[190px]"} text-[14px] max10:ml-3 ml-4 mt-2 font-josefin`}
@@ -207,12 +202,14 @@ const ShoppingCart = () => {
             Continue Shopping
           </Link>
         </div>
+        
       )}
+      <Footer/>
     </>
   );
 };
 
-export default ShoppingCart;
+export default ProductList;
 
 // this will convert object key and value inside teh cartItems object into an array
 // cartItems : { 1:{  ,name , quantity , stock , image , price , value} } ->[ [0:"1" , 1:{,name , quantity , stock , image , price , value}] ,[0:"2" , 1:{,name , quantity , stock , image , price , value}] ] same thing for all objects
@@ -244,60 +241,3 @@ export default ShoppingCart;
 // //   console.log(key , item)
 // // })
 
-// button code
-{
-  /* <div className="w-full flex justify-between pt-8">
-                <Button
-                  variant="outline"
-                  size={"default"}
-                  className=" font-josefin pb-[6px] h-[40px] max12:text-[14px] max12:w-[130px]"
-                >
-                  Update Cart
-                </Button>
-NOT USED
-                <Button
-                  variant="outline"
-                  size={"default"}
-                  className=" font-josefin  pb-[6px] h-[40px] max12:text-[14px]  max12:w-[130px]"
-                >
-                  Clear Cart
-                </Button>
-              </div> */
-}
-
-// box code
-
-{
-  /* <div className="flex gap-x-[52px] justify-center md:justify-start flex-wrap lg:flex-nowrap flex-row items-center lg:flex-col mt-14 "> */
-}
-
-{
-  /*  <div className="w-[350px] mt-10 md:mt-0 min7:w-[370px]">
-                <h1 className="flex  justify-center lg:mt-8  gap-y-8 text-[20px] font-[700] font-josefin text-[#15245E]">
-                  Calculate Shopping
-                </h1>
-                <div className="w-full mt-4 lg:mt-8 h-[284px] bg-[#F4F4FC]">
-                  <div className="w-full flex px-6 h-full  justify-evenly  flex-col">
-                    <div className="flex justify-between text-[#C5CBE3] font-lato border-b-[2px] mt-2 border-[#E1E1E4] pb-1">
-                      <p className="font-[600] text-[14px]">Bangladesh</p>
-                    </div>
-                    <div className="flex justify-between font-lato text-[#C5CBE3]  border-b-[2px] border-[#E1E1E4] pb-1">
-                      <p className="font-[600] text-[14px]">Totals</p>
-                    </div>
-NOT USED
-                    <div className="flex justify-between font-lato text-[#C5CBE3]  border-b-[2px] border-[#E1E1E4] pb-1">
-                      <p className="font-[600] text-[14px]">Totals</p>
-                    </div>
-
-                    <Button
-                      variant="outline"
-                      size={"default"}
-                      className=" w-[65%] font-josefin mt-2  "
-                    >
-                      Calculating Shopping
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div> */
-}

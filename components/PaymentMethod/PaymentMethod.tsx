@@ -1,14 +1,21 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const PaymentMethod = () => {
-  const [selectedOption, setSelectedOption] = useState(() => {
-    return sessionStorage.getItem("paymentMethod") || "cod";
-  });
+  const [selectedOption, setSelectedOption] = useState<string>('');
+console.log(selectedOption , "selectedOption")
+
+  useEffect(()=>{
+    if(typeof window !== "undefined"){
+      const storedVal = sessionStorage.getItem('paymentMethod')
+      console.log(storedVal , 'session storage val')
+      if(storedVal) setSelectedOption(storedVal)
+      }
+  },[])
 
   useEffect(() => {
-    sessionStorage.setItem("paymentMethod", selectedOption);
+    sessionStorage.setItem("paymentMethod", (selectedOption));
   }, [selectedOption]);
 
   return (

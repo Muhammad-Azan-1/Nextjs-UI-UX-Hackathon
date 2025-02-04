@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Brands from "@/components/Brands/Brands";
 import Header from "@/components/Header/Header";
 import { Metadata } from "next";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Login | Hekhto Sofas - Premium Sofas for Your Home",
@@ -89,6 +90,7 @@ const login = () => {
       </div>
 
       <Brands />
+      <Footer/>
     </>
   );
 };

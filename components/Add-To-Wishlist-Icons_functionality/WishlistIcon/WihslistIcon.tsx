@@ -3,8 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import useWishlist from "@/context/WishListContext";
 import { useToast } from "@/hooks/use-toast";
 
-const HeartIcon = ({
-  stock,
+const HeartIcon = ({ stock,
   id,
   name,
   image,
@@ -31,6 +30,7 @@ const HeartIcon = ({
   const { addItem } = useWishlist();
   return (
     <div
+     data-testid="wishlist-icon"
       onClick={handleWishlistItems}
       className="absolute flex items-center justify-center max-w2:right-[65px]  right-[85px]  max-w5:right-[45px] bottom-3 w-[30px] h-[30px] hover:bg-[#151875] bg-white rounded-[50%] group "
     >

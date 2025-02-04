@@ -9,40 +9,12 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import useCart from "@/context/CartContext";
-import useWishlist from "@/context/WishListContext";
-import { useState, useEffect } from "react";
-import { CiHeart } from "react-icons/ci";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+
+import { useState } from "react";
 import HeaderTopBar from "../HeaderTopBar/HeaderTopBar";
 const Header = () => {
   const [Menu, setMenu] = useState(false);
-  // const [amount, setAmount] = useState<number | null>()
-  // const [wishAmount , setWishAmout]= useState<number>(0)
-  // const { cartItems } = useCart()
-  // const {wishListItem} = useWishlist()
 
-  // useEffect(()=>{
-  //   if(wishListItem){
-  //   setWishAmout(wishListItem.length)
-  //   }
-  // },[wishListItem])
-
-  // useEffect(() => {
-
-  //   if (cartItems) {
-  //     const ids: string[] = Object.keys(cartItems)
-
-  //     const ID = ids.map((items) => (items))
-
-  //     const totalItems = ID.reduce((acc, ID) => {
-  //       return acc + cartItems[ID]?.value
-  //     }, 0)
-  //     setAmount(totalItems)
-
-  //     //console.log(totalItems)
-  //   }
-  // }, [cartItems]);
 
   function toggleMenu() {
     setMenu((menu: boolean) => !menu);
@@ -55,7 +27,7 @@ const Header = () => {
 
       {/* header main */}
 
-      <div className=" pt-20 mb-10 w-full  h-[80px] flex justify-between md:justify-center items-center  px-3">
+      <div className=" pt-16 mb-4 w-full   flex justify-between md:justify-center items-center  px-3">
         <div className="w-[100px] md:w-[150px] lg:w-[130px] pt-1 md:pt-0 flex justify-start sm:justify-center md:justify-start">
           <Link href="/">
             <Image
@@ -64,7 +36,9 @@ const Header = () => {
               className="cursor-pointer w-[70px] min-w:w-[80px] sm:w-[90px] lg:w-[100px]"
               width={100}
               height={34}
-            ></Image>
+              quality={75}
+              priority
+            />
           </Link>
         </div>
 
@@ -75,20 +49,23 @@ const Header = () => {
     ${Menu ? "top-[0px] translate-y-0 " : "translate-y-[-100%] md:translate-y-[0px] "} `}
         >
           <div className="inline-block mb-[90px] max-w:mt-8 sm:mb-[50px] md:mb-0  md:hidden">
-            <Link href="/">
+            <Link  aria-label="Go to homepage" href="/">
               <Image
                 src="/images/logo.svg"
                 alt="logo.svg"
                 className="cursor-pointer w-[150px]"
                 width={130}
                 height={34}
-              ></Image>
+                loading="lazy"
+                quality={75}
+              />
             </Link>
           </div>
 
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400] text-[18px] md:text-[16px] mb-10 md:mb-0 font-lato"
             href="/"
+           aria-label="Go to homepage"
           >
             Home{" "}
             <span className="hidden md:inline-block">
@@ -101,30 +78,36 @@ const Header = () => {
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400]  text-[18px] md:text-[16px] mb-10 md:mb-0  font-lato"
             href="/About"
+             aria-label="Go to About us"
           >
             About
           </Link>
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400]  text-[18px] md:text-[16px] mb-10 md:mb-0  font-lato"
             href="/shop"
+             aria-label="Go to shop"
           >
             Shop
           </Link>
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400]  text-[18px] md:text-[16px] mb-10 md:mb-0  font-lato"
             href="/Blog"
+             aria-label="Go to Blog"
           >
             Blog
           </Link>
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400]  text-[18px] md:text-[16px] mb-10 md:mb-0  font-lato"
             href="/product"
+             aria-label="Go to Product"
           >
             Product
           </Link>
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400]  text-[18px] md:text-[16px]  mb-10 md:mb-0 font-lato"
             href="/Contact"
+             aria-label="Go to Contact"
+           data-testid="contact-link"
           >
             Contact
           </Link>
@@ -137,10 +120,12 @@ const Header = () => {
             />
           </div>
 
-          <ul className="absolute max-w:top-[185px] top-[150px] cursor-pointer justify-center flex mt-3">
+          
+          <div className="absolute max-w:top-[185px] top-[150px] cursor-pointer justify-center flex mt-3">
             <Link
               href="/Login"
               className="cursor-pointer inline-block sm:hidden"
+               aria-label="Go to Login"
             >
               <span className="text-[16px] font-[600]">Login</span>
               <FontAwesomeIcon className=" ml-1 text-[16px]" icon={faUser} />
@@ -149,35 +134,39 @@ const Header = () => {
             <Link
               href="/"
               className=" text-black cursor-pointer inline-block sm:hidden"
+               aria-label="Go to Signup"
             >
               <span className="text-[16px] font-[600]">Sign Up</span>
               <FontAwesomeIcon className=" ml-1 text-[16px]" icon={faUser} />
             </Link>
-          </ul>
+          </div>
+        
 
-          <ul className="inline-block absolute top-8 left-4 sm:hidden cursor-pointer">
-            <Link href="/">
-              <span className="text-[16px] cursor-pointer font-[600]">
+          <div className="inline-block absolute top-8 left-4 sm:hidden cursor-pointer">
+        
+              <p className="text-[16px] cursor-pointer font-[600]">
                 English
-              </span>
+              </p>
               <FontAwesomeIcon
                 className=" ml-1 text-[16px]"
                 icon={faChevronDown}
               />
-            </Link>
-            <Link href="/">
-              <span className="text-[16px]  cursor-pointer font-[600] ml-3">
+           
+        
+              <p className="text-[16px]  cursor-pointer font-[600] ml-3">
                 USD
-              </span>
+              </p>
               <FontAwesomeIcon
                 className=" ml-1 text-[16px]"
                 icon={faChevronDown}
               />
-            </Link>
-          </ul>
+        
+          </div>
         </div>
 
+
         <div className="flex justify-center md:justify-end w-[75%] md:w-[360px] lg:w-[500px]  h-[40px]">
+          <label htmlFor=""></label>
           <input
             type="text"
             className="border-[2px] border-r-0 border-[#E7E6EF] w-full md:w-[220px] lg:w-[320px]"
@@ -186,6 +175,8 @@ const Header = () => {
             <FontAwesomeIcon className="text-[#f3f9ff]" icon={faSearch} />
           </div>
         </div>
+
+
 
         <div className="flex cursor-pointer  justify-end sm:justify-center md:hidden w-[50px]">
           <FontAwesomeIcon

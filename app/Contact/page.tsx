@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header/Header";
 import { Metadata } from "next";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Contact Us - Hekhto Sofas",
@@ -215,6 +216,7 @@ const Contact = () => {
           />
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

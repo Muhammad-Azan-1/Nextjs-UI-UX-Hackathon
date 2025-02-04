@@ -14,7 +14,8 @@ const Banner = ({ Product }: { Product: Products[] }) => {
             className="w-[450px] lg:w-[530px] xl:w-[630px]"
             width={630}
             height={600}
-            priority
+            quality={75}
+            loading="lazy"
           ></Image>
         </div>
 

@@ -5,7 +5,7 @@ import Header from "@/components/Header/Header";
 import ProductList from "@/components/ProductList/ProductList";
 import { client } from "@/sanity/lib/client";
 import { Products } from "@/components/Utilits/Helper";
-
+import Footer from "@/components/Footer/Footer";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,6 +18,7 @@ export const revalidate = 10
 
 const page = async () => {
 
+ try{
 
   const query1 = `
   *[_type == 'product'] | order(id asc) {
@@ -45,9 +46,22 @@ const page = async () => {
         name3="Shop" />
       <ProductList DataFetched={DataFetched} />
       <Brands />
+      <Footer/>
 
     </>
   )
+}catch(err){
+  console.log(err)
+  return(
+  <>
+ <Header/>
+ <div className="w-full h-screen flex justify-center bg-black text-white font-lato items-center">
+  <p className="text-center text-[16px font-[700] sm:text-[25px]">Network Error Fail to load the Products. Please try again later</p>
+  </div>
+  <Footer/>
+  </>
+  )
+}
 }
 
 export default page;

@@ -17,8 +17,9 @@ const Blog = () => {
                 width={380}
                 height={380}
                 className="w-full rounded-[6px]"
-                priority
-              ></Image>
+                quality={75}
+               loading="lazy"
+              />
             </div>
 
             <div className="flex flex-col h-[200px] justify-evenly px-[16px] rounded-[6px] bg-white shadow-md group-hover:shadow-lg">
@@ -30,17 +31,18 @@ const Blog = () => {
                     className=""
                     width={14}
                     height={40}
-                  ></Image>
+                    loading="lazy"
+                  />
                   <span className="text-[#151875] ml-1">SaberAli</span>
                 </div>
                 <div className="flex items-center">
                   <Image
                     src="/images/calendar.svg"
                     alt="pen loogo"
-                    className=""
+                     loading="lazy"
                     width={14}
                     height={40}
-                  ></Image>
+                  />
                   <span className="text-[#151875] ml-1">21 August,2020</span>
                 </div>
               </div>
@@ -74,8 +76,9 @@ const Blog = () => {
                 width={380}
                 height={380}
                 className="w-full rounded-[6px]"
-                priority
-              ></Image>
+                quality={75}
+                 loading="lazy"
+              />
             </div>
 
             <div className="flex flex-col h-[200px] justify-evenly px-[16px] rounded-[6px] bg-white shadow-md group-hover:shadow-lg">
@@ -88,7 +91,8 @@ const Blog = () => {
                     width={14}
                     height={40}
                     priority
-                  ></Image>
+                    quality={75}
+                  />
                   <span className="text-[#151875] ml-1">SaberAli</span>
                 </div>
                 <div className="flex items-center">
@@ -98,8 +102,9 @@ const Blog = () => {
                     className=""
                     width={14}
                     height={40}
-                    priority
-                  ></Image>
+                    quality={75}
+                   loading="lazy"
+                  />
                   <span className="text-[#151875] ml-1">21 August,2020</span>
                 </div>
               </div>
@@ -132,8 +137,9 @@ const Blog = () => {
                 width={380}
                 height={380}
                 className="w-full rounded-[6px]"
-                priority
-              ></Image>
+                quality={75}
+                loading="lazy"
+              />
             </div>
 
             <div className="flex flex-col h-[200px] justify-evenly px-[16px] rounded-[6px] bg-white shadow-md group-hover:shadow-lg">
@@ -145,8 +151,9 @@ const Blog = () => {
                     className=""
                     width={14}
                     height={40}
+                    quality={75}
                     priority
-                  ></Image>
+                  />
                   <span className="text-[#151875] ml-1">SaberAli</span>
                 </div>
                 <div className="flex items-center">
@@ -156,8 +163,9 @@ const Blog = () => {
                     className=""
                     width={14}
                     height={40}
-                    priority
-                  ></Image>
+                   loading="lazy"
+                    quality={75}
+                  />
                   <span className="text-[#151875] ml-1">21 August,2020</span>
                 </div>
               </div>

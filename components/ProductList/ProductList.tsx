@@ -6,6 +6,7 @@ import CartIcon from "../Add-To-Card-Icons_functionality/CartIcon/CartIcon";
 import HeartIcon from "../Add-To-Wishlist-Icons_functionality/WishlistIcon/WihslistIcon";
 
 const ProductList = ({ DataFetched }: { DataFetched: Products[] }) => {
+  console.log(ProductList , "PRoduct list")
   return (
     <>
       <div className="relative   items-center flex flex-wrap justify-center gap-y-24 gap-x-[25px] sm:gap-x-[35px] lg:gap-x-[50px] min1:gap-x-[85px] h-auto mx-2 lg:mx-4 min1:mx-20 pt-24">

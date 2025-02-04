@@ -13,15 +13,16 @@ const page = () => {
 
       <div className="grid  font-lato pt-[44px] grid-cols-1 lg:grid-cols-[minmax(0,65%)_45%]">
         {/* grid box1 */}
-        <div className=" pt-16  lg:px-8 min7:px-12 ">
+        <div className=" pt-16 pb-4  lg:px-8 min7:px-12 ">
           <div className="w-full text-[12px] flex flex-col justify-center items-center ">
             <Image
               src="/images/logo.svg"
               alt="logo"
               width={200}
               height={200}
-              priority
-            ></Image>
+             loading="lazy"
+            />
+        
             <div className="flex justify-center w-full font-lato font-[600] mt-2">
               <span>Geniune</span>
               <span className="px-2">|</span>
@@ -48,8 +49,9 @@ const page = () => {
                   </label>
                 </div>
                 <input
-                  type="text"
+                  type="Email"
                   placeholder="Email"
+                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
                   className="h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                 />
 
@@ -160,8 +162,13 @@ const page = () => {
         </div>
 
         {/* gridbox2 */}
-        <div className="bg-[#f5f5f5] hidden lg:inline-block  lg:sticky lg:top-10 h-[calc(100vh-0px)] overflow-y-auto">
-          <GridTwoContent />
+        <div className="bg-[#f5f5f5] border-l-[1px] hidden lg:inline-block  relative">
+        <div
+    className="lg:sticky lg:top-10 max-h-[calc(100vh-40px)] overflow-auto"
+    id="summaryContainer"
+  >
+    <GridTwoContent />
+  </div>
         </div>
       </div>
     </>

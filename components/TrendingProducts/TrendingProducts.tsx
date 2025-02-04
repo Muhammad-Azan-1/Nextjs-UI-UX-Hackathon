@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import Link from "next/link";
 import { Products } from "../Utilits/Helper";
 const TrendingProducts = ({ Product }: { Product: Products[] }) => {
@@ -15,14 +14,15 @@ const TrendingProducts = ({ Product }: { Product: Products[] }) => {
           Trending Products
         </h1>
 
-        <div className="w-full h-full pt-6 flex justify-center  gap-y-14   flex-wrap lg:flex-nowrap gap-x-6 md:gap-x-[30px] min3:gap-x-[25px] lg:gap-3 xl:gap-5 px-3 min3:px-2 xl:px-0">
+        <div className="w-full h-full pt-6 flex justify-center  gap-y-14 flex-wrap lg:flex-nowrap gap-x-6 md:gap-x-[30px] min3:gap-x-[25px] lg:gap-2 xl:gap-5 px-3 min3:px-2 xl:px-0">
           {filteredProducts.map((item) => (
-            <Link key={item.id} href={`/productsDetails/${item.slug}`}>
+         
               <div
-                className="h-[350px] w-[330px] sm:w-[300px]  min3:w-[270px] shadow-lg"
+              key={item.id}
+                className="h-[350px] w-[330px] sm:w-[300px]  min3:w-[270px]  shadow-lg"
                 data-aos="fade-up"
               >
-                <div className="flex justify-center items-center bg-[white] w-[100%] h-[75%]">
+                <div className="flex justify-center items-center bg-[white] w-full h-[75%]">
                   <div className="group overflow-hidden bg-[#F6F7FB] w-[92%] sm:w-[90%] flex justify-center items-center h-[90%]">
                     <Image
                       src={item.imageUrl}
@@ -33,7 +33,7 @@ const TrendingProducts = ({ Product }: { Product: Products[] }) => {
                     ></Image>
                   </div>
                 </div>
-
+                <Link className="" key={item.id} href={`/productsDetails/${item.slug}`}>
                 <div className="group h-[25%] p-1 w-full bg-white   cursor-pointer flex flex-col  items-center gap-1 shadow-xl ">
                   <h1 className="font-poppins truncate w-44 text-[#1A0B5B] font-lato text-[18px] font-[700]">
                     {item.name}
@@ -48,10 +48,12 @@ const TrendingProducts = ({ Product }: { Product: Products[] }) => {
                     </h3>
                   </div>
                 </div>
+                </Link>
               </div>
-            </Link>
+       
           ))}
         </div>
+
 
         {/* box2 of images */}
         <div className="w-full h-auto flex mt-16 justify-center gap-x-[28px] gap-y-[50px] min5:gap-5 items-center flex-wrap lg:flex-nowrap px-3 xl:px-0">
@@ -92,7 +94,7 @@ const TrendingProducts = ({ Product }: { Product: Products[] }) => {
                 className="w-[312px] max-w:w-[240px]"
                 width={312}
                 height={173}
-              ></Image>
+              />
             </div>
           </div>
 
@@ -106,7 +108,7 @@ const TrendingProducts = ({ Product }: { Product: Products[] }) => {
                   alt="chair"
                   width={65}
                   height={71}
-                ></Image>
+                />
               </div>
               <div>
                 <h2 className="text-[#151875] font-josefin text-[16px]  lg:text-[13px] min5:text-[16px] min5:ml-1 ml-0">
@@ -125,7 +127,7 @@ const TrendingProducts = ({ Product }: { Product: Products[] }) => {
                   alt="chair"
                   width={65}
                   height={71}
-                ></Image>
+                />
               </div>
               <div>
                 <h2 className="text-[#151875] font-josefin text-[16px]  lg:text-[13px] min5:text-[16px] min5:ml-1 ml-0">
@@ -144,7 +146,7 @@ const TrendingProducts = ({ Product }: { Product: Products[] }) => {
                   alt="chair"
                   width={65}
                   height={71}
-                ></Image>
+                />
               </div>
               <div>
                 <h2 className="text-[#151875] font-josefin text-[16px] lg:text-[13px] min5:text-[16px] min5:ml-1 ml-0">

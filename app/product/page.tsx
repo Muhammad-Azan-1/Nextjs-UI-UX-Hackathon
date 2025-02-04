@@ -1,11 +1,7 @@
 import Pagesbar from "@/components/PageBar/PageBar";
 import Image from "next/image";
 import { faStar, faHeart } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faInstagram, faTwitter,} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { productDetails } from "@/Data/Data";
@@ -13,6 +9,7 @@ import Brands from "@/components/Brands/Brands";
 import Header from "@/components/Header/Header";
 
 import { Metadata } from "next";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Login | Hekhto Sofas - Premium Sofas for Your Home",
@@ -30,7 +27,7 @@ export const metadata: Metadata = {
   },
 };
 const Shop = () => {
-  // w-[90%] min3:w-[900px] lg:w-[1000px] min7:
+
   return (
     <>
       <Header />
@@ -322,6 +319,7 @@ const Shop = () => {
         </div>
       </div>
       <Brands />
+      <Footer/>
     </>
   );
 };

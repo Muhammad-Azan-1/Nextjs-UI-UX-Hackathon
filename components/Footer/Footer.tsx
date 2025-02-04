@@ -91,7 +91,7 @@ const Footer = () => {
         </p>
         <div className="flex w-[150px] justify-evenly sm:justify-between mt-4 sm:mt-0">
           <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
-            <Link href="">
+            <Link  aria-label="Go to Facebook" href="">
               {" "}
               <FontAwesomeIcon
                 className="text-white max-w:text-[14px]"
@@ -100,7 +100,7 @@ const Footer = () => {
             </Link>
           </div>
           <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
-            <Link href="">
+            <Link     aria-label="Go to Instagram" href="">
               {" "}
               <FontAwesomeIcon
                 className="text-white max-w:text-[14px]"
@@ -109,7 +109,7 @@ const Footer = () => {
             </Link>
           </div>
           <div className="bg-[#1A0B5B] w-[30px] h-[30px] flex justify-center items-center rounded-[100%]">
-            <Link href="">
+            <Link     aria-label="Go to Twitter" href="">
               {" "}
               <FontAwesomeIcon
                 className="text-white max-w:text-[14px]"

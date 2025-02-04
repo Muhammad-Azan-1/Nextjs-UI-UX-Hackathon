@@ -6,6 +6,7 @@ import { clientsImages } from "@/Data/Data";
 import Header from "@/components/Header/Header";
 import { Metadata } from "next";
 
+import Footer from "@/components/Footer/Footer";
 export const metadata: Metadata = {
   title: "About Us | Hekhto - Premium Sofas for Your Home",
   description:
@@ -79,6 +80,7 @@ const page = () => {
                   width={55}
                   className={`rounded-[5px] ${id === "2" ? "w-[65px] " : "w-[60px] mt-[12px]"} `}
                   height={55}
+                  priority
                 ></Image>
               </div>
             ))}
@@ -103,11 +105,13 @@ const page = () => {
                 alt="scroller"
                 width={100}
                 height={40}
+                priority
               ></Image>
             </div>
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

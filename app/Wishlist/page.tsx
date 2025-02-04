@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import useWishlist from "@/context/WishListContext";
 import { CiHeart } from "react-icons/ci";
-
+import Footer from "@/components/Footer/Footer";
 import useCart from "@/context/CartContext";
+import WishListItemsDeleteBtn from "@/components/WishListItemsDeleteBtn/WishListItemsDeleteBtn";
 
 const WihsList = () => {
   const { wishListItem, deleteItem } = useWishlist();
@@ -40,14 +41,7 @@ const WihsList = () => {
                         width={83}
                         height={87}
                       ></Image>
-                      <Image
-                        src="/images/crosssicon.svg"
-                        onClick={() => deleteItem(response.id)}
-                        className="absolute top-[0] right-[0px] cursor-pointer"
-                        alt="cross Icon"
-                        width={12}
-                        height={12}
-                      ></Image>
+                      <WishListItemsDeleteBtn id={response.id} color={response.color}/>
                     </div>
 
                     <div className="text-[14px] max13:w-[150px] ml-2 font-josefin  flex flex-col justify-center items-start">
@@ -113,6 +107,7 @@ const WihsList = () => {
           </Link>
         </div>
       )}
+      <Footer/>
     </>
   );
 };

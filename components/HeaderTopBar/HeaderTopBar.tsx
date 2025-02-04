@@ -3,9 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
   faUser,
-  faSearch,
-  faBars,
-  faTimes,
+ 
 } from "@fortawesome/free-solid-svg-icons";
 import useCart from "@/context/CartContext";
 import useWishlist from "@/context/WishListContext";
@@ -15,7 +13,8 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 import Image from "next/image";
 const HeaderTopBar = () => {
-  const [amount, setAmount] = useState<number | null>();
+
+  const [amount, setAmount] = useState<number>(0);
   const [wishAmount, setWishAmout] = useState<number>(0);
   const { cartItems } = useCart();
   const { wishListItem } = useWishlist();
@@ -71,34 +70,34 @@ const HeaderTopBar = () => {
       </div>
 
       <div className="flex   justify-end gap-x-4 lg:justify-center items-center max-w:w-full   w-[350px] lg:w-[410px]">
-        <ul className="  flex items-center w-[99%] justify-between  lg:justify-evenly">
-          <li className="">
+        <div className="  flex items-center w-[99%] justify-between  lg:justify-evenly">
+          <p className="">
             <span className="  text-[15px]">English</span>
             <FontAwesomeIcon
               className="ml-1 text-[15px]"
               icon={faChevronDown}
             />
-          </li>
-          <li className="max13:hidden cursor-pointer">
+          </p>
+          <p className="max13:hidden cursor-pointer">
             <span className="  text-[15px]">USD</span>
             <FontAwesomeIcon
               className="ml-1 text-[15px]"
               icon={faChevronDown}
             />
-          </li>
+          </p>
           <Link href="/Login" className="">
             {" "}
-            <li className="">
+            <p className="">
               <span className="text-[15px] cursor-pointer">Login</span>
               <FontAwesomeIcon
                 className=" ml-1 text-[15px]"
                 icon={faUser}
               />{" "}
-            </li>
+            </p>
           </Link>
 
           <div className="relative ">
-            <Link href="/Wishlist">
+            <Link  aria-label="Go to Wish List" href="/Wishlist">
               <CiHeart className=" cursor-pointer  text-[35px]" />
             </Link>
             <div
@@ -109,7 +108,7 @@ const HeaderTopBar = () => {
           </div>
 
           <div className="relative">
-            <Link href="/shoppingCart">
+            <Link     aria-label="Go to Shoppin cart" href="/shoppingCart">
               <AiOutlineShoppingCart className="cursor-pointer ml-0 text-[35px] " />
             </Link>
             <div
@@ -118,7 +117,7 @@ const HeaderTopBar = () => {
               {amount == 0 ? "" : amount}
             </div>
           </div>
-        </ul>
+        </div>
       </div>
     </div>
   );

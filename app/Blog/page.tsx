@@ -5,14 +5,11 @@ import { MdSearch } from "react-icons/md";
 import { recentPosts, saleProduct } from "@/Data/Data";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF,faInstagram, faTwitter,} from "@fortawesome/free-brands-svg-icons";
 import Brands from "@/components/Brands/Brands";
 import Header from "@/components/Header/Header";
 import { Metadata } from "next";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Our Blog | Hekhto - Premium Sofas for Your Home",
@@ -32,7 +29,7 @@ const page = () => {
         name2="Page"
         name3="Blog page"
       />
-      {/* min6:w-[550px] lg:w-[650px] min5:w-[750px] */}
+   
       <div className="w-full h-auto  justify-center  flex flex-row max8:flex-col max7:gap-x-8 max6:gap-x-6 gap-x-10 xl:gap-x-16 px-1 min6:px-3 xl:px-0">
         <div className=" h-auto flex flex-col items-center justify-start max7:justify-evenly max7:pt-6 pt-16">
           {BlogData.map((item) => (
@@ -388,6 +385,7 @@ const page = () => {
         </div>
       </div>
       <Brands />
+      <Footer/>
     </>
   );
 };

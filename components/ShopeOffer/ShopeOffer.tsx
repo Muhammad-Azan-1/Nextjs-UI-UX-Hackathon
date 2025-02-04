@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
+
 const ShopeOffer = ({ heading = "What Shope Offer" }) => {
   useEffect(() => {
     AOS.init({});
