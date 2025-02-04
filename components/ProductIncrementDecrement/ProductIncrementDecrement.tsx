@@ -24,7 +24,7 @@ const ProductIncrementDecrement = ({
       className={` ${num ? "w-[70px] max13:w-[60px] max13:p-1  flex p-2 justify-between items-center rounded-[3px] border-[1px] border-[#dedede]" : " w-[95px] h-[50px] pt-[5px]  flex p-2 justify-between items-center rounded-[3px] border-[1px] border-[#dedede]"}`}
     >
       <button onClick={() => setDecrement(id, colors)}>
-        <FaMinus className="text-[#151875]" size={12} />
+        <FaMinus aria-label="Decrement" className="text-[#151875]" size={12} />
       </button>
 
       <p className="text-[14px] max13:text-[12px] text-[#151875] font-[700]">
@@ -33,7 +33,7 @@ const ProductIncrementDecrement = ({
       <button
         onClick={() => setIncrement(stock, id, name, price, image, colors)}
       >
-        <FaPlus className="text-[#151875]" size={12} />
+        <FaPlus aria-label="Increment" className="text-[#151875]" size={12} />
       </button>
     </div>
   );
