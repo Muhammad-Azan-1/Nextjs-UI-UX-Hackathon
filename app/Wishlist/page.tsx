@@ -3,17 +3,16 @@ import Header from "@/components/Header/Header";
 import PageBar from "@/components/PageBar/PageBar";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import useWishlist from "@/context/WishListContext";
 import { CiHeart } from "react-icons/ci";
 import Footer from "@/components/Footer/Footer";
-import useCart from "@/context/CartContext";
 import WishListItemsDeleteBtn from "@/components/WishListItemsDeleteBtn/WishListItemsDeleteBtn";
-
+import AddToCartBtnWishlist from "@/components/Add-To-Card-Icons_functionality/AddToCartBtnWishList/AddToCartBtnWishlist";
 const WihsList = () => {
   const { wishListItem } = useWishlist();
-  const { setIncrement } = useCart();
+
+ 
 
   return (
     <>
@@ -58,23 +57,7 @@ const WihsList = () => {
                   </div>
 
                   <div className=" ">
-                    <Button
-                      onClick={() =>
-                        setIncrement(
-                          response.stock,
-                          response.id,
-                          response.name,
-                          response.price,
-                          response.image,
-                          response.color
-                        )
-                      }
-                      className="font-josefin max13:text-[12px] max13:w-[85px] w-[100px] "
-                      size={"outline"}
-                      variant={"outline"}
-                    >
-                      Add To Cart
-                    </Button>
+                   <AddToCartBtnWishlist stock={response.stock} id={response.id} name={response.name} image={response.image} price={response.price} colors={response.color}/>
                   </div>
 
                   <Link

@@ -1,0 +1,7 @@
+Test Case Id,   Test Description,   Test Steps,   Expected Result,  Actuall Result,      Status, Severity Level,    Remarks
+T01,Checking ProductList Page,Navigate to ProductList  > Verify  Products,Products displayed Correctly,Products displayed Correctly,PASSED,LOW, NO ERROR FOUND
+T02,Checking Cart Funtionality, Navigate to shoppingCart >   Add Items & Remove Items from the cart,products add and delete perfectly,same as expected result,PASSED,LOW,NO ISSSUE FOUND
+T03,Checking WishList Funtionality,Navigate to wihslist > Add Items & Remove Items from the wishList,products add and delete perfectly,same as expected result,PASSED,LOW,NO ISSSUE FOUND
+T04,Testing website on differ browers,tested on firefox / safari / Google / Brave / Edge , website works perfeclty fine, website works perfeclty fine,PASSED,LOW,NO ISSSUE FOUND
+T05,Testing responivness,tested responsivness on mobile / tablets / desktops / laptops,Excellent Responsivness,Excellent Responsivness,PASSED,LOW,NO ISSSUE FOUND
+T06,Testing Porduct detials page,Navigate to ProductList  > click view Item > re-direct to product details pg, Product displayed will all detals, Product dsiplayed will all detals,PASSED,LOW,NO ISSSUE FOUND
