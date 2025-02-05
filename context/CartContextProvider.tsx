@@ -23,8 +23,8 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
       const storedAmount = sessionStorage.getItem("amountInLocal");
       if(storedAmount){
         setcartItems(JSON.parse(storedAmount));
-        console.log(storedAmount)
-        console.log("RUNNING")
+       
+       
       }
     }
   }, []); 

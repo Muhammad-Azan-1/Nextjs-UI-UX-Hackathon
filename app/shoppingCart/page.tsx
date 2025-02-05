@@ -22,7 +22,7 @@ const ProductList = () => {
     if (cartItems) {
       const itemsVal = Object.values(cartItems).some((item) => item?.value > 0);
       setItems(itemsVal);
-
+   
       const noOfItems: number[] = Object.values(cartItems).map(
         (items) => items.value
       );

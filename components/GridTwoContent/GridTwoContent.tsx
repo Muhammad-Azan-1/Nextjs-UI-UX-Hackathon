@@ -9,14 +9,16 @@ const GridTwoContent = () => {
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalAmount, setTotalAmount] = useState<number>(0);
 
+
   useEffect(() => {
     if (cartItems) {
-    
 
+      // console.log("Updated Cart Items:", cartItems);
+  
       const noOfItems: number[] = Object.values(cartItems).map(
         (items) => items.value
       );
-      console.log("Total no of Items", noOfItems);
+      // console.log("Total no of Items", noOfItems);
       if (noOfItems.length > 0) {
         setTotalItems(noOfItems.reduce((acc, curr) => acc + curr));
       }
@@ -24,7 +26,7 @@ const GridTwoContent = () => {
       const priceOfEachItem: number[] = Object?.values(cartItems).map(
         (items) => items.price
       );
-      console.log("total price", priceOfEachItem);
+      // console.log("total price", priceOfEachItem);
 
       const totalPrice = noOfItems.map(
         (items, index) => items * priceOfEachItem[index]

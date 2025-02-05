@@ -1,15 +1,14 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import CheckoutBtn from "../CheckoutBtn/CheckoutBtn";
 
 const PaymentMethod = () => {
   const [selectedOption, setSelectedOption] = useState<string>('');
-console.log(selectedOption , "selectedOption")
 
   useEffect(()=>{
     if(typeof window !== "undefined"){
       const storedVal = sessionStorage.getItem('paymentMethod')
-      console.log(storedVal , 'session storage val')
       if(storedVal) setSelectedOption(storedVal)
       }
   },[])
@@ -19,6 +18,7 @@ console.log(selectedOption , "selectedOption")
   }, [selectedOption]);
 
   return (
+    <>
     <div className="flex flex-col">
       <div className="mt-4">
         <h2 className="text-[21px] font-[700]">Payment method</h2>
@@ -145,10 +145,21 @@ console.log(selectedOption , "selectedOption")
           </div>
         </div>
       </div>
+      <div className="w-full">
+      <CheckoutBtn paymentMethod={selectedOption}/>
+      </div>
     </div>
+
+     {/* checkout button */}
+
+      
+   
+    </>
   );
 };
 
 export default PaymentMethod;
 
 //
+
+

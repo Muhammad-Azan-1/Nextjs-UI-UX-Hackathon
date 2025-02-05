@@ -5,14 +5,20 @@ import ContactInputField from "@/components/ContactInputField/ContactInputField"
 import PaymentMethod from "@/components/PaymentMethod/PaymentMethod";
 import GridTwoContent from "@/components/GridTwoContent/GridTwoContent";
 import CheckOutAccordin from "@/components/CheckOutAccordin/CheckOutAccordin";
+import CheckoutBtn from "@/components/CheckoutBtn/CheckoutBtn";
+
 
 const page = () => {
+
+
+
   return (
     <>
       <HeaderTopBar />
 
       <div className="grid  font-lato pt-[44px] grid-cols-1 lg:grid-cols-[minmax(0,65%)_45%]">
         {/* grid box1 */}
+        <form action=""> 
         <div className=" pt-16 pb-4  lg:px-8 min7:px-12 ">
           <div className="w-full text-[12px] flex flex-col justify-center items-center ">
             <Image
@@ -38,7 +44,7 @@ const page = () => {
 
           <div className="w-full flex justify-center items-center lg:w-auto">
             <div className="lg:w-full w-[600px] px-3 inline-block mt-8 lg:mt-14">
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full">
                 {/* email input field */}
                 <div className="w-full flex justify-between">
                   <label className="text-[21px] mb-[6px] font-[700]">
@@ -51,7 +57,7 @@ const page = () => {
                 <input
                   type="Email"
                   placeholder="Email"
-                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                  pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
                   className="h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                 />
 
@@ -94,8 +100,7 @@ const page = () => {
                     <option value="">Pakistan</option>
                   </select>
                 </div>
-
-                {/* consumer details */}
+                
                 <div className="flex gap-y-3 flex-col mt-4">
                   <div className="flex gap-x-3 justify-between">
                     <input
@@ -114,21 +119,21 @@ const page = () => {
                     <input
                       type="text"
                       placeholder="Address"
-                      className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
-                    />
-                  </div>
+                        className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                      />
+                    </div>
 
-                  <div className="flex gap-x-3 justify-between">
-                    <input
-                      type="text"
-                      placeholder="City"
-                      className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
-                    />
-                    <input
-                      type="number"
-                      placeholder="Postal code (Optional)"
-                      className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
-                    />
+                    <div className="flex gap-x-3 justify-between">
+                      <input
+                        type="text"
+                        placeholder="City"
+                        className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                      />
+                      <input
+                        type="number"
+                        placeholder="Postal code (Optional)"
+                        className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                      />
                   </div>
 
                   {/* contact field */}
@@ -152,14 +157,13 @@ const page = () => {
             </div>
           </div>
 
-          <div className="  px-3 w-full flex justify-center items-center lg:inline-block ">
-            <div className="w-[600px] lg:w-full mt-5 rounded-[4px] text-[18px] h-[50px] bg-black text-white flex justify-center items-center">
-              <Link href={"stripe later on"} className="font-[700]">
-                Pay now
-              </Link>
-            </div>
-          </div>
+
+    
+
         </div>
+        </form>
+
+
 
         {/* gridbox2 */}
         <div className="bg-[#f5f5f5] border-l-[1px] hidden lg:inline-block  relative">
