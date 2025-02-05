@@ -39,37 +39,43 @@ const GridTwoContent = () => {
 
   return (
     <>
-      <div className="w-full pb-12 pt-2 lg:py-0 bg-[#f5f5f5]  font-lato px-2 sm:px-6 lg:pl-2 lg:pr-10">
+    <div className= " flex justify-center   lg:inline-block border-b-[1px] font-[500]  overflow-visible lg:overflow-y-scroll h-auto lg:h-[320px] font-josefin w-full bg-[#f5f5f5] lg:py-0  pl-0 pr-2 sm:px-4 lg:pl-2 lg:pr-12 min5:pr-24">
+      <div className="flex flex-col items-start justify-center pb-6 pt-3 lg:pt-0 lg:pb-0 w-[600px] lg:w-full lg:inline-block">
         {Object.entries(cartItems || {}).map(([, items]) => (
-          <div key={items.id} className="h-auto w-auto  flex items-center justify-between  pt-8">
-           
-            <div className="flex items justify-start">
-              <div className="relative bg-[#f5f5f5] pl-5 w-[70px] ">
+          <div key={items.id} className="h-auto w-full lg:w-auto mb-3 lg:mb-2   flex   items-center justify-between   lg:gap-x-0  pt-3">
+            <div className="flex  justify-start">
+              <div className="relative bg-[#f5f5f5]  pl-5 max13:w-[75px] w-[80px] ">
                 <Image
                   src={items.image}
                   alt={items.name}
-                  width={60}
-                  height={100}
+                  width={70}
+                  height={0}
                    className="bg-white border-[1px] rounded-[5px]"
-                ></Image>
-                <div className="bg-[#666666] text-[12px] absolute top-[-8px] left-[8px] font-[600] text-white w-[17px] h-[17px] rounded-[50%] flex justify-center items-center">
+                />
+                <div className="bg-[#666666] text-[12px] absolute top-[-8px] left-[8px] font-[600] text-white w-[18px] h-[18px] rounded-[50%] flex justify-center items-center">
                   {items.value}
                 </div>
               </div>
 
-              <div className=" flex justify-center max12:w-[200px] w-auto flex-col pl-3  h-auto">
-                <p className=" truncate text-[14px] sm:text-[16px] max-w-[250px] ">{items.name}</p>
+              <div className=" flex justify-center max12:w-[200px]  flex-col pl-3  h-auto">
+                <p className=" truncate text-[14px] sm:text-[16px]  max-w-[250px] ">{items.name}</p>
                 <p className="text-[#666666] text-[12px] ">
                   Color : {items.color}
                 </p>
               </div>
-            </div>
 
-            <p>Rs {items.price.toLocaleString("en-PK")}</p>
+            </div>
+            <p  className="mb-3 max max-w2:text-[12px] lg:pl-3 font-[600]">Rs {items.price.toLocaleString("en-PK")}</p>
+
+  
           </div>
         ))}
-        <div className="w-full justify-center flex gap-y-3 mt-6 mb-3   flex-col">
-          <div className="pl-4 flex text-[15px] font-[500]   justify-between w-full">
+          </div>
+          </div>
+
+        <div className="flex justify-center lg:inline-block w-full  bg-[#f5f5f5] pt-6 pb-8 border-b-[1px] lg:border-none lg:mt-4 mb-3 pr-2 sm:px-4 lg:pl-4 lg:pr-12 min5:pr-24 ">
+      <div className="justify-center flex-col w-[600px] lg:w-auto flex gap-y-4">
+          <div className="pl-4 flex text-[15px] font-[500]  justify-between w-full">
             <p>Subtotals - {totalItems} items</p>
             <p>Rs. {totalAmount.toLocaleString("en-PK")}</p>
           </div>
@@ -81,8 +87,9 @@ const GridTwoContent = () => {
             <p>Totals</p>
             <p>Rs. {totalAmount.toLocaleString("en-PK")}</p>
           </div>
+         </div>
         </div>
-      </div>
+    
     </>
   );
 };

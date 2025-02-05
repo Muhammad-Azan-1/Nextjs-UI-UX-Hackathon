@@ -38,7 +38,7 @@ const page = () => {
             </div>
           </div>
 
-          <div className="inline-block mt-8 lg:hidden w-full h-[65px] border-[1px] bg-[#f5f5f5]">
+          <div className="inline-block mt-8 lg:hidden w-full h-[65px]  bg-[#f5f5f5]">
             <CheckOutAccordin />
           </div>
 
@@ -166,11 +166,12 @@ const page = () => {
 
 
         {/* gridbox2 */}
-        <div className="bg-[#f5f5f5] border-l-[1px] hidden lg:inline-block  relative">
+        <div className="bg-[#f5f5f5] border-l-[1px] hidden lg:inline-block relative">
         <div
-    className="lg:sticky lg:top-10 max-h-[calc(100vh-40px)] overflow-auto"
+    className="lg:sticky lg:top-[75px] h-screen "
     id="summaryContainer"
   >
+    {/* max-h-[calc(100vh-10px)] */}
     <GridTwoContent />
   </div>
         </div>

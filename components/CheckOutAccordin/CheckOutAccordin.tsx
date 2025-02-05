@@ -12,7 +12,7 @@ const CheckOutAccordin = () => {
         <div className="">
 <Accordion type="single" collapsible>
   <AccordionItem value="item-1">
-    <AccordionTrigger>Order Summary</AccordionTrigger>
+    <AccordionTrigger>Order Summary </AccordionTrigger>
     <AccordionContent>
    <GridTwoContent/>
     </AccordionContent>

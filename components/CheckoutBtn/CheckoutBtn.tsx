@@ -1,7 +1,7 @@
 'use client'
 import useCart from "@/context/CartContext"
 import { useState } from "react"
-import {useRouter} from "next/navigation"
+
 
 const CheckoutBtn = ({paymentMethod} : {paymentMethod : string}) => {
 
@@ -54,7 +54,7 @@ const CheckoutBtn = ({paymentMethod} : {paymentMethod : string}) => {
       
         <div className=" w-full flex justify-center items-center lg:inline-block ">
            
-              <button type="submit" onClick={(e)=> paymentMethod == 'cod' ? handleCod(e) : handleSubmit(e) } className="font-[700] lg:w-[600px] w-full mt-5 rounded-[4px] text-[18px] h-[50px] bg-black text-white flex justify-center items-center">
+              <button type="submit" onClick={(e)=> paymentMethod == 'cod' ? handleCod(e) : handleSubmit(e) } className="font-[700]  w-full mt-5 rounded-[4px] text-[18px] h-[50px] bg-black text-white flex justify-center items-center">
               { loading ? 'Procssing...' : 'Pay now'}
               </button>
           </div>
