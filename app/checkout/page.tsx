@@ -162,7 +162,7 @@ const Page = () => {
                        value={order?.postalCode}
                         type="number"
                         name="postalCode"
-                        placeholder="Postal code (Optional)"
+                        placeholder="Postal code (Optional
                         className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                       />
                   </div>
