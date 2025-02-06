@@ -73,7 +73,7 @@ const GridTwoContent = () => {
           </div>
           </div>
 
-        <div className="flex justify-center lg:inline-block w-full  bg-[#f5f5f5] pt-4 pb-8 border-b-[1px] lg:border-none lg:mt-4 mb-3 pr-2 sm:px-4 lg:pl-4 lg:pr-12 min5:pr-24 ">
+        <div className="flex justify-center h-auto lg:inline-block w-full  bg-[#f5f5f5] pt-4 pb-8 border-b-[1px] lg:border-none lg:mt-4 mb-3 pr-2 sm:px-4 lg:pl-4 lg:pr-12 min5:pr-24 ">
       <div className="justify-center flex-col w-[600px] lg:w-auto flex gap-y-4">
           <div className="pl-4 flex text-[15px] font-[500]  justify-between w-full">
             <p>Subtotals - {totalItems} items</p>

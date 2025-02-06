@@ -55,7 +55,7 @@ const Page = () => {
             <div className="lg:w-full w-[600px] px-3 inline-block mt-8 lg:mt-14">
               <div className="flex flex-col w-full">
                 {/* email input field */}
-                <div className="w-full flex justify-between">
+                <div className="w-full h-auto flex justify-between">
                   <label className="text-[21px] mb-[6px] font-[700]">
                     Contact
                   </label>
@@ -69,9 +69,8 @@ const Page = () => {
                   name="email"
                   placeholder="Email"
                   value={order?.email}
-              
                   pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-                  className="h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                  className=" w-full h-auto py-3 placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                 />
 
                 {/* checkbox */}
@@ -102,14 +101,14 @@ const Page = () => {
                   </label>
                 </div>
 
-                <div className="h-[53px] relative mt-2 placeholder:text-[#707070] appearance-none focus-within:border-black  focus:outline-none focus-within:border-[2px]  focus-within:ring-0 transition-all duration-300  ease-in-out   text-[14px] pl-1 pr-2 border rounded-[4px]">
+                <div className="h-[53px] bg-none relative mt-2 placeholder:text-[#707070] appearance-none focus-within:border-black  focus:outline-none focus-within:border-[2px]  focus-within:ring-0 transition-all duration-300  ease-in-out   text-[14px] pl-1 pr-2 border rounded-[4px]">
                   <label
-                    className="absolute text-[12px] top-[6px] left-3 text-[#707070]"
+                    className="absolute  bg-nonetext-[12px] top-[6px] left-3 text-[#707070]"
                     htmlFor=""
                   >
                     Country/Region
                   </label>
-                  <select className="w-full h-full pt-3 pl-1 focus:outline-none peer ">
+                  <select className="w-full bg-none h-full pt-3 pl-1 focus:outline-none peer ">
                     <option  value="">Pakistan</option>
                   </select>
                 </div>
@@ -123,7 +122,7 @@ const Page = () => {
                       type="text"
                       name="firstName"
                       placeholder="First Name"
-                      className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                      className="w-full h-auto py-3 placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                     />
                     <input
                        value={order?.lastName}
@@ -131,7 +130,7 @@ const Page = () => {
                       type="text"
                       name="lastName"
                       placeholder="Last Name"
-                      className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                      className="w-full  h-auto py-3 placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                     />
                   </div>
 
@@ -142,7 +141,7 @@ const Page = () => {
                       type="text"
                       name="address"
                       placeholder="Address"
-                      className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                      className="w-full  h-auto py-3 placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                       />
                     </div>
 
@@ -153,7 +152,7 @@ const Page = () => {
                         type="text"
                         name="city"
                         placeholder="City"
-                        className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                        className="w-full  h-auto py-3 placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                       />
 
                       <input
@@ -162,7 +161,7 @@ const Page = () => {
                         type="number"
                         name="postalCode"
                         placeholder="Postal code (Optional)"
-                        className="w-full h-[50px] placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
+                        className="w-full  h-auto py-3 placeholder:text-[#707070] focus:border-black  focus:outline-none focus:border-[2px]  focus:ring-0 transition-all duration-300 ease-in-out   text-[14px] pl-[10px] border rounded-[4px]"
                       />
                   </div>
 
@@ -195,7 +194,7 @@ const Page = () => {
         {/* gridbox2 */}
         <div className="bg-[#f5f5f5] border-l-[1px] hidden lg:inline-block relative">
         <div
-    className="lg:sticky lg:top-[75px] h-screen "
+    className=" static lg:sticky lg:top-[75px] h-screen "
     id="summaryContainer"
   >
     {/* max-h-[calc(100vh-10px)] */}
