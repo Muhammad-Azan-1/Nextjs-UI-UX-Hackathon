@@ -1,4 +1,4 @@
-import product from "@/sanity/schemaTypes/product";
+
 import { NextResponse } from "next/server";
 import Stripe from 'stripe'
 
@@ -40,7 +40,7 @@ export  async function POST(req: Request) {
                     quantity : item.value,
             })),
             success_url:`${process.env.NEXT_PUBLIC_BASE_URL}/orderConfirmation`,
-            cancel_url:`${process.env.NEXT_PUBLIC_BASE_URL}/orderConfirmation`
+            cancel_url:`${process.env.NEXT_PUBLIC_BASE_URL}/orderCancle`
         });
 
 

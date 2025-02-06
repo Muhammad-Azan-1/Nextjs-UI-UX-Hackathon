@@ -8,6 +8,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
 config.autoAddCss = false;
 import CartContextProvider from "@/context/CartContextProvider";
 import WishlistContextProvider from "@/context/WishListContextProvider";
+import OrderConfirmationContextProvider from "@/context/OrderConfirmationContextProvider";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -28,9 +29,9 @@ import { Josefin_Sans, Lato } from 'next/font/google';
 
 
 // Load fonts optimally
-const josefin = Josefin_Sans({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '600', '700'], display: 'swap' });
-const lato = Lato({ subsets: ['latin'], weight: ['100', '300', '400', '700', '900'], display: 'swap' });
-
+const josefin = Josefin_Sans({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '600', '700'], display: 'swap', variable: "--font-josefin" });
+const lato = Lato({ subsets: ['latin'], weight: ['100', '300', '400', '700', '900'], display: 'swap', variable: "--font-lato" });
+export{josefin , lato}
 
 export default function RootLayout({
   children,
@@ -38,17 +39,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${josefin.variable} ${lato.variable}`}>
       <body
-        className={`${josefin.className} ${lato.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${geistSans.variable} ${geistMono.variable} antialiased`}
       > 
+      <OrderConfirmationContextProvider>
       <WishlistContextProvider>
         <CartContextProvider>
           {children}
         </CartContextProvider>
         </WishlistContextProvider>
-        <Toaster />
-      
+        </OrderConfirmationContextProvider>
+      < Toaster/>
       </body>
     </html>
   );

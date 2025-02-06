@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 import { Quantity } from "@/components/Utilits/Helper";
 import { useCallback } from "react";
-
+import useHistory from "./OrderHistoryContext";
 // cartItems : {
 //1:{  ,name , quantity , stock , image , price , value}
 //}
@@ -16,8 +16,8 @@ import { useCallback } from "react";
 
 const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setcartItems] = useState<Quantity>({});
+  const {getOrderHistory} = useHistory()
 
-  
   useEffect(() => {
     if (typeof window !== "undefined") {  // Ensure this runs only in the browser
       const storedAmount = sessionStorage.getItem("amountInLocal");
@@ -68,8 +68,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   
 
-  const setIncrement = useCallback(
-    (
+  const setIncrement = useCallback((
       stock: number,
       id: number,
       name: string,
@@ -127,6 +126,27 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
     });
   }
 
+
+  const cartItemsSaveOrderToHistory = useCallback(()=>{
+    if(typeof window != 'undefined' && Object.values(cartItems).length > 0){
+        getOrderHistory(cartItems)
+        console.log("Value is set to order history")
+        setcartItems({})
+        sessionStorage.removeItem("amountInLocal");
+    }
+
+  },[cartItems])
+  // function cartItemsSaveOrderToHistory(){
+  //   if(typeof window !== 'undefined' && Object.values(cartItems).length > 0){
+  //  getOrderHistory({
+  //   ProductsData:cartItems,
+  //  })
+  //   setcartItems({})
+  //   }
+     
+   
+  // }
+
   const contextValue = useMemo(
     () => ({
       cartItems,
@@ -146,6 +166,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
         setcartItems,
         id,
         deleteItem,
+        cartItemsSaveOrderToHistory,
       }}
     >
       {children}

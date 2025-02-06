@@ -9,6 +9,7 @@ type Cart = {
     setDecrement: (id: number, color: string) => void,
     setcartItems: (amount: Quantity) => void,
     deleteItem: (id: number, color: string) => void,
+    cartItemsSaveOrderToHistory : () => void,
     id: number
 
 
@@ -20,6 +21,7 @@ export const CartContext = createContext<Cart>({
     setDecrement: () => { },
     deleteItem: () => { },
     setcartItems: ({}) => { },
+    cartItemsSaveOrderToHistory : () => {},
     id: 0
 
 }

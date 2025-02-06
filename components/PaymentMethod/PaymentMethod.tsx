@@ -2,20 +2,27 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import CheckoutBtn from "../CheckoutBtn/CheckoutBtn";
+import useOrder from "@/context/OrderConfirmationContext";
 
 const PaymentMethod = () => {
   const [selectedOption, setSelectedOption] = useState<string>('');
-
+  const {order , getOrder} = useOrder()
+ 
   useEffect(()=>{
     if(typeof window !== "undefined"){
       const storedVal = sessionStorage.getItem('paymentMethod')
-      if(storedVal) setSelectedOption(storedVal)
+      if(storedVal) {setSelectedOption(storedVal)}
       }
   },[])
 
   useEffect(() => {
     sessionStorage.setItem("paymentMethod", (selectedOption));
+      getOrder({
+    ...order,
+    paymentMethod : selectedOption
+   })
   }, [selectedOption]);
+
 
   return (
     <>

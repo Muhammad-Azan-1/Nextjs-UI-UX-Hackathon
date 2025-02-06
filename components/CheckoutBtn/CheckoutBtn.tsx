@@ -9,7 +9,7 @@ const CheckoutBtn = ({paymentMethod} : {paymentMethod : string}) => {
     const {cartItems} = useCart()
    
     const [loading , setLoading] = useState(false)
-   let Products = Object.values(cartItems)
+   const Products = Object.values(cartItems)
 
     const handleSubmit = async(e: React.MouseEvent<HTMLButtonElement>) =>{
         e.preventDefault()
@@ -44,7 +44,7 @@ const CheckoutBtn = ({paymentMethod} : {paymentMethod : string}) => {
         console.log("COD selected")
         setLoading(true)
         if(typeof window !== 'undefined'){
-        window.location.href = "/"
+        window.location.href = "/orderConfirmation"
         setLoading(false)
         }
       }
@@ -55,7 +55,7 @@ const CheckoutBtn = ({paymentMethod} : {paymentMethod : string}) => {
         <div className=" w-full flex justify-center items-center lg:inline-block ">
            
               <button type="submit" onClick={(e)=> paymentMethod == 'cod' ? handleCod(e) : handleSubmit(e) } className="font-[700]  w-full mt-5 rounded-[4px] text-[18px] h-[50px] bg-black text-white flex justify-center items-center">
-              { loading ? 'Procssing...' : 'Pay now'}
+              { loading ? 'Paying...' : 'Pay now'}
               </button>
           </div>
           

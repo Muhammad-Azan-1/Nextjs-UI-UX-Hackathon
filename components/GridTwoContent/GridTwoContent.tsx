@@ -39,7 +39,7 @@ const GridTwoContent = () => {
 
   return (
     <>
-    <div className= " flex justify-center   lg:inline-block border-b-[1px] font-[500]  overflow-visible lg:overflow-y-scroll h-auto lg:h-[320px] font-josefin w-full bg-[#f5f5f5] lg:py-0  pl-0 pr-2 sm:px-4 lg:pl-2 lg:pr-12 min5:pr-24">
+    <div className= " flex justify-center   lg:inline-block border-b-[1px] font-[500]  overflow-visible lg:overflow-y-scroll h-auto lg:max-h-[320px] font-josefin w-full bg-[#f5f5f5] lg:py-0  pl-0 pr-2 sm:px-4 lg:pl-2 lg:pr-12 min5:pr-24">
       <div className="flex flex-col items-start justify-center pb-6 pt-3 lg:pt-0 lg:pb-0 w-[600px] lg:w-full lg:inline-block">
         {Object.entries(cartItems || {}).map(([, items]) => (
           <div key={items.id} className="h-auto w-full lg:w-auto mb-3 lg:mb-2   flex   items-center justify-between   lg:gap-x-0  pt-3">
@@ -73,7 +73,7 @@ const GridTwoContent = () => {
           </div>
           </div>
 
-        <div className="flex justify-center lg:inline-block w-full  bg-[#f5f5f5] pt-6 pb-8 border-b-[1px] lg:border-none lg:mt-4 mb-3 pr-2 sm:px-4 lg:pl-4 lg:pr-12 min5:pr-24 ">
+        <div className="flex justify-center lg:inline-block w-full  bg-[#f5f5f5] pt-4 pb-8 border-b-[1px] lg:border-none lg:mt-4 mb-3 pr-2 sm:px-4 lg:pl-4 lg:pr-12 min5:pr-24 ">
       <div className="justify-center flex-col w-[600px] lg:w-auto flex gap-y-4">
           <div className="pl-4 flex text-[15px] font-[500]  justify-between w-full">
             <p>Subtotals - {totalItems} items</p>

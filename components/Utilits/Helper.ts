@@ -58,3 +58,27 @@ export type ProductsDetails = {
     
 
      
+
+
+export type value = {
+    id?:number
+    email?:string,
+    country?:string,
+    firstName?:string,
+    lastName?:string,
+    address?:string,
+    city?:string,
+    postalCode?:string,
+    phoneNumber?:string,
+    paymentMethod?:string,
+
+
+}
+
+
+
+export type orderHistory = {
+   ProductsData? : Quantity,
+    consumerData? : value
+
+}

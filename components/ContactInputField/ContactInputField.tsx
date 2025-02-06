@@ -2,6 +2,7 @@
 import Hovercard from "../HoverCard/HoverCard";
 import { useState } from "react";
 import Image from "next/image";
+import useOrder from "@/context/OrderConfirmationContext";
 const CountryFlags: { [key: string]: string } = {
   "+92":
     "https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/pk.C6GKfae7.svg", // Pakistan
@@ -11,14 +12,17 @@ const CountryFlags: { [key: string]: string } = {
     "https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/cn.JoknfU_Z.svg", // China
 };
 
+
 const ContactInputField = () => {
-  const [phone, setPhone] = useState<string>("");
+
   const [flagUrl, setFlagUrl] = useState<string>("");
   const [Error, setError] = useState<boolean>(false);
+  const {order , getOrder} = useOrder()
+
 
   const handleFlags = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setPhone(value);
+    const { name , value }= e.target;
+    getOrder({...order , [name]:value})
 
     if (value.startsWith("+")) {
       setError(false);
@@ -32,6 +36,8 @@ const ContactInputField = () => {
     setFlagUrl(CountryFlags[countryCode] || "");
   };
 
+
+
   return (
     <>
       <div
@@ -40,8 +46,9 @@ const ContactInputField = () => {
         duration-300 ease-in-out   text-[14px] pl-[10px] border ${Error ? "focus-within:border-[#DD1D1D]" : "focus-within:border-black"} rounded-[4px] `}
       >
         <input
+         name="phoneNumber"
           type="text"
-          value={phone}
+          value={order.phoneNumber}
           placeholder="Phone +92"
           onChange={handleFlags}
           className="w-[90%] focus:outline-none h-full peer"

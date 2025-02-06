@@ -97,7 +97,7 @@ const HeaderTopBar = () => {
           </Link>
 
           <div className="relative ">
-            <Link  aria-label="Go to Wish List" href="/Wishlist">
+            <Link  aria-label="Go to Wish List" href="/wishlist">
               <CiHeart className=" cursor-pointer  text-[35px]" />
             </Link>
             <div

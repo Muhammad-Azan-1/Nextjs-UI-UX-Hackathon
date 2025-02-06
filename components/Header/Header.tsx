@@ -77,7 +77,7 @@ const Header = () => {
           </Link>
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400]  text-[18px] md:text-[16px] mb-10 md:mb-0  font-lato"
-            href="/About"
+            href="/about"
              aria-label="Go to About us"
           >
             About
@@ -91,7 +91,7 @@ const Header = () => {
           </Link>
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400]  text-[18px] md:text-[16px] mb-10 md:mb-0  font-lato"
-            href="/Blog"
+            href="/blog"
              aria-label="Go to Blog"
           >
             Blog
@@ -105,7 +105,7 @@ const Header = () => {
           </Link>
           <Link
             className="transition-all duration-500 hover:text-[#FB2E86] font-[600] md:font-[400]  text-[18px] md:text-[16px]  mb-10 md:mb-0 font-lato"
-            href="/Contact"
+            href="/contact"
              aria-label="Go to Contact"
            data-testid="contact-link"
           >
